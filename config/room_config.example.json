@@ -1506,7 +1506,7 @@
       ],
       "source_url": "http://127.0.0.1:8096/status",
       "poll_seconds": 15,
-      "source_enabled": true
+      "source_enabled": false
     },
     {
       "id": "calendar",
@@ -18564,19 +18564,13 @@
     }
   },
   "morning_greeting": {
-    "enabled": true,
+    "enabled": false,
     "start": "06:00",
-    "end": "21:30",
-    "fuel_app_id": "fuel_tracker",
+    "end": "10:00",
     "sections": [
       {
         "app_id": "deskpal_weather",
         "event": "forecast",
-        "field": "summary"
-      },
-      {
-        "app_id": "fuel_tracker",
-        "event": "heartbeat",
         "field": "summary"
       }
     ]

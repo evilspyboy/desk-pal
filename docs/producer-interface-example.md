@@ -1,8 +1,8 @@
 # Build an application interface for Desk-Pal
 
-These examples generalize BMCBF's separate application/relay design without requiring its source, accounts, task names or personal settings.
+These examples generalize a separate application/relay design without requiring any specific upstream accounts, task names, or personal settings.
 
-## Three different files and roles
+## Example files and roles
 
 | Example | Purpose |
 | --- | --- |
@@ -10,6 +10,8 @@ These examples generalize BMCBF's separate application/relay design without requ
 | [Cached status response](../examples/status.example.json) | Example JSON from the producer's read-only status endpoint, or a heartbeat pushed to Desk-Pal. Includes concise physical-button text and dated structured results. |
 | [Completed job event](../examples/job-finished.example.json) | One actual occurrence, sent when work finishes. Its stable run identity prevents replaying the same result on every poll. |
 | [Sender](../examples/send_example.py) | Dependency-free Python HTTP client for delivering real status/events. |
+| [Monitoring hook](../examples/monitoring_hook_example.py) | Drop-in Python `@deskpal_monitor` decorator and `send_deskpal_event()` helper for pushing job pass/fail events. |
+| [Companion service template](../examples/companion_service_template/main.py) | Minimal on-Pi HTTP microservice template (`GET /status` + `service.json`). |
 
 All supplied payloads are marked `demo: true`. Dates, counts and titles are examples; replace them with actual results. Desk-Pal does not launch these examples automatically.
 
@@ -17,7 +19,7 @@ All supplied payloads are marked `demo: true`. Dates, counts and titles are exam
 
 An application may expose `GET /api/v1/status` returning its cached snapshot. The URL/path is configurable; this is a recommended convention, not an endpoint Desk-Pal creates in your application. A separate relay can read it, or the application can push the snapshot to Desk-Pal's `/api/v1/heartbeat` directly.
 
-Update the snapshot when real work completes. A status request must read cached state, not run scrapers, query mail, post to social media or generate summaries. Persist results where another process can read them reliably. BMCBF's web process retained old in-memory data while its scheduler produced new results: one authoritative snapshot shared across processes avoids that failure.
+Update the snapshot when real work completes. A status request must read cached state, not run scrapers, query mail, post to social media or generate summaries. Persist results where another process can read them reliably: if a web process retains stale in-memory data while a separate scheduler produces new results, reading from one authoritative persisted snapshot avoids that drift.
 
 Use `summary` for ordinary application status and optional `button_summary` for a short useful inspection response. Normal physical buttons use the latest heartbeat's cached button text. Structured `results` fields in this example are **producer-defined**, not a built-in daily-results schema; Desk-Pal records fields for mapping conditions but does not automatically turn arbitrary fields into prose. Your application/adapter formats that prose.
 
@@ -37,5 +39,3 @@ These exact commands send **demo data**; use copies populated from your applicat
 Do not resend a completed job as a new occurrence on every status poll. Include a stable run/result ID and persist delivery/deduplication history across restarts. A later genuine run gets a new ID even if it returns the same counts. Queueing, duplicate suppression, attention acknowledgement and physical-button behaviour are described in [Adding integrations](adding-integrations.md).
 
 Keep scene names, gestures, GPIO assignments, credentials and the Pi address out of the producer's results contract. Store credentials separately, use bounded requests, and handle delivery failure without disrupting the application. An importer accepts configuration data, not executable producer code.
-
-For the current personal BMCBF adapter's exact sources and remaining limits, see [BMCBF interface notes](bmcbf-interface-notes.md).
