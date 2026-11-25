@@ -4,6 +4,9 @@ Desk-Pal is a small animated application monitor for a Raspberry Pi and touchscr
 
 **The character does not perform the work.** Separate applications do the work and send status or events; Desk-Pal maps those inputs to animations, scene locations, props and optional messages.
 
+> [!NOTE]
+> Do you have a lot of small helper scripts or apps you have made for various things that you only use occasionally and when you use them you just want them to work? Would it be helpful if you had something that was monitoring them and maybe show some animations so you know stuff is happening without having to check them all the time? That is what this is - a fancy SCUMM inspired little world with a pixelated character that does animations and interactions that are mapped to various things that are being monitored... but it also gives you a place to host more small scripts and functions if they fit on your spare pi (if you have a spare pi).
+
 The hardware targets Raspberry Pi 4 or newer, the official 5-inch Raspberry Pi Touch Display 2 and six Cherry MX-style mechanical buttons. The current personal build runs on a Pi 4. Its pixel-art scenes are a study, video store, resort beach and apartment. This is a working personal project; installation scripts and some adapters still reflect that installation rather than a finished portable distribution.
 
 ![Desk-Pal in its printed enclosure, showing the video store and six physical buttons](docs/images/desk-pal-hardware.png)
