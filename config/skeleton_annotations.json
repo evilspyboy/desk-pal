@@ -1,0 +1,5432 @@
+{
+  "/assets/characters/adventurer/walk/walk_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.51,
+        0.13
+      ],
+      "neck": [
+        0.47,
+        0.22
+      ],
+      "pelvis": [
+        0.48,
+        0.52
+      ],
+      "shoulder_l": [
+        0.43,
+        0.25
+      ],
+      "elbow_l": [
+        0.26,
+        0.41
+      ],
+      "wrist_l": [
+        0.23,
+        0.54
+      ],
+      "shoulder_r": [
+        0.54,
+        0.26
+      ],
+      "elbow_r": [
+        0.61,
+        0.42
+      ],
+      "wrist_r": [
+        0.76,
+        0.51
+      ],
+      "hip_l": [
+        0.44,
+        0.53
+      ],
+      "knee_l": [
+        0.3,
+        0.73
+      ],
+      "ankle_l": [
+        0.13,
+        0.88
+      ],
+      "toe_l": [
+        0.26,
+        0.94
+      ],
+      "hip_r": [
+        0.53,
+        0.53
+      ],
+      "knee_r": [
+        0.64,
+        0.73
+      ],
+      "ankle_r": [
+        0.7,
+        0.91
+      ],
+      "toe_r": [
+        0.88,
+        0.92
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "wrist_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.12,
+      0.08
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/walk/walk_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.51,
+        0.13
+      ],
+      "neck": [
+        0.47,
+        0.22
+      ],
+      "pelvis": [
+        0.48,
+        0.52
+      ],
+      "shoulder_l": [
+        0.43,
+        0.25
+      ],
+      "elbow_l": [
+        0.32,
+        0.4
+      ],
+      "wrist_l": [
+        0.34,
+        0.54
+      ],
+      "shoulder_r": [
+        0.54,
+        0.26
+      ],
+      "elbow_r": [
+        0.61,
+        0.42
+      ],
+      "wrist_r": [
+        0.7,
+        0.5
+      ],
+      "hip_l": [
+        0.45,
+        0.53
+      ],
+      "knee_l": [
+        0.44,
+        0.76
+      ],
+      "ankle_l": [
+        0.43,
+        0.92
+      ],
+      "toe_l": [
+        0.59,
+        0.95
+      ],
+      "hip_r": [
+        0.52,
+        0.53
+      ],
+      "knee_r": [
+        0.71,
+        0.65
+      ],
+      "ankle_r": [
+        0.29,
+        0.82
+      ],
+      "toe_r": [
+        0.24,
+        0.88
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "wrist_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.12,
+      0.08
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/walk/walk_2.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.51,
+        0.13
+      ],
+      "neck": [
+        0.47,
+        0.22
+      ],
+      "pelvis": [
+        0.48,
+        0.52
+      ],
+      "shoulder_l": [
+        0.43,
+        0.25
+      ],
+      "elbow_l": [
+        0.26,
+        0.41
+      ],
+      "wrist_l": [
+        0.24,
+        0.54
+      ],
+      "shoulder_r": [
+        0.54,
+        0.26
+      ],
+      "elbow_r": [
+        0.61,
+        0.42
+      ],
+      "wrist_r": [
+        0.77,
+        0.51
+      ],
+      "hip_l": [
+        0.44,
+        0.53
+      ],
+      "knee_l": [
+        0.44,
+        0.7
+      ],
+      "ankle_l": [
+        0.22,
+        0.87
+      ],
+      "toe_l": [
+        0.32,
+        0.94
+      ],
+      "hip_r": [
+        0.53,
+        0.53
+      ],
+      "knee_r": [
+        0.63,
+        0.71
+      ],
+      "ankle_r": [
+        0.64,
+        0.92
+      ],
+      "toe_r": [
+        0.81,
+        0.95
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "wrist_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.12,
+      0.08
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/walk/walk_3.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.51,
+        0.13
+      ],
+      "neck": [
+        0.47,
+        0.22
+      ],
+      "pelvis": [
+        0.48,
+        0.52
+      ],
+      "shoulder_l": [
+        0.44,
+        0.26
+      ],
+      "elbow_l": [
+        0.5,
+        0.42
+      ],
+      "wrist_l": [
+        0.74,
+        0.48
+      ],
+      "shoulder_r": [
+        0.5,
+        0.26
+      ],
+      "elbow_r": [
+        0.36,
+        0.4
+      ],
+      "wrist_r": [
+        0.34,
+        0.48
+      ],
+      "hip_l": [
+        0.46,
+        0.53
+      ],
+      "knee_l": [
+        0.45,
+        0.76
+      ],
+      "ankle_l": [
+        0.44,
+        0.92
+      ],
+      "toe_l": [
+        0.59,
+        0.95
+      ],
+      "hip_r": [
+        0.53,
+        0.53
+      ],
+      "knee_r": [
+        0.65,
+        0.68
+      ],
+      "ankle_r": [
+        0.28,
+        0.82
+      ],
+      "toe_r": [
+        0.26,
+        0.87
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "wrist_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.12,
+      0.08
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_up_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.12
+      ],
+      "neck": [
+        0.5,
+        0.22
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.27
+      ],
+      "elbow_l": [
+        0.35,
+        0.38
+      ],
+      "wrist_l": [
+        0.38,
+        0.42
+      ],
+      "shoulder_r": [
+        0.6,
+        0.27
+      ],
+      "elbow_r": [
+        0.64,
+        0.42
+      ],
+      "wrist_r": [
+        0.69,
+        0.56
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.44,
+        0.72
+      ],
+      "ankle_l": [
+        0.45,
+        0.9
+      ],
+      "toe_l": [
+        0.45,
+        0.95
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.56,
+        0.66
+      ],
+      "ankle_r": [
+        0.55,
+        0.81
+      ],
+      "toe_r": [
+        0.56,
+        0.84
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_up_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.12
+      ],
+      "neck": [
+        0.5,
+        0.22
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.27
+      ],
+      "elbow_l": [
+        0.36,
+        0.4
+      ],
+      "wrist_l": [
+        0.35,
+        0.51
+      ],
+      "shoulder_r": [
+        0.6,
+        0.27
+      ],
+      "elbow_r": [
+        0.64,
+        0.42
+      ],
+      "wrist_r": [
+        0.68,
+        0.58
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.45,
+        0.69
+      ],
+      "ankle_l": [
+        0.45,
+        0.83
+      ],
+      "toe_l": [
+        0.45,
+        0.85
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.55,
+        0.75
+      ],
+      "ankle_r": [
+        0.56,
+        0.92
+      ],
+      "toe_r": [
+        0.56,
+        0.95
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_up_2.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.12
+      ],
+      "neck": [
+        0.5,
+        0.22
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.27
+      ],
+      "elbow_l": [
+        0.34,
+        0.42
+      ],
+      "wrist_l": [
+        0.33,
+        0.56
+      ],
+      "shoulder_r": [
+        0.6,
+        0.27
+      ],
+      "elbow_r": [
+        0.64,
+        0.38
+      ],
+      "wrist_r": [
+        0.61,
+        0.42
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.45,
+        0.66
+      ],
+      "ankle_l": [
+        0.45,
+        0.81
+      ],
+      "toe_l": [
+        0.45,
+        0.84
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.55,
+        0.73
+      ],
+      "ankle_r": [
+        0.56,
+        0.92
+      ],
+      "toe_r": [
+        0.56,
+        0.95
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_up_3.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.12
+      ],
+      "neck": [
+        0.5,
+        0.22
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.27
+      ],
+      "elbow_l": [
+        0.34,
+        0.42
+      ],
+      "wrist_l": [
+        0.33,
+        0.57
+      ],
+      "shoulder_r": [
+        0.6,
+        0.27
+      ],
+      "elbow_r": [
+        0.64,
+        0.42
+      ],
+      "wrist_r": [
+        0.68,
+        0.57
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.44,
+        0.75
+      ],
+      "ankle_l": [
+        0.45,
+        0.9
+      ],
+      "toe_l": [
+        0.45,
+        0.94
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.56,
+        0.69
+      ],
+      "ankle_r": [
+        0.56,
+        0.82
+      ],
+      "toe_r": [
+        0.56,
+        0.85
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_down_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.28
+      ],
+      "elbow_l": [
+        0.35,
+        0.41
+      ],
+      "wrist_l": [
+        0.34,
+        0.53
+      ],
+      "shoulder_r": [
+        0.6,
+        0.28
+      ],
+      "elbow_r": [
+        0.65,
+        0.41
+      ],
+      "wrist_r": [
+        0.66,
+        0.52
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.45,
+        0.74
+      ],
+      "ankle_l": [
+        0.46,
+        0.91
+      ],
+      "toe_l": [
+        0.45,
+        0.95
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.56,
+        0.67
+      ],
+      "ankle_r": [
+        0.57,
+        0.8
+      ],
+      "toe_r": [
+        0.57,
+        0.84
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_down_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.28
+      ],
+      "elbow_l": [
+        0.35,
+        0.41
+      ],
+      "wrist_l": [
+        0.34,
+        0.54
+      ],
+      "shoulder_r": [
+        0.6,
+        0.28
+      ],
+      "elbow_r": [
+        0.65,
+        0.41
+      ],
+      "wrist_r": [
+        0.66,
+        0.53
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.47,
+        0.74
+      ],
+      "ankle_l": [
+        0.46,
+        0.91
+      ],
+      "toe_l": [
+        0.45,
+        0.95
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.54,
+        0.67
+      ],
+      "ankle_r": [
+        0.55,
+        0.79
+      ],
+      "toe_r": [
+        0.55,
+        0.82
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_down_2.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.28
+      ],
+      "elbow_l": [
+        0.35,
+        0.4
+      ],
+      "wrist_l": [
+        0.33,
+        0.52
+      ],
+      "shoulder_r": [
+        0.6,
+        0.28
+      ],
+      "elbow_r": [
+        0.65,
+        0.42
+      ],
+      "wrist_r": [
+        0.67,
+        0.54
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.44,
+        0.66
+      ],
+      "ankle_l": [
+        0.44,
+        0.79
+      ],
+      "toe_l": [
+        0.44,
+        0.82
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.54,
+        0.74
+      ],
+      "ankle_r": [
+        0.55,
+        0.92
+      ],
+      "toe_r": [
+        0.55,
+        0.95
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_walk_down_3.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.28
+      ],
+      "elbow_l": [
+        0.35,
+        0.41
+      ],
+      "wrist_l": [
+        0.33,
+        0.54
+      ],
+      "shoulder_r": [
+        0.6,
+        0.28
+      ],
+      "elbow_r": [
+        0.65,
+        0.41
+      ],
+      "wrist_r": [
+        0.67,
+        0.55
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.45,
+        0.68
+      ],
+      "ankle_l": [
+        0.45,
+        0.81
+      ],
+      "toe_l": [
+        0.45,
+        0.84
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.55,
+        0.75
+      ],
+      "ankle_r": [
+        0.56,
+        0.92
+      ],
+      "toe_r": [
+        0.56,
+        0.95
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_side_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.53,
+        0.14
+      ],
+      "neck": [
+        0.49,
+        0.23
+      ],
+      "pelvis": [
+        0.48,
+        0.51
+      ],
+      "shoulder_l": [
+        0.44,
+        0.28
+      ],
+      "elbow_l": [
+        0.43,
+        0.42
+      ],
+      "wrist_l": [
+        0.43,
+        0.55
+      ],
+      "shoulder_r": [
+        0.54,
+        0.28
+      ],
+      "elbow_r": [
+        0.57,
+        0.42
+      ],
+      "wrist_r": [
+        0.59,
+        0.55
+      ],
+      "hip_l": [
+        0.45,
+        0.52
+      ],
+      "knee_l": [
+        0.43,
+        0.73
+      ],
+      "ankle_l": [
+        0.45,
+        0.91
+      ],
+      "toe_l": [
+        0.54,
+        0.93
+      ],
+      "hip_r": [
+        0.52,
+        0.52
+      ],
+      "knee_r": [
+        0.53,
+        0.73
+      ],
+      "ankle_r": [
+        0.55,
+        0.9
+      ],
+      "toe_r": [
+        0.64,
+        0.92
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "wrist_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_side_breathe.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.52,
+        0.14
+      ],
+      "neck": [
+        0.48,
+        0.23
+      ],
+      "pelvis": [
+        0.48,
+        0.51
+      ],
+      "shoulder_l": [
+        0.43,
+        0.28
+      ],
+      "elbow_l": [
+        0.42,
+        0.42
+      ],
+      "wrist_l": [
+        0.43,
+        0.54
+      ],
+      "shoulder_r": [
+        0.54,
+        0.28
+      ],
+      "elbow_r": [
+        0.57,
+        0.42
+      ],
+      "wrist_r": [
+        0.59,
+        0.55
+      ],
+      "hip_l": [
+        0.44,
+        0.51
+      ],
+      "knee_l": [
+        0.43,
+        0.73
+      ],
+      "ankle_l": [
+        0.45,
+        0.91
+      ],
+      "toe_l": [
+        0.54,
+        0.93
+      ],
+      "hip_r": [
+        0.51,
+        0.51
+      ],
+      "knee_r": [
+        0.53,
+        0.73
+      ],
+      "ankle_r": [
+        0.55,
+        0.9
+      ],
+      "toe_r": [
+        0.64,
+        0.92
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "wrist_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_side_blink.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.53,
+        0.14
+      ],
+      "neck": [
+        0.49,
+        0.23
+      ],
+      "pelvis": [
+        0.48,
+        0.51
+      ],
+      "shoulder_l": [
+        0.44,
+        0.28
+      ],
+      "elbow_l": [
+        0.43,
+        0.42
+      ],
+      "wrist_l": [
+        0.43,
+        0.55
+      ],
+      "shoulder_r": [
+        0.54,
+        0.28
+      ],
+      "elbow_r": [
+        0.57,
+        0.42
+      ],
+      "wrist_r": [
+        0.59,
+        0.55
+      ],
+      "hip_l": [
+        0.45,
+        0.52
+      ],
+      "knee_l": [
+        0.43,
+        0.73
+      ],
+      "ankle_l": [
+        0.45,
+        0.91
+      ],
+      "toe_l": [
+        0.54,
+        0.93
+      ],
+      "hip_r": [
+        0.52,
+        0.52
+      ],
+      "knee_r": [
+        0.53,
+        0.73
+      ],
+      "ankle_r": [
+        0.55,
+        0.9
+      ],
+      "toe_r": [
+        0.64,
+        0.92
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "wrist_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_up_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.12
+      ],
+      "neck": [
+        0.5,
+        0.22
+      ],
+      "pelvis": [
+        0.5,
+        0.5
+      ],
+      "shoulder_l": [
+        0.39,
+        0.28
+      ],
+      "elbow_l": [
+        0.35,
+        0.42
+      ],
+      "wrist_l": [
+        0.34,
+        0.56
+      ],
+      "shoulder_r": [
+        0.61,
+        0.28
+      ],
+      "elbow_r": [
+        0.65,
+        0.42
+      ],
+      "wrist_r": [
+        0.66,
+        0.56
+      ],
+      "hip_l": [
+        0.43,
+        0.51
+      ],
+      "knee_l": [
+        0.42,
+        0.74
+      ],
+      "ankle_l": [
+        0.42,
+        0.93
+      ],
+      "toe_l": [
+        0.38,
+        0.96
+      ],
+      "hip_r": [
+        0.57,
+        0.51
+      ],
+      "knee_r": [
+        0.58,
+        0.74
+      ],
+      "ankle_r": [
+        0.58,
+        0.93
+      ],
+      "toe_r": [
+        0.62,
+        0.96
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.12
+      ],
+      "neck": [
+        0.5,
+        0.22
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.39,
+        0.27
+      ],
+      "elbow_l": [
+        0.35,
+        0.4
+      ],
+      "wrist_l": [
+        0.34,
+        0.53
+      ],
+      "shoulder_r": [
+        0.61,
+        0.27
+      ],
+      "elbow_r": [
+        0.65,
+        0.4
+      ],
+      "wrist_r": [
+        0.66,
+        0.53
+      ],
+      "hip_l": [
+        0.43,
+        0.5
+      ],
+      "knee_l": [
+        0.42,
+        0.72
+      ],
+      "ankle_l": [
+        0.42,
+        0.91
+      ],
+      "toe_l": [
+        0.38,
+        0.94
+      ],
+      "hip_r": [
+        0.57,
+        0.5
+      ],
+      "knee_r": [
+        0.58,
+        0.72
+      ],
+      "ankle_r": [
+        0.58,
+        0.91
+      ],
+      "toe_r": [
+        0.62,
+        0.94
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_down_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.48
+      ],
+      "shoulder_l": [
+        0.4,
+        0.28
+      ],
+      "elbow_l": [
+        0.35,
+        0.42
+      ],
+      "wrist_l": [
+        0.34,
+        0.54
+      ],
+      "shoulder_r": [
+        0.6,
+        0.28
+      ],
+      "elbow_r": [
+        0.65,
+        0.42
+      ],
+      "wrist_r": [
+        0.66,
+        0.54
+      ],
+      "hip_l": [
+        0.44,
+        0.49
+      ],
+      "knee_l": [
+        0.42,
+        0.73
+      ],
+      "ankle_l": [
+        0.41,
+        0.91
+      ],
+      "toe_l": [
+        0.35,
+        0.94
+      ],
+      "hip_r": [
+        0.56,
+        0.49
+      ],
+      "knee_r": [
+        0.58,
+        0.73
+      ],
+      "ankle_r": [
+        0.59,
+        0.91
+      ],
+      "toe_r": [
+        0.65,
+        0.94
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.48,
+        0.14
+      ],
+      "neck": [
+        0.48,
+        0.23
+      ],
+      "pelvis": [
+        0.48,
+        0.48
+      ],
+      "shoulder_l": [
+        0.38,
+        0.28
+      ],
+      "elbow_l": [
+        0.33,
+        0.41
+      ],
+      "wrist_l": [
+        0.32,
+        0.52
+      ],
+      "shoulder_r": [
+        0.58,
+        0.28
+      ],
+      "elbow_r": [
+        0.63,
+        0.41
+      ],
+      "wrist_r": [
+        0.64,
+        0.52
+      ],
+      "hip_l": [
+        0.42,
+        0.49
+      ],
+      "knee_l": [
+        0.4,
+        0.73
+      ],
+      "ankle_l": [
+        0.39,
+        0.91
+      ],
+      "toe_l": [
+        0.33,
+        0.94
+      ],
+      "hip_r": [
+        0.54,
+        0.49
+      ],
+      "knee_r": [
+        0.56,
+        0.73
+      ],
+      "ankle_r": [
+        0.57,
+        0.91
+      ],
+      "toe_r": [
+        0.63,
+        0.94
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_stand_down_blink_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.48
+      ],
+      "shoulder_l": [
+        0.4,
+        0.28
+      ],
+      "elbow_l": [
+        0.35,
+        0.42
+      ],
+      "wrist_l": [
+        0.34,
+        0.54
+      ],
+      "shoulder_r": [
+        0.6,
+        0.28
+      ],
+      "elbow_r": [
+        0.65,
+        0.42
+      ],
+      "wrist_r": [
+        0.66,
+        0.54
+      ],
+      "hip_l": [
+        0.44,
+        0.49
+      ],
+      "knee_l": [
+        0.42,
+        0.73
+      ],
+      "ankle_l": [
+        0.41,
+        0.91
+      ],
+      "toe_l": [
+        0.35,
+        0.94
+      ],
+      "hip_r": [
+        0.56,
+        0.49
+      ],
+      "knee_r": [
+        0.58,
+        0.73
+      ],
+      "ankle_r": [
+        0.59,
+        0.91
+      ],
+      "toe_r": [
+        0.65,
+        0.94
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_kneel_down_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.66,
+        0.44
+      ],
+      "neck": [
+        0.6,
+        0.51
+      ],
+      "pelvis": [
+        0.42,
+        0.73
+      ],
+      "shoulder_l": [
+        0.54,
+        0.54
+      ],
+      "elbow_l": [
+        0.43,
+        0.63
+      ],
+      "wrist_l": [
+        0.48,
+        0.75
+      ],
+      "shoulder_r": [
+        0.62,
+        0.54
+      ],
+      "elbow_r": [
+        0.73,
+        0.7
+      ],
+      "wrist_r": [
+        0.87,
+        0.79
+      ],
+      "hip_l": [
+        0.42,
+        0.73
+      ],
+      "knee_l": [
+        0.43,
+        0.88
+      ],
+      "ankle_l": [
+        0.19,
+        0.87
+      ],
+      "toe_l": [
+        0.12,
+        0.91
+      ],
+      "hip_r": [
+        0.48,
+        0.72
+      ],
+      "knee_r": [
+        0.63,
+        0.71
+      ],
+      "ankle_r": [
+        0.63,
+        0.89
+      ],
+      "toe_r": [
+        0.73,
+        0.91
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "hip_l"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_kneel_down_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.66,
+        0.44
+      ],
+      "neck": [
+        0.6,
+        0.51
+      ],
+      "pelvis": [
+        0.42,
+        0.73
+      ],
+      "shoulder_l": [
+        0.54,
+        0.54
+      ],
+      "elbow_l": [
+        0.43,
+        0.63
+      ],
+      "wrist_l": [
+        0.48,
+        0.75
+      ],
+      "shoulder_r": [
+        0.62,
+        0.54
+      ],
+      "elbow_r": [
+        0.78,
+        0.76
+      ],
+      "wrist_r": [
+        0.88,
+        0.84
+      ],
+      "hip_l": [
+        0.42,
+        0.73
+      ],
+      "knee_l": [
+        0.43,
+        0.88
+      ],
+      "ankle_l": [
+        0.19,
+        0.87
+      ],
+      "toe_l": [
+        0.12,
+        0.91
+      ],
+      "hip_r": [
+        0.48,
+        0.72
+      ],
+      "knee_r": [
+        0.63,
+        0.71
+      ],
+      "ankle_r": [
+        0.63,
+        0.89
+      ],
+      "toe_r": [
+        0.73,
+        0.91
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "hip_l"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_kneel_back_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.6,
+        0.46
+      ],
+      "neck": [
+        0.59,
+        0.53
+      ],
+      "pelvis": [
+        0.47,
+        0.73
+      ],
+      "shoulder_l": [
+        0.49,
+        0.56
+      ],
+      "elbow_l": [
+        0.4,
+        0.63
+      ],
+      "wrist_l": [
+        0.44,
+        0.68
+      ],
+      "shoulder_r": [
+        0.64,
+        0.57
+      ],
+      "elbow_r": [
+        0.71,
+        0.7
+      ],
+      "wrist_r": [
+        0.8,
+        0.82
+      ],
+      "hip_l": [
+        0.44,
+        0.74
+      ],
+      "knee_l": [
+        0.49,
+        0.88
+      ],
+      "ankle_l": [
+        0.33,
+        0.88
+      ],
+      "toe_l": [
+        0.28,
+        0.92
+      ],
+      "hip_r": [
+        0.53,
+        0.73
+      ],
+      "knee_r": [
+        0.61,
+        0.72
+      ],
+      "ankle_r": [
+        0.62,
+        0.87
+      ],
+      "toe_r": [
+        0.67,
+        0.9
+      ]
+    },
+    "inferred": [
+      "wrist_l",
+      "hip_l"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_kneel_back_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.6,
+        0.47
+      ],
+      "neck": [
+        0.59,
+        0.54
+      ],
+      "pelvis": [
+        0.47,
+        0.73
+      ],
+      "shoulder_l": [
+        0.49,
+        0.56
+      ],
+      "elbow_l": [
+        0.4,
+        0.63
+      ],
+      "wrist_l": [
+        0.44,
+        0.68
+      ],
+      "shoulder_r": [
+        0.64,
+        0.58
+      ],
+      "elbow_r": [
+        0.73,
+        0.74
+      ],
+      "wrist_r": [
+        0.81,
+        0.86
+      ],
+      "hip_l": [
+        0.44,
+        0.74
+      ],
+      "knee_l": [
+        0.49,
+        0.88
+      ],
+      "ankle_l": [
+        0.33,
+        0.88
+      ],
+      "toe_l": [
+        0.28,
+        0.92
+      ],
+      "hip_r": [
+        0.53,
+        0.73
+      ],
+      "knee_r": [
+        0.61,
+        0.72
+      ],
+      "ankle_r": [
+        0.62,
+        0.87
+      ],
+      "toe_r": [
+        0.67,
+        0.9
+      ]
+    },
+    "inferred": [
+      "wrist_l",
+      "hip_l"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_table_reach_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.44,
+        0.14
+      ],
+      "neck": [
+        0.41,
+        0.23
+      ],
+      "pelvis": [
+        0.4,
+        0.49
+      ],
+      "shoulder_l": [
+        0.36,
+        0.28
+      ],
+      "elbow_l": [
+        0.34,
+        0.42
+      ],
+      "wrist_l": [
+        0.34,
+        0.55
+      ],
+      "shoulder_r": [
+        0.44,
+        0.28
+      ],
+      "elbow_r": [
+        0.53,
+        0.4
+      ],
+      "wrist_r": [
+        0.71,
+        0.42
+      ],
+      "hip_l": [
+        0.37,
+        0.5
+      ],
+      "knee_l": [
+        0.35,
+        0.73
+      ],
+      "ankle_l": [
+        0.36,
+        0.91
+      ],
+      "toe_l": [
+        0.44,
+        0.94
+      ],
+      "hip_r": [
+        0.44,
+        0.5
+      ],
+      "knee_r": [
+        0.44,
+        0.73
+      ],
+      "ankle_r": [
+        0.45,
+        0.9
+      ],
+      "toe_r": [
+        0.54,
+        0.93
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_table_reach_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.44,
+        0.14
+      ],
+      "neck": [
+        0.41,
+        0.23
+      ],
+      "pelvis": [
+        0.4,
+        0.49
+      ],
+      "shoulder_l": [
+        0.36,
+        0.28
+      ],
+      "elbow_l": [
+        0.34,
+        0.42
+      ],
+      "wrist_l": [
+        0.34,
+        0.55
+      ],
+      "shoulder_r": [
+        0.44,
+        0.28
+      ],
+      "elbow_r": [
+        0.56,
+        0.41
+      ],
+      "wrist_r": [
+        0.77,
+        0.43
+      ],
+      "hip_l": [
+        0.37,
+        0.5
+      ],
+      "knee_l": [
+        0.35,
+        0.73
+      ],
+      "ankle_l": [
+        0.36,
+        0.91
+      ],
+      "toe_l": [
+        0.44,
+        0.94
+      ],
+      "hip_r": [
+        0.44,
+        0.5
+      ],
+      "knee_r": [
+        0.44,
+        0.73
+      ],
+      "ankle_r": [
+        0.45,
+        0.9
+      ],
+      "toe_r": [
+        0.54,
+        0.93
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_noticeboard_reach_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.48,
+        0.15
+      ],
+      "neck": [
+        0.45,
+        0.24
+      ],
+      "pelvis": [
+        0.44,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.29
+      ],
+      "elbow_l": [
+        0.38,
+        0.43
+      ],
+      "wrist_l": [
+        0.38,
+        0.55
+      ],
+      "shoulder_r": [
+        0.48,
+        0.28
+      ],
+      "elbow_r": [
+        0.63,
+        0.27
+      ],
+      "wrist_r": [
+        0.76,
+        0.17
+      ],
+      "hip_l": [
+        0.41,
+        0.5
+      ],
+      "knee_l": [
+        0.39,
+        0.73
+      ],
+      "ankle_l": [
+        0.39,
+        0.91
+      ],
+      "toe_l": [
+        0.48,
+        0.94
+      ],
+      "hip_r": [
+        0.48,
+        0.5
+      ],
+      "knee_r": [
+        0.48,
+        0.73
+      ],
+      "ankle_r": [
+        0.49,
+        0.9
+      ],
+      "toe_r": [
+        0.6,
+        0.93
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_noticeboard_reach_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.48,
+        0.15
+      ],
+      "neck": [
+        0.45,
+        0.24
+      ],
+      "pelvis": [
+        0.44,
+        0.49
+      ],
+      "shoulder_l": [
+        0.4,
+        0.29
+      ],
+      "elbow_l": [
+        0.38,
+        0.43
+      ],
+      "wrist_l": [
+        0.38,
+        0.55
+      ],
+      "shoulder_r": [
+        0.48,
+        0.28
+      ],
+      "elbow_r": [
+        0.64,
+        0.3
+      ],
+      "wrist_r": [
+        0.72,
+        0.18
+      ],
+      "hip_l": [
+        0.41,
+        0.5
+      ],
+      "knee_l": [
+        0.39,
+        0.73
+      ],
+      "ankle_l": [
+        0.39,
+        0.91
+      ],
+      "toe_l": [
+        0.48,
+        0.94
+      ],
+      "hip_r": [
+        0.48,
+        0.5
+      ],
+      "knee_r": [
+        0.48,
+        0.73
+      ],
+      "ankle_r": [
+        0.49,
+        0.9
+      ],
+      "toe_r": [
+        0.6,
+        0.93
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_reach_high_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.49,
+        0.2
+      ],
+      "neck": [
+        0.45,
+        0.29
+      ],
+      "pelvis": [
+        0.43,
+        0.57
+      ],
+      "shoulder_l": [
+        0.4,
+        0.33
+      ],
+      "elbow_l": [
+        0.34,
+        0.47
+      ],
+      "wrist_l": [
+        0.34,
+        0.61
+      ],
+      "shoulder_r": [
+        0.48,
+        0.32
+      ],
+      "elbow_r": [
+        0.65,
+        0.22
+      ],
+      "wrist_r": [
+        0.81,
+        0.1
+      ],
+      "hip_l": [
+        0.4,
+        0.57
+      ],
+      "knee_l": [
+        0.33,
+        0.76
+      ],
+      "ankle_l": [
+        0.27,
+        0.91
+      ],
+      "toe_l": [
+        0.35,
+        0.95
+      ],
+      "hip_r": [
+        0.47,
+        0.57
+      ],
+      "knee_r": [
+        0.52,
+        0.78
+      ],
+      "ankle_r": [
+        0.54,
+        0.93
+      ],
+      "toe_r": [
+        0.65,
+        0.95
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_reach_high_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.49,
+        0.2
+      ],
+      "neck": [
+        0.45,
+        0.29
+      ],
+      "pelvis": [
+        0.43,
+        0.57
+      ],
+      "shoulder_l": [
+        0.4,
+        0.33
+      ],
+      "elbow_l": [
+        0.34,
+        0.47
+      ],
+      "wrist_l": [
+        0.34,
+        0.61
+      ],
+      "shoulder_r": [
+        0.48,
+        0.32
+      ],
+      "elbow_r": [
+        0.63,
+        0.23
+      ],
+      "wrist_r": [
+        0.81,
+        0.11
+      ],
+      "hip_l": [
+        0.4,
+        0.57
+      ],
+      "knee_l": [
+        0.33,
+        0.76
+      ],
+      "ankle_l": [
+        0.27,
+        0.91
+      ],
+      "toe_l": [
+        0.35,
+        0.95
+      ],
+      "hip_r": [
+        0.47,
+        0.57
+      ],
+      "knee_r": [
+        0.52,
+        0.78
+      ],
+      "ankle_r": [
+        0.54,
+        0.93
+      ],
+      "toe_r": [
+        0.65,
+        0.95
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_shelf_reach_back_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.47,
+        0.24
+      ],
+      "neck": [
+        0.47,
+        0.32
+      ],
+      "pelvis": [
+        0.47,
+        0.57
+      ],
+      "shoulder_l": [
+        0.38,
+        0.36
+      ],
+      "elbow_l": [
+        0.34,
+        0.49
+      ],
+      "wrist_l": [
+        0.31,
+        0.61
+      ],
+      "shoulder_r": [
+        0.57,
+        0.34
+      ],
+      "elbow_r": [
+        0.69,
+        0.26
+      ],
+      "wrist_r": [
+        0.78,
+        0.15
+      ],
+      "hip_l": [
+        0.41,
+        0.58
+      ],
+      "knee_l": [
+        0.36,
+        0.77
+      ],
+      "ankle_l": [
+        0.32,
+        0.92
+      ],
+      "toe_l": [
+        0.3,
+        0.95
+      ],
+      "hip_r": [
+        0.53,
+        0.58
+      ],
+      "knee_r": [
+        0.54,
+        0.78
+      ],
+      "ankle_r": [
+        0.55,
+        0.93
+      ],
+      "toe_r": [
+        0.61,
+        0.95
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_shelf_reach_back_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.47,
+        0.24
+      ],
+      "neck": [
+        0.47,
+        0.32
+      ],
+      "pelvis": [
+        0.47,
+        0.57
+      ],
+      "shoulder_l": [
+        0.38,
+        0.36
+      ],
+      "elbow_l": [
+        0.34,
+        0.49
+      ],
+      "wrist_l": [
+        0.31,
+        0.61
+      ],
+      "shoulder_r": [
+        0.57,
+        0.34
+      ],
+      "elbow_r": [
+        0.68,
+        0.3
+      ],
+      "wrist_r": [
+        0.75,
+        0.21
+      ],
+      "hip_l": [
+        0.41,
+        0.58
+      ],
+      "knee_l": [
+        0.36,
+        0.77
+      ],
+      "ankle_l": [
+        0.32,
+        0.92
+      ],
+      "toe_l": [
+        0.3,
+        0.95
+      ],
+      "hip_r": [
+        0.53,
+        0.58
+      ],
+      "knee_r": [
+        0.54,
+        0.78
+      ],
+      "ankle_r": [
+        0.55,
+        0.93
+      ],
+      "toe_r": [
+        0.61,
+        0.95
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_notebook_write_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.54,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.49,
+        0.5
+      ],
+      "shoulder_l": [
+        0.44,
+        0.28
+      ],
+      "elbow_l": [
+        0.48,
+        0.41
+      ],
+      "wrist_l": [
+        0.65,
+        0.35
+      ],
+      "shoulder_r": [
+        0.53,
+        0.28
+      ],
+      "elbow_r": [
+        0.57,
+        0.42
+      ],
+      "wrist_r": [
+        0.68,
+        0.38
+      ],
+      "hip_l": [
+        0.46,
+        0.51
+      ],
+      "knee_l": [
+        0.44,
+        0.73
+      ],
+      "ankle_l": [
+        0.45,
+        0.92
+      ],
+      "toe_l": [
+        0.54,
+        0.95
+      ],
+      "hip_r": [
+        0.52,
+        0.51
+      ],
+      "knee_r": [
+        0.54,
+        0.73
+      ],
+      "ankle_r": [
+        0.56,
+        0.91
+      ],
+      "toe_r": [
+        0.65,
+        0.93
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_notebook_write_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.54,
+        0.14
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.49,
+        0.5
+      ],
+      "shoulder_l": [
+        0.44,
+        0.28
+      ],
+      "elbow_l": [
+        0.48,
+        0.41
+      ],
+      "wrist_l": [
+        0.65,
+        0.36
+      ],
+      "shoulder_r": [
+        0.53,
+        0.28
+      ],
+      "elbow_r": [
+        0.57,
+        0.42
+      ],
+      "wrist_r": [
+        0.67,
+        0.38
+      ],
+      "hip_l": [
+        0.46,
+        0.51
+      ],
+      "knee_l": [
+        0.44,
+        0.73
+      ],
+      "ankle_l": [
+        0.45,
+        0.92
+      ],
+      "toe_l": [
+        0.54,
+        0.95
+      ],
+      "hip_r": [
+        0.52,
+        0.51
+      ],
+      "knee_r": [
+        0.54,
+        0.73
+      ],
+      "ankle_r": [
+        0.56,
+        0.91
+      ],
+      "toe_r": [
+        0.65,
+        0.93
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_typing_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.51,
+        0.14
+      ],
+      "neck": [
+        0.47,
+        0.23
+      ],
+      "pelvis": [
+        0.46,
+        0.49
+      ],
+      "shoulder_l": [
+        0.43,
+        0.28
+      ],
+      "elbow_l": [
+        0.44,
+        0.4
+      ],
+      "wrist_l": [
+        0.63,
+        0.43
+      ],
+      "shoulder_r": [
+        0.51,
+        0.28
+      ],
+      "elbow_r": [
+        0.53,
+        0.4
+      ],
+      "wrist_r": [
+        0.72,
+        0.39
+      ],
+      "hip_l": [
+        0.43,
+        0.5
+      ],
+      "knee_l": [
+        0.42,
+        0.73
+      ],
+      "ankle_l": [
+        0.43,
+        0.91
+      ],
+      "toe_l": [
+        0.52,
+        0.94
+      ],
+      "hip_r": [
+        0.49,
+        0.5
+      ],
+      "knee_r": [
+        0.51,
+        0.73
+      ],
+      "ankle_r": [
+        0.53,
+        0.91
+      ],
+      "toe_r": [
+        0.62,
+        0.93
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_typing_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.51,
+        0.14
+      ],
+      "neck": [
+        0.47,
+        0.23
+      ],
+      "pelvis": [
+        0.46,
+        0.49
+      ],
+      "shoulder_l": [
+        0.43,
+        0.28
+      ],
+      "elbow_l": [
+        0.44,
+        0.4
+      ],
+      "wrist_l": [
+        0.63,
+        0.44
+      ],
+      "shoulder_r": [
+        0.51,
+        0.28
+      ],
+      "elbow_r": [
+        0.53,
+        0.4
+      ],
+      "wrist_r": [
+        0.74,
+        0.37
+      ],
+      "hip_l": [
+        0.43,
+        0.5
+      ],
+      "knee_l": [
+        0.42,
+        0.73
+      ],
+      "ankle_l": [
+        0.43,
+        0.91
+      ],
+      "toe_l": [
+        0.52,
+        0.94
+      ],
+      "hip_r": [
+        0.49,
+        0.5
+      ],
+      "knee_r": [
+        0.51,
+        0.73
+      ],
+      "ankle_r": [
+        0.53,
+        0.91
+      ],
+      "toe_r": [
+        0.62,
+        0.93
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_inspect_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.54,
+        0.17
+      ],
+      "neck": [
+        0.49,
+        0.25
+      ],
+      "pelvis": [
+        0.47,
+        0.49
+      ],
+      "shoulder_l": [
+        0.42,
+        0.3
+      ],
+      "elbow_l": [
+        0.36,
+        0.43
+      ],
+      "wrist_l": [
+        0.37,
+        0.56
+      ],
+      "shoulder_r": [
+        0.53,
+        0.3
+      ],
+      "elbow_r": [
+        0.63,
+        0.36
+      ],
+      "wrist_r": [
+        0.69,
+        0.25
+      ],
+      "hip_l": [
+        0.43,
+        0.5
+      ],
+      "knee_l": [
+        0.39,
+        0.74
+      ],
+      "ankle_l": [
+        0.39,
+        0.92
+      ],
+      "toe_l": [
+        0.48,
+        0.94
+      ],
+      "hip_r": [
+        0.5,
+        0.5
+      ],
+      "knee_r": [
+        0.54,
+        0.74
+      ],
+      "ankle_r": [
+        0.57,
+        0.92
+      ],
+      "toe_r": [
+        0.67,
+        0.94
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_inspect_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.54,
+        0.17
+      ],
+      "neck": [
+        0.49,
+        0.25
+      ],
+      "pelvis": [
+        0.47,
+        0.49
+      ],
+      "shoulder_l": [
+        0.42,
+        0.3
+      ],
+      "elbow_l": [
+        0.36,
+        0.43
+      ],
+      "wrist_l": [
+        0.37,
+        0.56
+      ],
+      "shoulder_r": [
+        0.53,
+        0.3
+      ],
+      "elbow_r": [
+        0.65,
+        0.36
+      ],
+      "wrist_r": [
+        0.73,
+        0.31
+      ],
+      "hip_l": [
+        0.43,
+        0.5
+      ],
+      "knee_l": [
+        0.39,
+        0.74
+      ],
+      "ankle_l": [
+        0.39,
+        0.92
+      ],
+      "toe_l": [
+        0.48,
+        0.94
+      ],
+      "hip_r": [
+        0.5,
+        0.5
+      ],
+      "knee_r": [
+        0.54,
+        0.74
+      ],
+      "ankle_r": [
+        0.57,
+        0.92
+      ],
+      "toe_r": [
+        0.67,
+        0.94
+      ]
+    },
+    "inferred": [
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_sitting_rest_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.25,
+        0.47
+      ],
+      "neck": [
+        0.22,
+        0.56
+      ],
+      "pelvis": [
+        0.26,
+        0.83
+      ],
+      "shoulder_l": [
+        0.2,
+        0.61
+      ],
+      "elbow_l": [
+        0.24,
+        0.75
+      ],
+      "wrist_l": [
+        0.42,
+        0.79
+      ],
+      "shoulder_r": [
+        0.27,
+        0.6
+      ],
+      "elbow_r": [
+        0.34,
+        0.71
+      ],
+      "wrist_r": [
+        0.51,
+        0.72
+      ],
+      "hip_l": [
+        0.26,
+        0.83
+      ],
+      "knee_l": [
+        0.52,
+        0.85
+      ],
+      "ankle_l": [
+        0.8,
+        0.91
+      ],
+      "toe_l": [
+        0.9,
+        0.88
+      ],
+      "hip_r": [
+        0.3,
+        0.81
+      ],
+      "knee_r": [
+        0.52,
+        0.76
+      ],
+      "ankle_r": [
+        0.81,
+        0.88
+      ],
+      "toe_r": [
+        0.92,
+        0.84
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_sitting_rest_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.25,
+        0.47
+      ],
+      "neck": [
+        0.22,
+        0.55
+      ],
+      "pelvis": [
+        0.26,
+        0.83
+      ],
+      "shoulder_l": [
+        0.2,
+        0.6
+      ],
+      "elbow_l": [
+        0.24,
+        0.74
+      ],
+      "wrist_l": [
+        0.42,
+        0.78
+      ],
+      "shoulder_r": [
+        0.27,
+        0.59
+      ],
+      "elbow_r": [
+        0.34,
+        0.71
+      ],
+      "wrist_r": [
+        0.51,
+        0.71
+      ],
+      "hip_l": [
+        0.26,
+        0.83
+      ],
+      "knee_l": [
+        0.52,
+        0.85
+      ],
+      "ankle_l": [
+        0.8,
+        0.91
+      ],
+      "toe_l": [
+        0.9,
+        0.88
+      ],
+      "hip_r": [
+        0.3,
+        0.81
+      ],
+      "knee_r": [
+        0.52,
+        0.76
+      ],
+      "ankle_r": [
+        0.81,
+        0.88
+      ],
+      "toe_r": [
+        0.92,
+        0.84
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_sleeping_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.12,
+        0.62
+      ],
+      "neck": [
+        0.23,
+        0.64
+      ],
+      "pelvis": [
+        0.55,
+        0.64
+      ],
+      "shoulder_l": [
+        0.27,
+        0.67
+      ],
+      "elbow_l": [
+        0.16,
+        0.73
+      ],
+      "wrist_l": [
+        0.21,
+        0.62
+      ],
+      "shoulder_r": [
+        0.27,
+        0.59
+      ],
+      "elbow_r": [
+        0.29,
+        0.52
+      ],
+      "wrist_r": [
+        0.24,
+        0.69
+      ],
+      "hip_l": [
+        0.54,
+        0.69
+      ],
+      "knee_l": [
+        0.69,
+        0.72
+      ],
+      "ankle_l": [
+        0.9,
+        0.72
+      ],
+      "toe_l": [
+        0.95,
+        0.78
+      ],
+      "hip_r": [
+        0.54,
+        0.61
+      ],
+      "knee_r": [
+        0.68,
+        0.65
+      ],
+      "ankle_r": [
+        0.82,
+        0.66
+      ],
+      "toe_r": [
+        0.91,
+        0.73
+      ]
+    },
+    "inferred": [
+      "hip_r",
+      "knee_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_sleeping_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.12,
+        0.62
+      ],
+      "neck": [
+        0.23,
+        0.63
+      ],
+      "pelvis": [
+        0.55,
+        0.63
+      ],
+      "shoulder_l": [
+        0.27,
+        0.67
+      ],
+      "elbow_l": [
+        0.16,
+        0.73
+      ],
+      "wrist_l": [
+        0.21,
+        0.62
+      ],
+      "shoulder_r": [
+        0.27,
+        0.58
+      ],
+      "elbow_r": [
+        0.29,
+        0.51
+      ],
+      "wrist_r": [
+        0.24,
+        0.69
+      ],
+      "hip_l": [
+        0.54,
+        0.69
+      ],
+      "knee_l": [
+        0.69,
+        0.72
+      ],
+      "ankle_l": [
+        0.9,
+        0.72
+      ],
+      "toe_l": [
+        0.95,
+        0.78
+      ],
+      "hip_r": [
+        0.54,
+        0.61
+      ],
+      "knee_r": [
+        0.68,
+        0.65
+      ],
+      "ankle_r": [
+        0.82,
+        0.66
+      ],
+      "toe_r": [
+        0.91,
+        0.73
+      ]
+    },
+    "inferred": [
+      "hip_r",
+      "knee_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.13
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.47
+      ],
+      "shoulder_l": [
+        0.39,
+        0.28
+      ],
+      "elbow_l": [
+        0.3,
+        0.36
+      ],
+      "wrist_l": [
+        0.39,
+        0.44
+      ],
+      "shoulder_r": [
+        0.61,
+        0.28
+      ],
+      "elbow_r": [
+        0.7,
+        0.36
+      ],
+      "wrist_r": [
+        0.61,
+        0.44
+      ],
+      "hip_l": [
+        0.44,
+        0.48
+      ],
+      "knee_l": [
+        0.42,
+        0.73
+      ],
+      "ankle_l": [
+        0.41,
+        0.93
+      ],
+      "toe_l": [
+        0.36,
+        0.96
+      ],
+      "hip_r": [
+        0.56,
+        0.48
+      ],
+      "knee_r": [
+        0.58,
+        0.73
+      ],
+      "ankle_r": [
+        0.59,
+        0.93
+      ],
+      "toe_r": [
+        0.64,
+        0.96
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "back",
+    "joints": {
+      "head": [
+        0.5,
+        0.13
+      ],
+      "neck": [
+        0.5,
+        0.23
+      ],
+      "pelvis": [
+        0.5,
+        0.47
+      ],
+      "shoulder_l": [
+        0.39,
+        0.28
+      ],
+      "elbow_l": [
+        0.3,
+        0.35
+      ],
+      "wrist_l": [
+        0.39,
+        0.43
+      ],
+      "shoulder_r": [
+        0.61,
+        0.28
+      ],
+      "elbow_r": [
+        0.7,
+        0.35
+      ],
+      "wrist_r": [
+        0.61,
+        0.43
+      ],
+      "hip_l": [
+        0.44,
+        0.48
+      ],
+      "knee_l": [
+        0.42,
+        0.73
+      ],
+      "ankle_l": [
+        0.41,
+        0.93
+      ],
+      "toe_l": [
+        0.36,
+        0.96
+      ],
+      "hip_r": [
+        0.56,
+        0.48
+      ],
+      "knee_r": [
+        0.58,
+        0.73
+      ],
+      "ankle_r": [
+        0.59,
+        0.93
+      ],
+      "toe_r": [
+        0.64,
+        0.96
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.62,
+        0.18
+      ],
+      "neck": [
+        0.53,
+        0.26
+      ],
+      "pelvis": [
+        0.42,
+        0.53
+      ],
+      "shoulder_l": [
+        0.47,
+        0.3
+      ],
+      "elbow_l": [
+        0.5,
+        0.45
+      ],
+      "wrist_l": [
+        0.7,
+        0.49
+      ],
+      "shoulder_r": [
+        0.54,
+        0.31
+      ],
+      "elbow_r": [
+        0.61,
+        0.46
+      ],
+      "wrist_r": [
+        0.76,
+        0.49
+      ],
+      "hip_l": [
+        0.39,
+        0.54
+      ],
+      "knee_l": [
+        0.43,
+        0.71
+      ],
+      "ankle_l": [
+        0.4,
+        0.89
+      ],
+      "toe_l": [
+        0.48,
+        0.92
+      ],
+      "hip_r": [
+        0.45,
+        0.54
+      ],
+      "knee_r": [
+        0.5,
+        0.7
+      ],
+      "ankle_r": [
+        0.51,
+        0.88
+      ],
+      "toe_r": [
+        0.61,
+        0.91
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.61,
+        0.2
+      ],
+      "neck": [
+        0.52,
+        0.28
+      ],
+      "pelvis": [
+        0.42,
+        0.53
+      ],
+      "shoulder_l": [
+        0.46,
+        0.32
+      ],
+      "elbow_l": [
+        0.49,
+        0.46
+      ],
+      "wrist_l": [
+        0.7,
+        0.49
+      ],
+      "shoulder_r": [
+        0.53,
+        0.33
+      ],
+      "elbow_r": [
+        0.61,
+        0.46
+      ],
+      "wrist_r": [
+        0.76,
+        0.49
+      ],
+      "hip_l": [
+        0.39,
+        0.54
+      ],
+      "knee_l": [
+        0.43,
+        0.71
+      ],
+      "ankle_l": [
+        0.4,
+        0.89
+      ],
+      "toe_l": [
+        0.48,
+        0.92
+      ],
+      "hip_r": [
+        0.45,
+        0.54
+      ],
+      "knee_r": [
+        0.5,
+        0.7
+      ],
+      "ankle_r": [
+        0.51,
+        0.88
+      ],
+      "toe_r": [
+        0.61,
+        0.91
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "elbow_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_wave_arms_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.18
+      ],
+      "neck": [
+        0.5,
+        0.27
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.39,
+        0.32
+      ],
+      "elbow_l": [
+        0.24,
+        0.28
+      ],
+      "wrist_l": [
+        0.21,
+        0.15
+      ],
+      "shoulder_r": [
+        0.61,
+        0.32
+      ],
+      "elbow_r": [
+        0.77,
+        0.31
+      ],
+      "wrist_r": [
+        0.79,
+        0.2
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.4,
+        0.74
+      ],
+      "ankle_l": [
+        0.38,
+        0.91
+      ],
+      "toe_l": [
+        0.31,
+        0.94
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.6,
+        0.74
+      ],
+      "ankle_r": [
+        0.62,
+        0.91
+      ],
+      "toe_r": [
+        0.69,
+        0.94
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_wave_arms_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.18
+      ],
+      "neck": [
+        0.5,
+        0.27
+      ],
+      "pelvis": [
+        0.5,
+        0.49
+      ],
+      "shoulder_l": [
+        0.39,
+        0.32
+      ],
+      "elbow_l": [
+        0.23,
+        0.28
+      ],
+      "wrist_l": [
+        0.27,
+        0.17
+      ],
+      "shoulder_r": [
+        0.61,
+        0.32
+      ],
+      "elbow_r": [
+        0.77,
+        0.33
+      ],
+      "wrist_r": [
+        0.83,
+        0.24
+      ],
+      "hip_l": [
+        0.44,
+        0.5
+      ],
+      "knee_l": [
+        0.4,
+        0.74
+      ],
+      "ankle_l": [
+        0.38,
+        0.91
+      ],
+      "toe_l": [
+        0.31,
+        0.94
+      ],
+      "hip_r": [
+        0.56,
+        0.5
+      ],
+      "knee_r": [
+        0.6,
+        0.74
+      ],
+      "ankle_r": [
+        0.62,
+        0.91
+      ],
+      "toe_r": [
+        0.69,
+        0.94
+      ]
+    },
+    "inferred": [],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.54,
+        0.14
+      ],
+      "neck": [
+        0.49,
+        0.23
+      ],
+      "pelvis": [
+        0.48,
+        0.5
+      ],
+      "shoulder_l": [
+        0.44,
+        0.28
+      ],
+      "elbow_l": [
+        0.49,
+        0.41
+      ],
+      "wrist_l": [
+        0.62,
+        0.38
+      ],
+      "shoulder_r": [
+        0.53,
+        0.28
+      ],
+      "elbow_r": [
+        0.62,
+        0.34
+      ],
+      "wrist_r": [
+        0.58,
+        0.24
+      ],
+      "hip_l": [
+        0.45,
+        0.51
+      ],
+      "knee_l": [
+        0.44,
+        0.73
+      ],
+      "ankle_l": [
+        0.45,
+        0.91
+      ],
+      "toe_l": [
+        0.54,
+        0.94
+      ],
+      "hip_r": [
+        0.52,
+        0.51
+      ],
+      "knee_r": [
+        0.53,
+        0.73
+      ],
+      "ankle_r": [
+        0.55,
+        0.91
+      ],
+      "toe_r": [
+        0.64,
+        0.93
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.54,
+        0.14
+      ],
+      "neck": [
+        0.49,
+        0.23
+      ],
+      "pelvis": [
+        0.48,
+        0.5
+      ],
+      "shoulder_l": [
+        0.44,
+        0.28
+      ],
+      "elbow_l": [
+        0.49,
+        0.4
+      ],
+      "wrist_l": [
+        0.62,
+        0.37
+      ],
+      "shoulder_r": [
+        0.53,
+        0.28
+      ],
+      "elbow_r": [
+        0.62,
+        0.33
+      ],
+      "wrist_r": [
+        0.58,
+        0.23
+      ],
+      "hip_l": [
+        0.45,
+        0.51
+      ],
+      "knee_l": [
+        0.44,
+        0.73
+      ],
+      "ankle_l": [
+        0.45,
+        0.91
+      ],
+      "toe_l": [
+        0.54,
+        0.94
+      ],
+      "hip_r": [
+        0.52,
+        0.51
+      ],
+      "knee_r": [
+        0.53,
+        0.73
+      ],
+      "ankle_r": [
+        0.55,
+        0.91
+      ],
+      "toe_r": [
+        0.64,
+        0.93
+      ]
+    },
+    "inferred": [
+      "shoulder_r",
+      "hip_r"
+    ],
+    "head_radius": [
+      0.075,
+      0.065
+    ],
+    "source": "manually traced from sprite"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_mild_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.48125,
+        0.152778
+      ],
+      "neck": [
+        0.48,
+        0.270833
+      ],
+      "pelvis": [
+        0.4925,
+        0.659722
+      ],
+      "shoulder_l": [
+        0.44,
+        0.295833
+      ],
+      "elbow_l": [
+        0.37875,
+        0.4625
+      ],
+      "wrist_l": [
+        0.37375,
+        0.5875
+      ],
+      "shoulder_r": [
+        0.50625,
+        0.311111
+      ],
+      "elbow_r": [
+        0.5575,
+        0.486111
+      ],
+      "wrist_r": [
+        0.58875,
+        0.5875
+      ],
+      "hip_l": [
+        0.46,
+        0.666667
+      ],
+      "knee_l": [
+        0.41875,
+        0.773611
+      ],
+      "ankle_l": [
+        0.40875,
+        0.915278
+      ],
+      "toe_l": [
+        0.4425,
+        0.979167
+      ],
+      "hip_r": [
+        0.51375,
+        0.666667
+      ],
+      "knee_r": [
+        0.545,
+        0.776389
+      ],
+      "ankle_r": [
+        0.54875,
+        0.915278
+      ],
+      "toe_r": [
+        0.615,
+        0.979167
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_mild_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.36875,
+        0.154167
+      ],
+      "neck": [
+        0.4075,
+        0.269444
+      ],
+      "pelvis": [
+        0.5,
+        0.652778
+      ],
+      "shoulder_l": [
+        0.3575,
+        0.301389
+      ],
+      "elbow_l": [
+        0.3075,
+        0.472222
+      ],
+      "wrist_l": [
+        0.24875,
+        0.545833
+      ],
+      "shoulder_r": [
+        0.42625,
+        0.304167
+      ],
+      "elbow_r": [
+        0.5475,
+        0.404167
+      ],
+      "wrist_r": [
+        0.66875,
+        0.45
+      ],
+      "hip_l": [
+        0.4625,
+        0.665278
+      ],
+      "knee_l": [
+        0.41,
+        0.772222
+      ],
+      "ankle_l": [
+        0.395,
+        0.916667
+      ],
+      "toe_l": [
+        0.4325,
+        0.980556
+      ],
+      "hip_r": [
+        0.52625,
+        0.654167
+      ],
+      "knee_r": [
+        0.56,
+        0.769444
+      ],
+      "ankle_r": [
+        0.565,
+        0.915278
+      ],
+      "toe_r": [
+        0.6275,
+        0.977778
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_mild_2.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.55125,
+        0.1625
+      ],
+      "neck": [
+        0.525,
+        0.280556
+      ],
+      "pelvis": [
+        0.48875,
+        0.651389
+      ],
+      "shoulder_l": [
+        0.48625,
+        0.302778
+      ],
+      "elbow_l": [
+        0.39625,
+        0.443056
+      ],
+      "wrist_l": [
+        0.3,
+        0.529167
+      ],
+      "shoulder_r": [
+        0.54125,
+        0.308333
+      ],
+      "elbow_r": [
+        0.59625,
+        0.433333
+      ],
+      "wrist_r": [
+        0.71875,
+        0.472222
+      ],
+      "hip_l": [
+        0.45375,
+        0.666667
+      ],
+      "knee_l": [
+        0.41,
+        0.773611
+      ],
+      "ankle_l": [
+        0.3975,
+        0.916667
+      ],
+      "toe_l": [
+        0.43125,
+        0.981944
+      ],
+      "hip_r": [
+        0.5175,
+        0.666667
+      ],
+      "knee_r": [
+        0.55875,
+        0.773611
+      ],
+      "ankle_r": [
+        0.56625,
+        0.916667
+      ],
+      "toe_r": [
+        0.62375,
+        0.980556
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_mild_3.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.475,
+        0.159722
+      ],
+      "neck": [
+        0.4725,
+        0.275
+      ],
+      "pelvis": [
+        0.48125,
+        0.658333
+      ],
+      "shoulder_l": [
+        0.4275,
+        0.305556
+      ],
+      "elbow_l": [
+        0.37125,
+        0.476389
+      ],
+      "wrist_l": [
+        0.37,
+        0.594444
+      ],
+      "shoulder_r": [
+        0.505,
+        0.313889
+      ],
+      "elbow_r": [
+        0.54625,
+        0.486111
+      ],
+      "wrist_r": [
+        0.5825,
+        0.598611
+      ],
+      "hip_l": [
+        0.44625,
+        0.666667
+      ],
+      "knee_l": [
+        0.4075,
+        0.773611
+      ],
+      "ankle_l": [
+        0.39375,
+        0.916667
+      ],
+      "toe_l": [
+        0.42625,
+        0.979167
+      ],
+      "hip_r": [
+        0.5125,
+        0.666667
+      ],
+      "knee_r": [
+        0.5475,
+        0.773611
+      ],
+      "ankle_r": [
+        0.5525,
+        0.916667
+      ],
+      "toe_r": [
+        0.61875,
+        0.977778
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_strong_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.485,
+        0.161111
+      ],
+      "neck": [
+        0.48625,
+        0.268056
+      ],
+      "pelvis": [
+        0.49,
+        0.631944
+      ],
+      "shoulder_l": [
+        0.4325,
+        0.302778
+      ],
+      "elbow_l": [
+        0.35875,
+        0.405556
+      ],
+      "wrist_l": [
+        0.47125,
+        0.348611
+      ],
+      "shoulder_r": [
+        0.515,
+        0.309722
+      ],
+      "elbow_r": [
+        0.5875,
+        0.398611
+      ],
+      "wrist_r": [
+        0.69375,
+        0.333333
+      ],
+      "hip_l": [
+        0.45375,
+        0.65
+      ],
+      "knee_l": [
+        0.40625,
+        0.779167
+      ],
+      "ankle_l": [
+        0.37625,
+        0.902778
+      ],
+      "toe_l": [
+        0.40875,
+        0.975
+      ],
+      "hip_r": [
+        0.5175,
+        0.647222
+      ],
+      "knee_r": [
+        0.57,
+        0.748611
+      ],
+      "ankle_r": [
+        0.57,
+        0.902778
+      ],
+      "toe_r": [
+        0.6525,
+        0.972222
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_strong_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.31375,
+        0.227778
+      ],
+      "neck": [
+        0.355,
+        0.308333
+      ],
+      "pelvis": [
+        0.50375,
+        0.619444
+      ],
+      "shoulder_l": [
+        0.30125,
+        0.356944
+      ],
+      "elbow_l": [
+        0.25875,
+        0.481944
+      ],
+      "wrist_l": [
+        0.18,
+        0.544444
+      ],
+      "shoulder_r": [
+        0.39,
+        0.338889
+      ],
+      "elbow_r": [
+        0.50625,
+        0.388889
+      ],
+      "wrist_r": [
+        0.63,
+        0.325
+      ],
+      "hip_l": [
+        0.47,
+        0.640278
+      ],
+      "knee_l": [
+        0.3975,
+        0.777778
+      ],
+      "ankle_l": [
+        0.29125,
+        0.919444
+      ],
+      "toe_l": [
+        0.3575,
+        0.977778
+      ],
+      "hip_r": [
+        0.54,
+        0.618056
+      ],
+      "knee_r": [
+        0.63125,
+        0.693056
+      ],
+      "ankle_r": [
+        0.61875,
+        0.908333
+      ],
+      "toe_r": [
+        0.69625,
+        0.977778
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_strong_2.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.6275,
+        0.298611
+      ],
+      "neck": [
+        0.62,
+        0.391667
+      ],
+      "pelvis": [
+        0.49125,
+        0.638889
+      ],
+      "shoulder_l": [
+        0.54375,
+        0.409722
+      ],
+      "elbow_l": [
+        0.6225,
+        0.495833
+      ],
+      "wrist_l": [
+        0.75,
+        0.538889
+      ],
+      "shoulder_r": [
+        0.62875,
+        0.401389
+      ],
+      "elbow_r": [
+        0.715,
+        0.4125
+      ],
+      "wrist_r": [
+        0.8175,
+        0.419444
+      ],
+      "hip_l": [
+        0.46125,
+        0.6625
+      ],
+      "knee_l": [
+        0.40875,
+        0.784722
+      ],
+      "ankle_l": [
+        0.32125,
+        0.930556
+      ],
+      "toe_l": [
+        0.38625,
+        0.986111
+      ],
+      "hip_r": [
+        0.53125,
+        0.641667
+      ],
+      "knee_r": [
+        0.59,
+        0.708333
+      ],
+      "ankle_r": [
+        0.595,
+        0.916667
+      ],
+      "toe_r": [
+        0.6625,
+        0.977778
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/sensor_v1/balance_strong_3.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "right",
+    "joints": {
+      "head": [
+        0.47875,
+        0.1625
+      ],
+      "neck": [
+        0.485,
+        0.279167
+      ],
+      "pelvis": [
+        0.48875,
+        0.654167
+      ],
+      "shoulder_l": [
+        0.43125,
+        0.3125
+      ],
+      "elbow_l": [
+        0.37,
+        0.475
+      ],
+      "wrist_l": [
+        0.375,
+        0.580556
+      ],
+      "shoulder_r": [
+        0.515,
+        0.3125
+      ],
+      "elbow_r": [
+        0.5775,
+        0.486111
+      ],
+      "wrist_r": [
+        0.625,
+        0.581944
+      ],
+      "hip_l": [
+        0.45625,
+        0.666667
+      ],
+      "knee_l": [
+        0.4075,
+        0.7875
+      ],
+      "ankle_l": [
+        0.39625,
+        0.922222
+      ],
+      "toe_l": [
+        0.43625,
+        0.981944
+      ],
+      "hip_r": [
+        0.52875,
+        0.666667
+      ],
+      "knee_r": [
+        0.5725,
+        0.773611
+      ],
+      "ankle_r": [
+        0.5725,
+        0.918056
+      ],
+      "toe_r": [
+        0.6425,
+        0.984722
+      ]
+    },
+    "head_radius": [
+      0.065,
+      0.11
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed balance frame artwork"
+  },
+  "/assets/characters/adventurer/speech_v1/talking_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.131215
+      ],
+      "neck": [
+        0.5,
+        0.240331
+      ],
+      "pelvis": [
+        0.5,
+        0.484807
+      ],
+      "shoulder_l": [
+        0.3625,
+        0.267956
+      ],
+      "elbow_l": [
+        0.225,
+        0.425414
+      ],
+      "wrist_l": [
+        0.1925,
+        0.600829
+      ],
+      "shoulder_r": [
+        0.635,
+        0.267956
+      ],
+      "elbow_r": [
+        0.78,
+        0.425414
+      ],
+      "wrist_r": [
+        0.8125,
+        0.600829
+      ],
+      "hip_l": [
+        0.425,
+        0.495856
+      ],
+      "knee_l": [
+        0.415,
+        0.698895
+      ],
+      "ankle_l": [
+        0.3975,
+        0.868785
+      ],
+      "toe_l": [
+        0.3,
+        0.958564
+      ],
+      "hip_r": [
+        0.57,
+        0.495856
+      ],
+      "knee_r": [
+        0.5875,
+        0.698895
+      ],
+      "ankle_r": [
+        0.61,
+        0.868785
+      ],
+      "toe_r": [
+        0.6975,
+        0.958564
+      ]
+    },
+    "head_radius": [
+      0.17,
+      0.1
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed speech and greeting frame artwork"
+  },
+  "/assets/characters/adventurer/speech_v1/talking_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.131215
+      ],
+      "neck": [
+        0.5,
+        0.240331
+      ],
+      "pelvis": [
+        0.5,
+        0.484807
+      ],
+      "shoulder_l": [
+        0.3625,
+        0.267956
+      ],
+      "elbow_l": [
+        0.225,
+        0.425414
+      ],
+      "wrist_l": [
+        0.1925,
+        0.600829
+      ],
+      "shoulder_r": [
+        0.635,
+        0.267956
+      ],
+      "elbow_r": [
+        0.78,
+        0.425414
+      ],
+      "wrist_r": [
+        0.8125,
+        0.600829
+      ],
+      "hip_l": [
+        0.425,
+        0.495856
+      ],
+      "knee_l": [
+        0.415,
+        0.698895
+      ],
+      "ankle_l": [
+        0.3975,
+        0.868785
+      ],
+      "toe_l": [
+        0.3,
+        0.958564
+      ],
+      "hip_r": [
+        0.57,
+        0.495856
+      ],
+      "knee_r": [
+        0.5875,
+        0.698895
+      ],
+      "ankle_r": [
+        0.61,
+        0.868785
+      ],
+      "toe_r": [
+        0.6975,
+        0.958564
+      ]
+    },
+    "head_radius": [
+      0.17,
+      0.1
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed speech and greeting frame artwork"
+  },
+  "/assets/characters/adventurer/speech_v1/talking_2.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.131215
+      ],
+      "neck": [
+        0.5,
+        0.240331
+      ],
+      "pelvis": [
+        0.5,
+        0.484807
+      ],
+      "shoulder_l": [
+        0.3625,
+        0.267956
+      ],
+      "elbow_l": [
+        0.225,
+        0.425414
+      ],
+      "wrist_l": [
+        0.1925,
+        0.600829
+      ],
+      "shoulder_r": [
+        0.635,
+        0.267956
+      ],
+      "elbow_r": [
+        0.78,
+        0.425414
+      ],
+      "wrist_r": [
+        0.8125,
+        0.600829
+      ],
+      "hip_l": [
+        0.425,
+        0.495856
+      ],
+      "knee_l": [
+        0.415,
+        0.698895
+      ],
+      "ankle_l": [
+        0.3975,
+        0.868785
+      ],
+      "toe_l": [
+        0.3,
+        0.958564
+      ],
+      "hip_r": [
+        0.57,
+        0.495856
+      ],
+      "knee_r": [
+        0.5875,
+        0.698895
+      ],
+      "ankle_r": [
+        0.61,
+        0.868785
+      ],
+      "toe_r": [
+        0.6975,
+        0.958564
+      ]
+    },
+    "head_radius": [
+      0.17,
+      0.1
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed speech and greeting frame artwork"
+  },
+  "/assets/characters/adventurer/speech_v1/talking_3.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.131215
+      ],
+      "neck": [
+        0.5,
+        0.240331
+      ],
+      "pelvis": [
+        0.5,
+        0.484807
+      ],
+      "shoulder_l": [
+        0.3625,
+        0.267956
+      ],
+      "elbow_l": [
+        0.225,
+        0.425414
+      ],
+      "wrist_l": [
+        0.1925,
+        0.600829
+      ],
+      "shoulder_r": [
+        0.635,
+        0.267956
+      ],
+      "elbow_r": [
+        0.78,
+        0.425414
+      ],
+      "wrist_r": [
+        0.8125,
+        0.600829
+      ],
+      "hip_l": [
+        0.425,
+        0.495856
+      ],
+      "knee_l": [
+        0.415,
+        0.698895
+      ],
+      "ankle_l": [
+        0.3975,
+        0.868785
+      ],
+      "toe_l": [
+        0.3,
+        0.958564
+      ],
+      "hip_r": [
+        0.57,
+        0.495856
+      ],
+      "knee_r": [
+        0.5875,
+        0.698895
+      ],
+      "ankle_r": [
+        0.61,
+        0.868785
+      ],
+      "toe_r": [
+        0.6975,
+        0.958564
+      ]
+    },
+    "head_radius": [
+      0.17,
+      0.1
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed speech and greeting frame artwork"
+  },
+  "/assets/characters/adventurer/speech_v1/wave_hello_0.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.131215
+      ],
+      "neck": [
+        0.5,
+        0.240331
+      ],
+      "pelvis": [
+        0.5,
+        0.484807
+      ],
+      "shoulder_l": [
+        0.3625,
+        0.267956
+      ],
+      "elbow_l": [
+        0.2625,
+        0.393646
+      ],
+      "wrist_l": [
+        0.225,
+        0.251381
+      ],
+      "shoulder_r": [
+        0.635,
+        0.267956
+      ],
+      "elbow_r": [
+        0.78,
+        0.425414
+      ],
+      "wrist_r": [
+        0.8125,
+        0.600829
+      ],
+      "hip_l": [
+        0.425,
+        0.495856
+      ],
+      "knee_l": [
+        0.415,
+        0.698895
+      ],
+      "ankle_l": [
+        0.3975,
+        0.868785
+      ],
+      "toe_l": [
+        0.3,
+        0.958564
+      ],
+      "hip_r": [
+        0.57,
+        0.495856
+      ],
+      "knee_r": [
+        0.5875,
+        0.698895
+      ],
+      "ankle_r": [
+        0.61,
+        0.868785
+      ],
+      "toe_r": [
+        0.6975,
+        0.958564
+      ]
+    },
+    "head_radius": [
+      0.17,
+      0.1
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed speech and greeting frame artwork"
+  },
+  "/assets/characters/adventurer/speech_v1/wave_hello_1.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.131215
+      ],
+      "neck": [
+        0.5,
+        0.240331
+      ],
+      "pelvis": [
+        0.5,
+        0.484807
+      ],
+      "shoulder_l": [
+        0.3625,
+        0.267956
+      ],
+      "elbow_l": [
+        0.2625,
+        0.393646
+      ],
+      "wrist_l": [
+        0.18,
+        0.251381
+      ],
+      "shoulder_r": [
+        0.635,
+        0.267956
+      ],
+      "elbow_r": [
+        0.78,
+        0.425414
+      ],
+      "wrist_r": [
+        0.8125,
+        0.600829
+      ],
+      "hip_l": [
+        0.425,
+        0.495856
+      ],
+      "knee_l": [
+        0.415,
+        0.698895
+      ],
+      "ankle_l": [
+        0.3975,
+        0.868785
+      ],
+      "toe_l": [
+        0.3,
+        0.958564
+      ],
+      "hip_r": [
+        0.57,
+        0.495856
+      ],
+      "knee_r": [
+        0.5875,
+        0.698895
+      ],
+      "ankle_r": [
+        0.61,
+        0.868785
+      ],
+      "toe_r": [
+        0.6975,
+        0.958564
+      ]
+    },
+    "head_radius": [
+      0.17,
+      0.1
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed speech and greeting frame artwork"
+  },
+  "/assets/characters/adventurer/speech_v1/wave_hello_2.png": {
+    "version": 1,
+    "space": "image_normalized",
+    "facing": "front",
+    "joints": {
+      "head": [
+        0.5,
+        0.131215
+      ],
+      "neck": [
+        0.5,
+        0.240331
+      ],
+      "pelvis": [
+        0.5,
+        0.484807
+      ],
+      "shoulder_l": [
+        0.3625,
+        0.267956
+      ],
+      "elbow_l": [
+        0.2625,
+        0.393646
+      ],
+      "wrist_l": [
+        0.225,
+        0.251381
+      ],
+      "shoulder_r": [
+        0.635,
+        0.267956
+      ],
+      "elbow_r": [
+        0.78,
+        0.425414
+      ],
+      "wrist_r": [
+        0.8125,
+        0.600829
+      ],
+      "hip_l": [
+        0.425,
+        0.495856
+      ],
+      "knee_l": [
+        0.415,
+        0.698895
+      ],
+      "ankle_l": [
+        0.3975,
+        0.868785
+      ],
+      "toe_l": [
+        0.3,
+        0.958564
+      ],
+      "hip_r": [
+        0.57,
+        0.495856
+      ],
+      "knee_r": [
+        0.5875,
+        0.698895
+      ],
+      "ankle_r": [
+        0.61,
+        0.868785
+      ],
+      "toe_r": [
+        0.6975,
+        0.958564
+      ]
+    },
+    "head_radius": [
+      0.17,
+      0.1
+    ],
+    "inferred": [
+      "pelvis",
+      "hip_l",
+      "hip_r"
+    ],
+    "source": "reviewed speech and greeting frame artwork"
+  }
+}

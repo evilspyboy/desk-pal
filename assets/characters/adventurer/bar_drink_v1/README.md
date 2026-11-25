@@ -1,0 +1,4 @@
+Generated with the built-in image generator, using adventurer walk_0 and stand_side_0 as identity/palette references. Prompt: four aligned full-body side-facing pixel-art frames, exact teal-coated adventurer, coconut cup reached toward a high beach-bar counter, held at chest, raised to lips, then sipping; transparent background, no scenery or external glow, no clipped boots. Sheet copies are lossless and paired with per-frame crop/anchor and independently editable skeleton metadata. Sequence plays once: reach, hold, sip, lower, return, standing. Scene restriction: resort_beach.
+
+> Artwork/provenance record. Runtime selection, crops, anchors and placements come from saved configuration; this record is not the current deployment or task list. See the [documentation index](../../../../docs/index.md).
+

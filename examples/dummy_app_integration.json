@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "application": {
+    "id": "dummy_worker",
+    "name": "Dummy Worker Pool",
+    "source_url": "http://localhost:8090/api/v1/status",
+    "source_enabled": true,
+    "monitor_health": true,
+    "poll_seconds": 15,
+    "summary_field": "summary"
+  },
+  "events": [
+    {
+      "name": "heartbeat",
+      "label": "Worker Pool Status",
+      "example": {
+        "status": "healthy",
+        "summary": "Worker pool idle: 4/4 nodes ready, 0 jobs pending.",
+        "button_summary": "Workers: 4 Ready",
+        "batch_id": "batch-101",
+        "items_processed": 420,
+        "active_workers": 4
+      }
+    },
+    {
+      "name": "job_completed",
+      "label": "Batch Job Completed",
+      "example": {
+        "event": "job_completed",
+        "status": "healthy",
+        "summary": "Batch 101 successfully processed 420 items.",
+        "items_processed": 420
+      }
+    },
+    {
+      "name": "worker_alert",
+      "label": "Worker Node Failure",
+      "example": {
+        "event": "worker_alert",
+        "status": "warning",
+        "attention_needed": true,
+        "summary": "Node 2 reported high memory threshold (92%)."
+      }
+    }
+  ]
+}

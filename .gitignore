@@ -1,0 +1,88 @@
+local-preview/
+.venv-preview/
+.venv-agent/
+**/deskpal-agent-*.json
+**/deskpal-agent-*.tmp
+scratch/
+__pycache__/
+*.pyc
+
+# User configuration and received runtime state (generic starter ZIP stays shareable)
+/config/room_config.json
+/logs/
+*.log
+*.pid
+*.lock
+**/activity_history.jsonl*
+**/telemetry.json
+**/tokens.json
+**/credentials.json
+**/oauth*.json
+**/backups/
+/integrations/store-monitor/data/
+/integrations/store-monitor/config.json
+/integrations/store-monitor/state.json
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+
+# Installation-specific launchers and legacy helpers; use install_pi.py for sharing
+/START_SATELLITES.bat
+/START_SATELLITES.ps1
+/scripts/deploy_*.py
+/scripts/check_telemetry.py
+/scripts/check_status.py
+/scripts/check_web.py
+/scripts/pi_connect.py
+/scripts/pull_from_pi.py
+/scripts/restart_deskpal.py
+/scripts/setup_launcher.py
+/scripts/fix_sudoers.py
+
+# Old root-level artwork experiments (maintained assets are under assets/)
+/*_crop.png
+/*_patch.png
+/window_exact.png
+
+# Additional legacy scripts with embedded connection credentials
+/scripts/check_env.py
+/scripts/deploy_and_test.py
+/scripts/deploy_app.py
+/scripts/deploy_code_only.py
+/scripts/deploy_composite_walk.py
+/scripts/deploy_modular_to_pi.py
+/scripts/run_remote_test.py
+
+# Personal Pi verification helpers depend on excluded deployment credentials
+/scripts/verify_attention_live.py
+/scripts/verify_beach_water.py
+
+# Separate store authorization files wherever a private data directory is placed
+**/big_cartel_tokens.json
+**/big_cartel_authorization.json
+
+# Installation-specific optional hardware preferences
+**/hardware_settings.json
+
+**/radar_capture_latest.json
+**/radar_capture_latest.tmp
+
+**/imu_capture_latest.json
+**/imu_capture_latest.tmp
+
+# Private once-per-morning greeting state
+**/morning_greeting_state.json
+**/morning_greeting_state.tmp
+
+# Private installation-specific AI endpoint/model preferences
+**/ai_settings.json
+**/ai_settings.tmp
+
+# Optional local speech environments and downloaded model assets
+.venv-deskpal-tts/
+.venv-deskpal-tts2/
+kitten-models/

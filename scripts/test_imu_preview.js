@@ -1,0 +1,28 @@
+const fs=require('fs'),assert=require('assert'),path=require('path');
+const source=fs.readFileSync(path.join(__dirname,'../src/hardware_studio.html'),'utf8');
+const body=source.slice(source.indexOf('function mapImuVector('),source.indexOf('let imuDisplayTilt'));
+const update=new Function(body+';return updateImuHeading;')();
+const settings={axes:[1,0,2],signs:[1,-1,1],gyro_bias:[-.7,-.5,-1]};
+const state={yaw:0,at:null,rate:0,mount:''};
+const sample=(at,rate)=>({at,gyro_dps:[-.7,-.5,rate-1]});
+update(sample(0,30),settings,state);
+for(let i=1;i<=10;i++)update(sample(i/10,30),settings,state);
+assert(Math.abs(state.yaw-Math.PI/6)<1e-9);
+const once=state.yaw;update(sample(1,30),settings,state);assert.strictEqual(state.yaw,once);
+update(sample(5,30),settings,state);assert.strictEqual(state.yaw,once);
+update(sample(5.1,0),settings,state);
+const still=state.yaw;for(let i=2;i<=20;i++)update(sample(5+i/10,.3),settings,state);
+assert.strictEqual(state.yaw,still);
+const reverse={...settings,signs:[1,1,-1]};update(sample(8,30),reverse,state);
+update(sample(8.1,30),reverse,state);assert(state.yaw<0);
+assert(!source.includes("$('imuAxis"));assert(!source.includes("$('imuFlip"));
+console.log('Verified calibrated yaw, bias/deadband, duplicate samples, gaps, mounting reset and removed manual controls.');
+
+const rest={yaw:0,at:null,rate:0,mount:''};
+for(let i=0;i<30;i++)update({at:i*.1,accel_g:[0,0,1],gyro_dps:[-.7,-.5,.8]},settings,rest);
+const settled=rest.yaw;
+for(let i=30;i<80;i++)update({at:i*.1,accel_g:[0,0,1],gyro_dps:[-.7,-.5,.8]},settings,rest);
+assert.strictEqual(rest.yaw,settled);
+for(let i=80;i<90;i++)update({at:i*.1,accel_g:[0,0,1],gyro_dps:[-.7,-.5,30]},settings,rest);
+assert(rest.yaw>settled+.2);
+console.log('Stationary residual bias stops accumulating; deliberate turning resumes.');

@@ -1,0 +1,9 @@
+{
+  "id": "wellness_check",
+  "name": "Wellness & Hydration Monitor",
+  "description": "Smart posture stretch and hydration reminders with radar presence or scheduled day/time timer",
+  "entrypoint": "main.py",
+  "port": 8096,
+  "auto_start": true,
+  "env": {}
+}

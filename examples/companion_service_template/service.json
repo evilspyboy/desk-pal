@@ -1,0 +1,10 @@
+{
+  "id": "example_service",
+  "name": "Example Companion Service",
+  "description": "Minimal starter template for an on-Pi Desk-Pal companion microservice.",
+  "entry": "main.py",
+  "port": 8099,
+  "status_path": "/status",
+  "poll_seconds": 30,
+  "enabled": false
+}

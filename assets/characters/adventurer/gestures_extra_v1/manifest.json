@@ -1,0 +1,696 @@
+{
+  "generator": "built-in image_gen",
+  "character": "adventurer_v1",
+  "tags": {
+    "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1430
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.5
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_window_look_1.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1430
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.50046
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1371
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.467311
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1372
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.467311
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_wave_arms_0.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1024,
+        1482
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.500977
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_wave_arms_1.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1024,
+        1483
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.500488
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1386
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.520258
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_ponder_1.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1386
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.520258
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1430
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.50046
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_wave_arms_1_colour_matched.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1024,
+        1483
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.500488
+    },
+    "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "gestures_extra_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1386
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.520258
+    }
+  },
+  "sequences": {
+    "adventurer_v1:window_look": {
+      "name": "window_look",
+      "role": "window_look",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "window_look_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 0
+        },
+        {
+          "name": "window_look_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 1
+        },
+        {
+          "name": "window_look_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 2
+        },
+        {
+          "name": "window_look_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 3
+        },
+        {
+          "name": "window_look_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 4
+        },
+        {
+          "name": "window_look_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 5
+        },
+        {
+          "name": "window_look_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.50046,
+          "index": 6
+        },
+        {
+          "name": "window_look_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.50046,
+          "index": 7
+        },
+        {
+          "name": "window_look_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.50046,
+          "index": 8
+        },
+        {
+          "name": "window_look_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.50046,
+          "index": 9
+        },
+        {
+          "name": "window_look_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.50046,
+          "index": 10
+        },
+        {
+          "name": "window_look_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_window_look_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1430
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.50046,
+          "index": 11
+        }
+      ]
+    },
+    "adventurer_v1:lean_globe": {
+      "name": "lean_globe",
+      "role": "lean_globe",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "lean_globe_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1371
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 0
+        },
+        {
+          "name": "lean_globe_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1371
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 1
+        },
+        {
+          "name": "lean_globe_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1371
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 2
+        },
+        {
+          "name": "lean_globe_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1371
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 3
+        },
+        {
+          "name": "lean_globe_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1371
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 4
+        },
+        {
+          "name": "lean_globe_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1371
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 5
+        },
+        {
+          "name": "lean_globe_1",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1372
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 6
+        },
+        {
+          "name": "lean_globe_1",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1372
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 7
+        },
+        {
+          "name": "lean_globe_1",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1372
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 8
+        },
+        {
+          "name": "lean_globe_1",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1372
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 9
+        },
+        {
+          "name": "lean_globe_1",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1372
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 10
+        },
+        {
+          "name": "lean_globe_1",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_lean_globe_1.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1372
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.467311,
+          "index": 11
+        }
+      ]
+    },
+    "adventurer_v1:wave_arms": {
+      "name": "wave_arms",
+      "role": "wave_arms",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "wave_arms_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_wave_arms_0.png",
+          "crop": [
+            0,
+            0,
+            1024,
+            1482
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.500977,
+          "index": 0
+        },
+        {
+          "name": "wave_arms_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_wave_arms_0.png",
+          "crop": [
+            0,
+            0,
+            1024,
+            1482
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.500977,
+          "index": 1
+        },
+        {
+          "name": "wave_arms_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_wave_arms_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1024,
+            1483
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.500488,
+          "index": 2
+        },
+        {
+          "name": "wave_arms_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_wave_arms_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1024,
+            1483
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.500488,
+          "index": 3
+        }
+      ]
+    },
+    "adventurer_v1:ponder": {
+      "name": "ponder",
+      "role": "ponder",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "ponder_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 0
+        },
+        {
+          "name": "ponder_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 1
+        },
+        {
+          "name": "ponder_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 2
+        },
+        {
+          "name": "ponder_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 3
+        },
+        {
+          "name": "ponder_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 4
+        },
+        {
+          "name": "ponder_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 5
+        },
+        {
+          "name": "ponder_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 6
+        },
+        {
+          "name": "ponder_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 7
+        },
+        {
+          "name": "ponder_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 8
+        },
+        {
+          "name": "ponder_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 9
+        },
+        {
+          "name": "ponder_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 10
+        },
+        {
+          "name": "ponder_1_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_ponder_1_colour_matched.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.520258,
+          "index": 11
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "application": {
+    "id": "example_app",
+    "name": "Example application",
+    "source_enabled": false,
+    "monitor_health": true,
+    "poll_seconds": 30,
+    "summary_field": "summary"
+  },
+  "events": [
+    {"name": "heartbeat", "label": "Normal update", "example": {"status": "healthy", "summary": "Example status", "jobs_pending": 2}},
+    {"name": "job_started", "label": "Job started", "example": {"event": "job_started", "job_name": "Example job", "summary": "Example job started"}},
+    {"name": "job_finished", "label": "Job finished", "example": {"event": "job_finished", "job_name": "Example job", "success": true, "summary": "Example job finished"}}
+  ]
+}

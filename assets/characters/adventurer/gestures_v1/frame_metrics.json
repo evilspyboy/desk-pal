@@ -1,0 +1,442 @@
+{
+  "kneel_down_0.png": {
+    "size": [
+      1087,
+      1447
+    ],
+    "alpha_bounds": [
+      103,
+      529,
+      1019,
+      1385
+    ],
+    "crop": [
+      0,
+      0,
+      1087,
+      1385
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.442502
+  },
+  "kneel_down_1.png": {
+    "size": [
+      1087,
+      1446
+    ],
+    "alpha_bounds": [
+      104,
+      528,
+      1051,
+      1384
+    ],
+    "crop": [
+      0,
+      0,
+      1087,
+      1385
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.442502
+  },
+  "kneel_back_0.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      291,
+      590,
+      947,
+      1385
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1385
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.482505
+  },
+  "kneel_back_1.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      291,
+      598,
+      945,
+      1385
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1385
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.482505
+  },
+  "table_reach_0.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      304,
+      77,
+      866,
+      1387
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1387
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.435083
+  },
+  "table_reach_1.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      304,
+      76,
+      920,
+      1387
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1387
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.436004
+  },
+  "noticeboard_reach_0.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      361,
+      95,
+      930,
+      1380
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1380
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.491252
+  },
+  "noticeboard_reach_1.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      362,
+      94,
+      854,
+      1381
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1381
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.492173
+  },
+  "reach_high_0.png": {
+    "size": [
+      975,
+      1614
+    ],
+    "alpha_bounds": [
+      188,
+      47,
+      896,
+      1573
+    ],
+    "crop": [
+      0,
+      0,
+      975,
+      1573
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.437949
+  },
+  "reach_high_1.png": {
+    "size": [
+      975,
+      1613
+    ],
+    "alpha_bounds": [
+      186,
+      117,
+      869,
+      1574
+    ],
+    "crop": [
+      0,
+      0,
+      975,
+      1574
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.437949
+  },
+  "shelf_reach_back_0.png": {
+    "size": [
+      975,
+      1614
+    ],
+    "alpha_bounds": [
+      243,
+      126,
+      850,
+      1575
+    ],
+    "crop": [
+      0,
+      0,
+      975,
+      1575
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.441026
+  },
+  "shelf_reach_back_1.png": {
+    "size": [
+      975,
+      1613
+    ],
+    "alpha_bounds": [
+      244,
+      263,
+      799,
+      1575
+    ],
+    "crop": [
+      0,
+      0,
+      975,
+      1575
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.441538
+  },
+  "notebook_write_0.png": {
+    "size": [
+      1087,
+      1447
+    ],
+    "alpha_bounds": [
+      388,
+      89,
+      835,
+      1396
+    ],
+    "crop": [
+      0,
+      0,
+      1087,
+      1396
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.527139
+  },
+  "notebook_write_1.png": {
+    "size": [
+      1087,
+      1446
+    ],
+    "alpha_bounds": [
+      389,
+      89,
+      837,
+      1396
+    ],
+    "crop": [
+      0,
+      0,
+      1087,
+      1396
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.527139
+  },
+  "typing_0.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      377,
+      79,
+      888,
+      1383
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1383
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.505064
+  },
+  "typing_1.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      376,
+      77,
+      878,
+      1384
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1384
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.506446
+  },
+  "inspect_0.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      340,
+      96,
+      792,
+      1393
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1393
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.508287
+  },
+  "inspect_1.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      354,
+      96,
+      866,
+      1395
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1395
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.520718
+  },
+  "sitting_rest_0.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      62,
+      549,
+      1026,
+      1407
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1407
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.492173
+  },
+  "sitting_rest_1.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_bounds": [
+      63,
+      548,
+      1026,
+      1408
+    ],
+    "crop": [
+      0,
+      0,
+      1086,
+      1408
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.492173
+  },
+  "sleeping_0.png": {
+    "size": [
+      1536,
+      1024
+    ],
+    "alpha_bounds": [
+      37,
+      484,
+      1508,
+      820
+    ],
+    "crop": [
+      0,
+      0,
+      1536,
+      820
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.515299
+  },
+  "sleeping_1.png": {
+    "size": [
+      1536,
+      1024
+    ],
+    "alpha_bounds": [
+      38,
+      475,
+      1508,
+      820
+    ],
+    "crop": [
+      0,
+      0,
+      1536,
+      820
+    ],
+    "reference_height": 1360,
+    "anchor_x": 0.515625
+  }
+}

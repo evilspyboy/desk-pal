@@ -1,0 +1,183 @@
+{
+  "side": {
+    "root": { "x": 140, "y": 380 },
+    "torso": {
+      "sprite": "torso",
+      "offset_x": -35,
+      "offset_y": -280,
+      "neck_socket": { "x": 65, "y": 20 },
+      "shoulder_socket": { "x": 32, "y": 51 },
+      "hip_socket": { "x": 45, "y": 185 }
+    },
+    "pelvis": {
+      "sprite": "pelvis",
+      "offset_x": -35,
+      "offset_y": -190
+    },
+    "head": {
+      "default_sprite": "head_neutral",
+      "valid_sprites": ["head_neutral", "head_down", "head_up", "head_profile_alt"],
+      "pivot": { "x": 45, "y": 105 }
+    },
+    "arm_front": {
+      "upper_sprite": "upper_arm",
+      "upper_pivot": { "x": 22, "y": 16 },
+      "elbow_joint": { "x": 27, "y": 172 },
+      "forearm_sprite": "forearm",
+      "forearm_pivot": { "x": 22, "y": 14 },
+      "wrist_joint": { "x": 24, "y": 114 },
+      "default_hand": "hand_open",
+      "valid_hands": ["hand_open", "hand_typing", "hand_fist", "hand_reach", "hand_quill"],
+      "hand_pivot": { "x": 25, "y": 12 },
+      "z_layer": "front"
+    },
+    "arm_back": {
+      "upper_sprite": "upper_arm",
+      "upper_pivot": { "x": 22, "y": 16 },
+      "elbow_joint": { "x": 27, "y": 172 },
+      "forearm_sprite": "forearm",
+      "forearm_pivot": { "x": 22, "y": 14 },
+      "wrist_joint": { "x": 24, "y": 114 },
+      "default_hand": "hand_fist",
+      "valid_hands": ["hand_open", "hand_typing", "hand_fist", "hand_reach", "hand_quill"],
+      "hand_pivot": { "x": 25, "y": 12 },
+      "z_layer": "back"
+    },
+    "leg_front": {
+      "thigh_sprite": "thigh",
+      "thigh_pivot": { "x": 43, "y": 14 },
+      "knee_joint": { "x": 48, "y": 189 },
+      "shin_sprite": "shin",
+      "shin_pivot": { "x": 34, "y": 14 },
+      "ankle_joint": { "x": 37, "y": 171 },
+      "default_boot": "boot_flat",
+      "valid_boots": ["boot_flat", "boot_bent_toe"],
+      "boot_pivot": { "x": 36, "y": 13 },
+      "z_layer": "front"
+    },
+    "leg_back": {
+      "thigh_sprite": "thigh",
+      "thigh_pivot": { "x": 43, "y": 14 },
+      "knee_joint": { "x": 48, "y": 189 },
+      "shin_sprite": "shin",
+      "shin_pivot": { "x": 34, "y": 14 },
+      "ankle_joint": { "x": 37, "y": 171 },
+      "default_boot": "boot_flat",
+      "valid_boots": ["boot_flat", "boot_bent_toe"],
+      "boot_pivot": { "x": 36, "y": 13 },
+      "z_layer": "back"
+    }
+  },
+  "back": {
+    "root": { "x": 140, "y": 380 },
+    "torso": {
+      "sprite": "torso",
+      "offset_x": -78,
+      "offset_y": -280,
+      "neck_socket": { "x": 78, "y": 18 },
+      "shoulder_left": { "x": 28, "y": 42 },
+      "shoulder_right": { "x": 128, "y": 43 },
+      "hip_socket": { "x": 78, "y": 185 }
+    },
+    "pelvis": {
+      "sprite": "pelvis",
+      "offset_x": -80,
+      "offset_y": -190
+    },
+    "head": {
+      "default_sprite": "head_neutral",
+      "valid_sprites": ["head_neutral", "head_up"],
+      "pivot": { "x": 41, "y": 135 }
+    },
+    "arm_left": {
+      "upper_sprite": "upper_arm_left",
+      "upper_pivot": { "x": 37, "y": 16 },
+      "elbow_joint": { "x": 21, "y": 172 },
+      "forearm_sprite": "forearm_left",
+      "forearm_pivot": { "x": 22, "y": 14 },
+      "wrist_joint": { "x": 24, "y": 114 },
+      "default_hand": "hand_hip_left",
+      "valid_hands": ["hand_hip_left", "hand_hip_right"],
+      "hand_pivot": { "x": 24, "y": 12 },
+      "z_layer": "front"
+    },
+    "arm_right": {
+      "upper_sprite": "upper_arm_right",
+      "upper_pivot": { "x": 23, "y": 16 },
+      "elbow_joint": { "x": 39, "y": 172 },
+      "forearm_sprite": "forearm_right",
+      "forearm_pivot": { "x": 22, "y": 14 },
+      "wrist_joint": { "x": 24, "y": 114 },
+      "default_hand": "hand_hip_right",
+      "valid_hands": ["hand_hip_left", "hand_hip_right"],
+      "hand_pivot": { "x": 29, "y": 12 },
+      "z_layer": "front"
+    },
+    "legs": {
+      "sprite": "legs",
+      "offset_x": -82,
+      "offset_y": -180,
+      "boot_left_socket": { "x": 45, "y": 175 },
+      "boot_right_socket": { "x": 120, "y": 175 },
+      "boot_left_sprite": "boot_left",
+      "boot_right_sprite": "boot_right",
+      "boot_pivot": { "x": 39, "y": 14 }
+    }
+  },
+  "front": {
+    "root": { "x": 140, "y": 380 },
+    "torso": {
+      "sprite": "torso",
+      "offset_x": -81,
+      "offset_y": -280,
+      "neck_socket": { "x": 81, "y": 20 },
+      "shoulder_left": { "x": 32, "y": 51 },
+      "shoulder_right": { "x": 128, "y": 52 },
+      "hip_socket": { "x": 81, "y": 185 }
+    },
+    "pelvis": {
+      "sprite": "pelvis",
+      "offset_x": -67,
+      "offset_y": -190
+    },
+    "head": {
+      "default_sprite": "head_neutral",
+      "valid_sprites": ["head_neutral", "head_down", "head_sleep"],
+      "pivot": { "x": 44, "y": 115 }
+    },
+    "arm_left": {
+      "upper_sprite": "upper_arm_left",
+      "upper_pivot": { "x": 37, "y": 16 },
+      "elbow_joint": { "x": 20, "y": 172 },
+      "forearm_sprite": "forearm_left",
+      "forearm_pivot": { "x": 22, "y": 14 },
+      "wrist_joint": { "x": 24, "y": 114 },
+      "default_hand": "hand_open_left",
+      "valid_hands": ["hand_open_left", "hand_fist_left", "hand_hip_flat"],
+      "hand_pivot": { "x": 25, "y": 12 },
+      "z_layer": "front"
+    },
+    "arm_right": {
+      "upper_sprite": "upper_arm_right",
+      "upper_pivot": { "x": 23, "y": 16 },
+      "elbow_joint": { "x": 40, "y": 172 },
+      "forearm_sprite": "forearm_right",
+      "forearm_pivot": { "x": 22, "y": 14 },
+      "wrist_joint": { "x": 24, "y": 114 },
+      "default_hand": "hand_fist_right",
+      "valid_hands": ["hand_fist_right", "hand_open_left", "hand_hip_flat"],
+      "hand_pivot": { "x": 25, "y": 12 },
+      "z_layer": "front"
+    },
+    "legs": {
+      "sprite": "legs",
+      "offset_x": -82,
+      "offset_y": -180,
+      "boot_left_socket": { "x": 45, "y": 170 },
+      "boot_right_socket": { "x": 120, "y": 170 },
+      "boot_left_sprite": "boot_left",
+      "boot_right_sprite": "boot_right",
+      "boot_pivot": { "x": 44, "y": 14 }
+    }
+  }
+}

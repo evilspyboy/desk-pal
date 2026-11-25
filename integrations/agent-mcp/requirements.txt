@@ -1,0 +1,2 @@
+# Official Python MCP SDK's maintained v1 API; isolate from Desk-Pal's runtime.
+mcp>=1.12,<2

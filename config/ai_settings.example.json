@@ -1,0 +1,6 @@
+{
+  "enabled": false,
+  "provider": "piper",
+  "voice": "en_GB-alan-low",
+  "keep_loaded": false
+}

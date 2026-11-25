@@ -1,0 +1,23 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+class Node {constructor(tag){this.tag=tag;this.children=[];this.style={};this.classList={add(){}};}append(...nodes){this.children.push(...nodes);} }
+const pane=new Node('div');pane.scrollTop=240;
+const ctx={document:{createElement:tag=>new Node(tag),getElementById:()=>pane},config:{scenes:{study:{name:'Study'}}},selectedActionId:'',renderActionPane(){pane.scrollTop=0;},saveConfigToPi(){},poseLabel:r=>r,actionSceneId:a=>a.scene,actionSceneData:()=>({interaction_spots:[{id:'desk',name:'Desk'}]})};
+vm.createContext(ctx);vm.runInContext(fs.readFileSync('src/integration_studio.js','utf8'),ctx);
+const app={id:'monitor',actions:[{id:'one',event:'update',scene:'study',animation:'typing',spot_id:'desk',display_mode:'none'},{id:'two',event:'update',scene:'study',animation:'typing',spot_id:'desk',display_mode:'none'}]};
+ctx.integrationFilteredEventGroups=()=>[['study',[{definition:{name:'update',label:'Update'},mappings:app.actions}]]];
+ctx.integrationEventGroups=()=>[['study',[]]];ctx.integrationPlacementPreview=()=>new Node('canvas');ctx.integrationMappingCheck=()=>({ok:true,reason:'Reachable'});ctx.integrationLastPlayback=()=>null;
+ctx.integrationPlaybackChoices=()=>[{playback_mode:'loop'}];ctx.playbackMode=s=>s.playback_mode;
+const before=JSON.stringify(app);ctx.renderIntegrationEvents(pane,app);assert.equal(JSON.stringify(app),before,'Rendering must not alter saved settings');
+const all=n=>[n,...n.children.flatMap(child=>child instanceof Node?all(child):[])];
+const labels=all(pane).filter(n=>n.tag==='label');
+const toggle=(name,index=0)=>labels.filter(n=>n.children.some(c=>c.textContent===name))[index].children.find(n=>n.tag==='input');
+assert.equal(toggle('Suppress duplicates').checked,true);
+toggle('Needs attention',1).checked=true;toggle('Needs attention',1).onchange();assert.equal(app.actions[1].attention_needed,true);assert.equal(app.actions[0].attention_needed,undefined);
+toggle('Until acknowledged',0).checked=true;toggle('Until acknowledged',0).onchange();assert.equal(app.actions[0].attention_until_interaction,true);assert.equal(app.actions[1].attention_until_interaction,undefined);assert.equal(pane.scrollTop,240);
+toggle('Suppress event').checked=true;toggle('Suppress event').onchange();assert.equal(app.suppressed_events.update,true);assert.equal(app.actions.length,2);
+toggle('Suppress duplicates').checked=false;toggle('Suppress duplicates').onchange();assert.equal(app.suppress_duplicate_events.update,false);
+assert(all(pane).some(n=>n.textContent==='More options · received values'));assert(!all(pane).some(n=>n.tag==='pre'));
+ctx.integrationPlaybackChoices=()=>[{playback_mode:'once'},{playback_mode:'repeat',repeat_count:3}];assert.equal(ctx.integrationPlaybackSummary({display_mode:'none'}),'Play once / Play 3 times · No text');
+ctx.integrationPlaybackChoices=()=>[{playback_mode:'ping_pong'}];assert.equal(ctx.integrationPlaybackSummary({duration_seconds:12,display_mode:'thought_bubble'}),'Ping-pong · 12 seconds · Message above character');
+assert.equal(ctx.integrationPlaybackSummary({attention_until_interaction:true,display_mode:'popup_modal'}),'Until acknowledged · Popup');
+console.log('Event cards preserve settings while browsing; visible controls change only their event/mapping, keep scroll position, and summarize finite/loop/attention playback.');

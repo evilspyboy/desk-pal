@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "application": {
+    "id": "llm_agent",
+    "name": "LLM agent",
+    "adapter": "json",
+    "heartbeat_action_id": "",
+    "suppressed_events": {"heartbeat": true},
+    "suppress_duplicate_events": {"task_started": true, "researching": true, "coding": true, "task_completed": true, "needs_attention": true, "task_failed": true}
+  },
+  "events": [
+    {"name": "heartbeat", "label": "Heartbeat", "example": {"status": "healthy", "summary": "Example task phase", "button_summary": "Example task phase"}},
+    {"name": "task_started", "label": "Task started", "example": {"task_id": "example-task", "activity": "started", "summary": "Starting the requested task", "event_id": "example-start"}},
+    {"name": "researching", "label": "Researching", "example": {"task_id": "example-task", "activity": "researching", "summary": "Checking relevant sources", "event_id": "example-research"}},
+    {"name": "coding", "label": "Working on code", "example": {"task_id": "example-task", "activity": "coding", "summary": "Implementing the requested change", "event_id": "example-code"}},
+    {"name": "task_completed", "label": "Task completed", "example": {"task_id": "example-task", "activity": "completed", "summary": "Finished; the result is ready", "event_id": "example-done"}},
+    {"name": "needs_attention", "label": "Needs your input", "example": {"task_id": "example-task", "activity": "needs_attention", "summary": "Please review the question in the agent chat", "attention_needed": true, "event_id": "example-question"}},
+    {"name": "task_failed", "label": "Task failed", "example": {"task_id": "example-task", "activity": "failed", "summary": "The task could not finish; see the agent chat", "attention_needed": true, "event_id": "example-failure"}}
+  ]
+}

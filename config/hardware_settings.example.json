@@ -1,0 +1,14 @@
+{
+  "radar": {
+    "enabled": false,
+    "presence_range_m": 2.0
+  },
+  "imu": {
+    "enabled": false
+  },
+  "speaker": {
+    "enabled": true,
+    "output": "default",
+    "volume": 0.5
+  }
+}

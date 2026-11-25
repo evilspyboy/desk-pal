@@ -1,0 +1,595 @@
+{
+  "sequences": {
+    "adventurer_v1:stand_from_sit": {
+      "name": "stand_from_sit",
+      "role": "stand_from_sit",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "playback_mode": "once",
+      "repeat_count": 1,
+      "ping_pong": false,
+      "idle_eligible": false,
+      "transition_only": true,
+      "frames": [
+        {
+          "name": "sitting_rest_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_sitting_rest_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1407
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.492173,
+          "index": 0
+        },
+        {
+          "name": "rise_tuck",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_tuck.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 1
+        },
+        {
+          "name": "rise_half",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_half.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1396
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 2
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 3
+        }
+      ]
+    },
+    "adventurer_v1:sit_down": {
+      "name": "sit_down",
+      "role": "sit_down",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "playback_mode": "once",
+      "repeat_count": 1,
+      "ping_pong": false,
+      "idle_eligible": false,
+      "transition_only": true,
+      "frames": [
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 0
+        },
+        {
+          "name": "rise_half",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_half.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1396
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 1
+        },
+        {
+          "name": "rise_tuck",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_tuck.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 2
+        },
+        {
+          "name": "sitting_rest_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_sitting_rest_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1407
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.492173,
+          "index": 3
+        }
+      ]
+    },
+    "adventurer_v1:stand_from_sleep": {
+      "name": "stand_from_sleep",
+      "role": "stand_from_sleep",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "playback_mode": "once",
+      "repeat_count": 1,
+      "ping_pong": false,
+      "idle_eligible": false,
+      "transition_only": true,
+      "frames": [
+        {
+          "name": "sleeping_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_sleeping_0.png",
+          "crop": [
+            0,
+            0,
+            1536,
+            820
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.515299,
+          "index": 0
+        },
+        {
+          "name": "wake_propped",
+          "url": "/assets/characters/adventurer/poses/v1_transition_wake_propped.png",
+          "crop": [
+            0,
+            0,
+            1536,
+            839
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 1
+        },
+        {
+          "name": "sitting_rest_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_sitting_rest_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1407
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.492173,
+          "index": 2
+        },
+        {
+          "name": "rise_tuck",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_tuck.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 3
+        },
+        {
+          "name": "rise_half",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_half.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1396
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 4
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 5
+        }
+      ]
+    },
+    "adventurer_v1:lie_down": {
+      "name": "lie_down",
+      "role": "lie_down",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "playback_mode": "once",
+      "repeat_count": 1,
+      "ping_pong": false,
+      "idle_eligible": false,
+      "transition_only": true,
+      "frames": [
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 0
+        },
+        {
+          "name": "rise_half",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_half.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1396
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 1
+        },
+        {
+          "name": "rise_tuck",
+          "url": "/assets/characters/adventurer/poses/v1_transition_rise_tuck.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1386
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 2
+        },
+        {
+          "name": "sitting_rest_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_sitting_rest_0.png",
+          "crop": [
+            0,
+            0,
+            1086,
+            1407
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.492173,
+          "index": 3
+        },
+        {
+          "name": "wake_propped",
+          "url": "/assets/characters/adventurer/poses/v1_transition_wake_propped.png",
+          "crop": [
+            0,
+            0,
+            1536,
+            839
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.5,
+          "index": 4
+        },
+        {
+          "name": "sleeping_0",
+          "url": "/assets/characters/adventurer/poses/v1_gesture_sleeping_0.png",
+          "crop": [
+            0,
+            0,
+            1536,
+            820
+          ],
+          "reference_height": 1360,
+          "anchor_x": 0.515299,
+          "index": 5
+        }
+      ]
+    }
+  },
+  "tags": {
+    "/assets/characters/adventurer/poses/v1_transition_rise_half.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "transitions_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1396
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.5,
+      "skeleton": {
+        "version": 1,
+        "space": "image_normalized",
+        "facing": "right",
+        "joints": {
+          "head": [
+            0.61,
+            0.41
+          ],
+          "neck": [
+            0.58,
+            0.49
+          ],
+          "pelvis": [
+            0.45,
+            0.73
+          ],
+          "shoulder_l": [
+            0.52,
+            0.54
+          ],
+          "elbow_l": [
+            0.43,
+            0.61
+          ],
+          "wrist_l": [
+            0.55,
+            0.7
+          ],
+          "shoulder_r": [
+            0.6,
+            0.54
+          ],
+          "elbow_r": [
+            0.61,
+            0.62
+          ],
+          "wrist_r": [
+            0.66,
+            0.68
+          ],
+          "hip_l": [
+            0.44,
+            0.74
+          ],
+          "knee_l": [
+            0.55,
+            0.72
+          ],
+          "ankle_l": [
+            0.46,
+            0.92
+          ],
+          "toe_l": [
+            0.54,
+            0.95
+          ],
+          "hip_r": [
+            0.49,
+            0.74
+          ],
+          "knee_r": [
+            0.64,
+            0.72
+          ],
+          "ankle_r": [
+            0.62,
+            0.91
+          ],
+          "toe_r": [
+            0.69,
+            0.94
+          ]
+        },
+        "inferred": [
+          "hip_r"
+        ],
+        "head_radius": [
+          0.075,
+          0.08
+        ],
+        "source": "manually traced from sprite"
+      }
+    },
+    "/assets/characters/adventurer/poses/v1_transition_rise_tuck.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "transitions_v1",
+      "crop": [
+        0,
+        0,
+        1086,
+        1386
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.5,
+      "skeleton": {
+        "version": 1,
+        "space": "image_normalized",
+        "facing": "right",
+        "joints": {
+          "head": [
+            0.56,
+            0.57
+          ],
+          "neck": [
+            0.52,
+            0.65
+          ],
+          "pelvis": [
+            0.39,
+            0.86
+          ],
+          "shoulder_l": [
+            0.46,
+            0.69
+          ],
+          "elbow_l": [
+            0.35,
+            0.8
+          ],
+          "wrist_l": [
+            0.28,
+            0.93
+          ],
+          "shoulder_r": [
+            0.54,
+            0.67
+          ],
+          "elbow_r": [
+            0.58,
+            0.71
+          ],
+          "wrist_r": [
+            0.65,
+            0.74
+          ],
+          "hip_l": [
+            0.4,
+            0.86
+          ],
+          "knee_l": [
+            0.58,
+            0.74
+          ],
+          "ankle_l": [
+            0.53,
+            0.92
+          ],
+          "toe_l": [
+            0.62,
+            0.94
+          ],
+          "hip_r": [
+            0.44,
+            0.86
+          ],
+          "knee_r": [
+            0.65,
+            0.74
+          ],
+          "ankle_r": [
+            0.62,
+            0.91
+          ],
+          "toe_r": [
+            0.68,
+            0.94
+          ]
+        },
+        "inferred": [
+          "hip_r"
+        ],
+        "head_radius": [
+          0.075,
+          0.08
+        ],
+        "source": "manually traced from sprite"
+      }
+    },
+    "/assets/characters/adventurer/poses/v1_transition_wake_propped.png": {
+      "variant": "adventurer_v1",
+      "generated_set": "transitions_v1",
+      "crop": [
+        0,
+        0,
+        1536,
+        839
+      ],
+      "reference_height": 1360,
+      "anchor_x": 0.5,
+      "skeleton": {
+        "version": 1,
+        "space": "image_normalized",
+        "facing": "right",
+        "joints": {
+          "head": [
+            0.18,
+            0.35
+          ],
+          "neck": [
+            0.21,
+            0.48
+          ],
+          "pelvis": [
+            0.45,
+            0.66
+          ],
+          "shoulder_l": [
+            0.14,
+            0.52
+          ],
+          "elbow_l": [
+            0.07,
+            0.72
+          ],
+          "wrist_l": [
+            0.18,
+            0.74
+          ],
+          "shoulder_r": [
+            0.27,
+            0.46
+          ],
+          "elbow_r": [
+            0.34,
+            0.61
+          ],
+          "wrist_r": [
+            0.31,
+            0.77
+          ],
+          "hip_l": [
+            0.45,
+            0.72
+          ],
+          "knee_l": [
+            0.63,
+            0.75
+          ],
+          "ankle_l": [
+            0.87,
+            0.73
+          ],
+          "toe_l": [
+            0.95,
+            0.77
+          ],
+          "hip_r": [
+            0.46,
+            0.64
+          ],
+          "knee_r": [
+            0.64,
+            0.68
+          ],
+          "ankle_r": [
+            0.84,
+            0.68
+          ],
+          "toe_r": [
+            0.94,
+            0.74
+          ]
+        },
+        "inferred": [
+          "hip_r"
+        ],
+        "head_radius": [
+          0.075,
+          0.08
+        ],
+        "source": "manually traced from sprite"
+      }
+    }
+  }
+}

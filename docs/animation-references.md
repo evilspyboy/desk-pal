@@ -1,0 +1,17 @@
+# Animation skeletons and reference sheets
+
+The Animation Grid wireframe now reads a skeleton attached to each sprite URL in `sprite_tags.json`. Reviewed guides cover the saved Adventurer v1 frames, including later balance, talking and hello additions; the exact count depends on installed content. Repeated hold frames and shared gestures reuse the same guide. The sprite artwork, playback configuration and scene locations are unchanged.
+
+Use **Edit frame skeleton** after selecting an animation and stepping to a frame. Drag joints, or select a named joint and click its position. Save applies to every use of that image. Cancel discards edits. Dashed bones denote hidden/inferred joints; these are pose guides, not an anatomical reconstruction. L/R refer to image sides; side views use near/far limbs. Head outline size and facing are editable.
+
+Skeleton schema version 1 uses original-image normalized coordinates (0 to 1), independently of crop and display size. Preview and export apply the sprite crop transform to those coordinates. Never store canvas coordinates. The annotations are in `config/skeleton_annotations.json`; their source mapping and build script are retained for reproducibility. New images require calibration; a missing guide is labelled rather than replaced by a pretend standing skeleton.
+
+**Download reference: this animation** uses the current timeline, timing and instructions, including unsaved timeline edits. **Download reference: all animations** uses saved sequences for the selected character and removes equivalent duplicates. Both include the character reference image, skeleton strips, facing, ordered frame ranges and hold durations, plus generation instructions beneath each animation. A preview opens with a Download PNG link. Custom instructions are saved by Save animation. Blank instructions use the role-specific defaults.
+
+The exporter requires a reference image tagged for the selected character and valid skeletons for all frames. Consecutive identical frames become timed holds; non-consecutive repeats retain their ordering. Ping-pong playback is labelled explicitly. Long collections are one tall sheet; individual sheets are better for inspecting or generating at higher effective detail. Skeletons do not encode fingers, facial expression, clothing or props, so the character reference and written instructions remain essential.
+
+Validation: `node scripts/test_animation_references.cjs` and `node scripts/test_stager.cjs`. Live checks covered saving a skeleton, the four-frame walking sheet and the complete 1600 x 13300 PNG collection preview.
+
+Deployment: `scripts/deploy_skeleton_references.py` backs up remote HTML, tags and config, merges only skeleton metadata, and uploads the editor without restarting the display. It preserves guides subsequently saved in the GUI. The label-encoding/layout polish and skeleton-only generation export were deployed and visually verified on 2026-09-28. Existing animation artwork is omitted from both export modes.
+
+The mild and strong balance reactions each have four individually reviewed skeletons and role-specific generation instructions. Both single-animation and full-character reference downloads include these guides. Mirroring applies to the complete strip; the instructions preserve ground contact and character proportions. Two strong-reaction sheet crops were corrected to retain complete hands and omit a neighbouring frame fragment.

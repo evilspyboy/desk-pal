@@ -1,0 +1,9 @@
+{
+  "id": "calendar",
+  "name": "Calendar & Daily Agenda",
+  "description": "Daily agenda and upcoming schedule monitor via private iCal feed (Google Calendar, iCloud, Outlook)",
+  "entrypoint": "main.py",
+  "port": 8097,
+  "auto_start": true,
+  "env": {}
+}

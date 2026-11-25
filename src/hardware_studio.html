@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Desk-Pal · Hardware</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#171b29;color:#e4eaf4}*{box-sizing:border-box}body{margin:0 auto;padding:24px;max-width:1200px}header{display:flex;align-items:center;gap:20px;flex-wrap:wrap}h1{font-size:26px;margin:0}h2{font-size:19px;margin:0 0 14px}p{line-height:1.5;color:#bdc8dc}a{color:#81dbe1}main{display:grid;grid-template-columns:minmax(300px,2fr) minmax(260px,1fr);gap:18px;margin-top:18px}.card{background:#242b3e;border:1px solid #3c4963;border-radius:12px;padding:18px;margin-bottom:16px}button,select{font:inherit;background:#354563;color:white;border:1px solid #657b9c;border-radius:6px;padding:9px 12px;cursor:pointer}button:disabled{opacity:.5;cursor:wait}label{display:inline-flex;align-items:center;gap:8px;margin:6px 10px 6px 0}input[type=checkbox]{width:18px;height:18px}canvas{width:100%;display:block;background:#151b2b;border-radius:8px;margin:12px 0}.status{padding:10px;border-radius:6px;background:#192034;white-space:pre-wrap}.good{color:#74e7b2}.bad{color:#ffb39d}.stats{display:flex;gap:18px;flex-wrap:wrap;font-variant-numeric:tabular-nums}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}td,th{text-align:left;padding:8px 4px;border-bottom:1px solid #3c4963;font-size:14px}meter{width:100%;height:25px}pre{white-space:pre-wrap;font-size:12px;overflow-wrap:anywhere}.muted{font-size:13px;color:#a7b5cc}#notice{min-height:24px;margin-top:12px;color:#ffd990}@media(max-width:800px){main{grid-template-columns:1fr}body{padding:14px}}
+@keyframes cal-once{0%,15%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg)}75%,100%{transform:var(--movement)}}</style>
+<style>
+.cal-demo{height:170px;display:grid;place-items:center;perspective:450px;margin:10px 0}.cal-case{width:115px;height:85px;position:relative;transform-style:preserve-3d;--movement:rotateZ(0deg);animation:cal-move 3s ease-in-out infinite}.cal-face{position:absolute;inset:0;border:3px solid #a0d7df;border-radius:8px;background:#334d65;transform:translateZ(12px);display:grid;place-items:center}.cal-face::after{content:'';width:75%;height:60%;background:#68c8bd;border:5px solid #182c43;border-radius:3px}.cal-back{position:absolute;inset:0;background:#526681;border:3px solid #a0d7df;border-radius:8px;transform:translateZ(-12px) rotateY(180deg)}.cal-side{position:absolute;width:24px;height:85px;left:-12px;top:0;background:#b38862;transform:rotateY(90deg)}.cal-side.right{left:auto;right:-12px}.cal-top{position:absolute;left:0;top:-12px;height:24px;width:115px;background:#8296b2;transform:rotateX(90deg)}@keyframes cal-move{0%,20%,100%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg)}55%,80%{transform:var(--movement)}}.cal-steps{display:flex;gap:5px;flex-wrap:wrap}.cal-step{border:1px solid #617591;padding:4px 7px;border-radius:20px;font-size:12px}.cal-step.current{background:#426f8e;color:white}.cal-step.done{background:#286b56}.cal-title{text-align:center;font-size:22px;font-weight:bold;color:#8df0c0}
+@keyframes cal-once{0%,15%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg)}75%,100%{transform:var(--movement)}}</style>
+<style>body.radar-calibrating .radar-live-panel,body.imu-calibrating .imu-live-panel,body.imu-calibrating #imuBox,body.imu-calibrating #imuTilt{display:none}</style>
+<header><h1>Desk-Pal · Hardware</h1><a href="/">Scene editor</a><span class="muted">Optional hardware · live readings and controls</span></header>
+<div id="notice" role="status"></div>
+<main><section><div class="card"><h2>Physical buttons · GPIO</h2>
+<label><input id="buttonsEnabled" type="checkbox">Enable GPIO buttons</label>
+<p class="muted">Use BCM GPIO numbers, not physical pin numbers. Button ID 1 is sleep/wake; ID 6 is shutdown. Other IDs can be assigned in App &amp; Action Studio. Buttons connect GPIO to ground using pull-ups. I²C/UART GPIOs are reserved while those readers are enabled.</p>
+<table><thead><tr><th>Button ID</th><th>BCM GPIO</th><th>Label</th><th></th></tr></thead><tbody id="buttonRows"></tbody></table>
+<button onclick="addButtonRow()">Add button</button><button onclick="saveSettings()">Save hardware settings</button>
+<button id="buttonTestToggle" onclick="toggleButtonTest()">Start button test</button><p class="muted">Test mode displays presses without running actions or shutdown. It expires after five minutes; Stop test restores normal actions.</p><div id="buttonStatus" class="status"></div></div><div class="card">
+<h2>RD-03D radar</h2>
+<label><input id="radarEnabled" type="checkbox">Enable radar reader</label>
+<select id="port" aria-label="UART port"><option>/dev/serial0</option><option>/dev/ttyS0</option><option>/dev/ttyAMA0</option></select>
+<button onclick="saveSettings()">Save hardware settings</button>
+<p class="muted">Connect only one radar to this UART. The smaller HMMD needs its own reader; it is not enabled here.</p>
+<label><input id="lightPresenceEnabled" type="checkbox">Stay awake while radar presence is detected</label>
+<label>Presence range <input id="radarPresenceRange" type="number" min="0.1" max="8" step="0.1" value="2" style="width:85px"> metres</label>
+<p class="muted">Only targets nearer than this distance count for wake, keep-awake, morning greeting and person-returned reactions. Distant targets remain visible for diagnostics. Plot range does not change this setting.</p>
+<label>No presence before allowing sleep <input id="lightPresenceAbsence" type="number" min="1" max="3600" value="30" style="width:85px"> seconds</label>
+<label>Bedtime <input id="radarBedtime" type="time" value="22:00" oninput="$('lightBedtime').value=this.value"></label>
+<p class="muted">Shared with the light sensor. Presence keeps Desk-Pal awake while you are at the desk past bedtime; as soon as no presence is detected after bedtime it goes to bed until morning. Once asleep at night, radar presence will not wake it until morning use or room lights return.</p>
+<div id="radarStatus" class="status">Connecting to Desk-Pal…</div>
+<div class="radar-live-panel">
+<label>Plot range <select id="range"><option value="1">1 m</option><option value="2" selected>2 m</option><option value="4">4 m</option><option value="8">8 m</option></select></label>
+<label><input id="trail" type="checkbox" checked>Movement trail</label><button onclick="trails.clear()">Clear trail</button>
+<label>Position display <select id="averaging"><option value="average" selected>Average · 0.5 seconds</option><option value="raw">Raw readings</option></select></label>
+<label>Radar interpretation <select id="radarInterpretation"><option value="corrected" selected>Provisional corrected / stabilised</option><option value="raw">Original sensor view</option></select></label>
+<label>Centre direction <input id="radarHeading" type="number" step="0.1" min="-180" max="180" value="2.17" style="width:80px">°</label>
+<p class="muted">Starting estimate: 2.17° from the unobstructed capture's initial centre (X 43 mm / Y 1136 mm). Current housed mounting differs. This rotates the view only; distance is not rescaled. Large position jumps are held briefly and marked uncertain before reacquisition. It cannot prove a return is a person.</p>
+<div id="radarQuality" class="status"></div>
+<label><input id="radarMirror" type="checkbox" checked>Rotate radar view 180° · facing the sensor</label>
+<p class="muted">Averaging combines recent position updates per target slot. It reduces jitter with a small delay; it cannot correct drift or false detections.</p>
+<canvas id="plot" width="720" height="480" aria-label="Live radar target positions"></canvas>
+<div id="radarStats" class="stats"></div>
+</div>
+<h3>Guided movement capture</h3>
+<p class="muted">Start once, then follow the large prompts without using the mouse. Stand in front, step left and right with returns to centre, then step back and repeat. About 90 seconds. Keep this page visible. This records diagnostics; it does not reset the sensor or change calibration.</p>
+<button onclick="radarCaptureAction('start')">Start movement capture</button>
+<button onclick="radarCaptureAction('cancel')">Cancel capture</button>
+<a href="/api/hardware/radar-capture/download" download="radar_capture_latest.json">Download latest capture</a>
+<div id="radarGuide" hidden style="margin-top:16px;padding:20px;background:#101b2c;border:2px solid #78d9c0;border-radius:12px;text-align:center">
+<div id="radarGuideTitle" style="font-size:clamp(30px,4vw,48px);font-weight:bold;color:#8df0c0"></div>
+<div style="display:flex;align-items:center;justify-content:center;gap:24px;margin:12px 0">
+<span id="radarGuideArrow" aria-hidden="true" style="font-size:110px;line-height:1"></span>
+<svg id="radarGuideMap" viewBox="0 0 300 210" role="img" aria-label="Top-down movement guide: you face the device at the top" style="width:230px;max-width:40%;background:#19273e;border-radius:10px">
+<rect x="113" y="10" width="74" height="24" rx="5" fill="#78d9c0"/><text x="150" y="27" text-anchor="middle" font-size="13" fill="#101b2c">DEVICE</text>
+<path d="M150 65V176 M55 82H245 M55 165H245" stroke="#536a89" stroke-width="3" stroke-dasharray="6 6"/>
+<circle cx="150" cy="82" r="12" fill="#526780"/><circle cx="150" cy="165" r="12" fill="#526780"/>
+<path id="radarGuidePath" d="M150 82L150 82" stroke="#ffc46e" stroke-width="7" fill="none"/>
+<circle id="radarGuidePerson" cx="150" cy="82" r="18" fill="#8df0c0"/><path id="radarGuideFacing" d="M141 79L150 66L159 79" stroke="#101b2c" stroke-width="4" fill="none"/>
+<text id="radarGuideLeftLabel" x="45" y="202" fill="#cad7eb" font-size="13">YOUR LEFT</text><text id="radarGuideRightLabel" x="180" y="202" fill="#cad7eb" font-size="13">YOUR RIGHT</text>
+</svg>
+<span id="radarGuideTimer" style="font-size:52px;font-weight:bold;min-width:80px"></span></div>
+<div id="radarGuideSub" style="font-size:24px"></div></div>
+<div id="radarCapturePrompt" class="status" role="status" style="font-size:24px;margin-top:12px">Ready</div>
+<p id="radarCaptureProgress" class="muted"></p>
+<table class="radar-live-panel"><thead><tr><th>Target</th><th>Side X</th><th>Forward Y</th><th>Distance</th><th>Angle</th></tr></thead><tbody id="targets"></tbody></table>
+<p class="muted">The sensor is the triangle: mirrored mode rotates the view 180°, placing it at the top pointing down. Plot labels stay upright; table values and captures remain raw. X− and X+ are sensor-relative, not calibrated room left/right. Slots are tracks, not person identities. No dot means no current target; stale readings are hidden.</p>
+</div>
+<div class="card"><h2>Motion · MPU6050</h2><label><input id="imuEnabled" type="checkbox">Enable IMU readings</label>
+<div class="imu-live-panel">
+<canvas id="imuBox" width="480" height="360" aria-label="3D sensor tilt preview"></canvas>
+<p id="imuMounting" class="muted"></p><button onclick="resetImuHeading()">Reset preview heading</button>
+<button onclick="setImuNeutral()">Set current position as neutral</button>
+<button onclick="resetImuNeutral()">Clear tilt offsets</button>
+<button onclick="saveSettings()">Save hardware settings</button>
+<p class="muted">Mounting axes and gyro bias come from guided calibration. Set neutral while the case is still on the table. Reset preview heading after drift or moving the sensor; raw readings stay unchanged.</p>
+</div><button onclick="startImuWizard()">Guided calibration</button>
+<button onclick="reviewSavedImuCapture()">Review saved capture</button>
+<a href="/api/hardware/imu-capture/download" download="imu_capture_latest.json">Download latest IMU capture</a>
+<p class="muted">Each recorded step is saved on the Pi, including raw readings and retries, even if the final direction check fails or the page is refreshed. Starting the neutral recording replaces the previous run. Settings change only when you apply calibration.</p>
+<div id="imuWizard" hidden class="status">
+<div id="calSteps" class="cal-steps"></div><p id="calTitle" class="cal-title"></p>
+<div class="cal-demo" role="img" aria-label="Demonstration of the requested calibration movement"><div id="calCase" class="cal-case"><div class="cal-back"></div><div class="cal-side"></div><div class="cal-side right"></div><div class="cal-top"></div><div class="cal-face"></div></div></div>
+<details><summary>Movement instructions</summary><p id="imuInstruction"></p></details><p id="imuProgress"></p>
+<button id="imuRecord" hidden onclick="retryImuStep()">Retry this step</button>
+<button id="imuApply" hidden onclick="applyImuCalibration()">Apply and save calibration</button>
+<button onclick="cancelImuWizard()">Cancel</button>
+</div>
+<p id="imuTilt" class="muted"></p>
+<details><summary>Raw motion readings</summary><div id="imuStatus" class="status"></div></details><p class="muted">The box uses calibrated axes for tilt and bias-corrected gyro for relative turns. Heading is relative to this preview session and can drift; there is no compass. Movement can temporarily distort tilt. A loose sensor does not show case orientation. Map optional character reactions in App & Action Studio → Sensors. Return detection checks tilt and stillness; this sensor cannot verify the original table location or compass direction.</p></div>
+</section><aside>
+<div class="card"><h2>Speaker</h2><label><input id="speakerEnabled" type="checkbox">Enable speaker tests</label>
+<p class="muted">Choose the saved default output for Desk-Pal speaker tests. This does not change the operating system default or mixer volume.</p>
+<label>Default output <select id="speakerOutput"><option value="headphones">3.5 mm jack</option><option value="usb">USB speaker</option><option value="default">System default</option></select></label>
+<label for="toneLevel">Test volume <input id="toneLevel" type="range" min="0" max="1" step="0.01" value="0.25" aria-label="Speaker test volume" oninput="document.getElementById('toneLevelValue').value=Math.round(this.value*100)+'%'"><output id="toneLevelValue" for="toneLevel">25%</output></label>
+<button onclick="saveSpeakerSettings()">Save speaker settings</button>
+<button id="speakerTest" onclick="testDevice('speaker')">Play short beep</button><div id="speakerStatus" class="status"></div></div>
+<div class="card"><h2>USB microphone</h2><label><input id="microphoneEnabled" type="checkbox">Enable microphone tests</label>
+<label>Wake peak threshold <input id="micWakeThreshold" type="number" min="300" max="30000" step="100" value="4500" style="width:110px"> <span class="muted">(raw peak 300–30000; lower = more sensitive)</span></label>
+<button onclick="saveMicrophoneSettings()">Save microphone settings</button>
+<button id="microphoneTest" onclick="testDevice('microphone')">Start 15-second level test</button>
+<meter id="micMeter" min="-70" max="0" value="-70" aria-label="Microphone level in decibels"></meter><div id="microphoneStatus" class="status"></div>
+<p class="muted">Speak from your normal seat and watch the meter. Audio is measured and discarded, never saved or uploaded.</p></div>
+<div class="card"><h2>Light · BH1750</h2><label><input id="lightEnabled" type="checkbox">Enable light readings</label><div id="lightStatus" class="status"></div>
+<p id="lightRange" class="muted"></p>
+<label>Resolution mode <select id="lightMode" style="width:200px"><option value="high_res_2">High-Res Mode 2 (0.5 lx / granular)</option><option value="high_res_1">High-Res Mode 1 (1.0 lx standard)</option></select></label>
+<label>Sensitivity MTreg <input id="lightMtreg" type="number" min="31" max="254" value="254" style="width:75px"> <span class="muted">(254 = ~0.11 lx min, 69 = default)</span></label>
+<label><input id="lightIdleEnabled" type="checkbox">Enable idle light threshold</label>
+<label>Sleep below <input id="lightThreshold" type="number" min="0.1" max="65535" step="0.1" value="5" style="width:90px"> lux</label>
+<label>Wake margin <input id="lightMargin" type="number" min="0.1" max="65535" step="0.1" value="2" style="width:90px"> lux</label>
+<label>Delay <input id="lightDelay" type="number" min="1" max="300" value="5" style="width:75px"> seconds</label>
+<label><input id="lightEveningEnabled" type="checkbox">Ignore low lux from sunset until bedtime</label>
+<label>Bedtime <input id="lightBedtime" type="time" value="22:00" oninput="$('radarBedtime').value=this.value"></label><p class="muted">Shared with radar. Uses the scene day/night location and timezone. Manual sleep still works. Outside this window the normal lux policy applies.</p>
+<label>Stay awake after manual wake <input id="lightWakeHold" type="number" min="10" max="3600" value="120" style="width:85px"> seconds</label>
+<button onclick="saveSettings()">Save hardware settings</button>
+<p class="muted">Sustained darkness uses the usual sleep animation and screen-off flow. Wake occurs above the threshold plus margin. Manual sleep stays asleep. A manual wake gets the time above before dark sleep can resume; an open information popup also keeps it awake. A shaded sensor may read zero—measure daytime and lights-off levels before enabling.</p></div>
+<div class="card"><h2>Other hardware</h2><p class="muted">Existing GPIO buttons continue using their current settings. These tests are independent of Desk-Pal actions.</p>
+<details><summary>Audio device inventory</summary><pre id="devices"></pre></details></div>
+<p class="muted">Device settings are stored separately in hardware_settings.json. Scene saves and content imports do not configure these devices.</p>
+</aside></main>
+<script>
+const $=id=>document.getElementById(id),trails=new Map();let loaded=false,last=null,closed=false;
+const positionSamples=new Map();let sampleFrame=null;
+const radarTracks=new Map();
+function stabiliseRadarTarget(target,state,now){const distance=(a,b)=>Math.hypot(a.x_mm-b.x_mm,a.y_mm-b.y_mm);if(!state.accepted){state.accepted={...target};state.quality='Initial reading · unverified';return {...target,quality:state.quality};}if(distance(target,state.accepted)<=600){state.accepted={...target};state.pending=null;state.quality='Position consistent · target unverified';}else{if(!state.pending||distance(target,state.pending.target)>180)state.pending={target:{...target},since:now};if(now-state.pending.since>=500){state.accepted={...target};state.pending=null;state.quality='Reacquired after jump · unverified';}else state.quality='Uncertain jump · showing previous position';}return {...state.accepted,quality:state.quality};}
+function interpretRadar(radar,now=Date.now()){if($('radarInterpretation').value==='raw')return {...radar,targets:radar.targets.map(t=>({...t,quality:'Original reading · unverified'}))};if(radar.state!=='receiving'){radarTracks.clear();return radar;}const active=new Set(radar.targets.map(t=>t.slot));for(const slot of radarTracks.keys())if(!active.has(slot))radarTracks.delete(slot);const heading=Number($('radarHeading').value)*Math.PI/180;return {...radar,targets:radar.targets.map(t=>{let state=radarTracks.get(t.slot);if(!state){state={};radarTracks.set(t.slot,state);}const x=t.x_mm*Math.cos(heading)-t.y_mm*Math.sin(heading),y=t.x_mm*Math.sin(heading)+t.y_mm*Math.cos(heading);return stabiliseRadarTarget({...t,x_mm:x,y_mm:y,angle_deg:Math.atan2(x,y)*180/Math.PI},state,now);})};}
+async function radarCaptureAction(action){try{await request('/api/hardware/radar-capture',{action});}catch(e){notice(e.message);}}
+function radarGuideFor(phase){const far=phase.startsWith('far_'),y=far?165:82;let x=150,from=150,title='STAND STILL',arrow='●',sub='Face the device. Hold this position.';
+ if(phase==='prepare'){title='GET READY';arrow='⌛';sub='Stand in front and face the device.';}
+ else if(phase==='far_center'){title='STEP BACK';arrow='↓';sub='One step AWAY from the device, then hold.';}
+ else if(phase.endsWith('_left')){x=55;title='STEP LEFT';arrow='←';sub='One step to YOUR left, then hold.';}
+ else if(phase.endsWith('_right')){x=245;title='STEP RIGHT';arrow='→';sub='One step to YOUR right, then hold.';}
+ else if(phase.includes('return')){from=phase.endsWith('_2')?245:55;title='RETURN TO CENTRE';arrow=from===55?'→':'←';sub=far?'Return to the FARTHER centre point, then hold.':'Return to your STARTING centre point, then hold.';}
+ $('radarGuideLeftLabel').textContent='YOUR LEFT';$('radarGuideRightLabel').textContent='YOUR RIGHT';
+ return {x,y,from,title,arrow,sub,path:phase==='far_center'?'M150 82L150 165':`M${from} ${y}L${x} ${y}`};}
+function updateRadarCapture(c){if(!c)return;const active=['preparing','recording'].includes(c.state);document.body.classList.toggle('radar-calibrating',active);const wasHidden=$('radarGuide').hidden;$('radarGuide').hidden=!active;if(active&&wasHidden)$('radarGuide').scrollIntoView({block:'center',behavior:'smooth'});if(active){const v=radarGuideFor(c.phase);$('radarGuideTitle').textContent=v.title;$('radarGuideArrow').textContent=v.arrow;$('radarGuideSub').textContent=v.sub;$('radarGuideTimer').textContent=Math.ceil(c.seconds_left)+'s';$('radarGuidePerson').setAttribute('cx',v.x);$('radarGuidePerson').setAttribute('cy',v.y);$('radarGuideFacing').setAttribute('d',`M${v.x-9} ${v.y-3}L${v.x} ${v.y-16}L${v.x+9} ${v.y-3}`);$('radarGuidePath').setAttribute('d',v.path);}$('radarCapturePrompt').textContent=c.error||c.instruction||c.state;$('radarCaptureProgress').textContent=active?Math.ceil(c.seconds_left)+' seconds · '+(c.frames||0)+' raw frames captured':c.state==='complete'?c.frames+' frames saved on the Pi. Download for review.':c.state;}
+function displayRadar(radar,now=Date.now()){
+ if(radar.state!=='receiving'){positionSamples.clear();sampleFrame=null;return {...radar,targets:[]};}
+ const active=new Set(radar.targets.map(t=>t.slot));
+ for(const slot of positionSamples.keys())if(!active.has(slot))positionSamples.delete(slot);
+ const fresh=radar.last_frame!==sampleFrame;sampleFrame=radar.last_frame;
+ const targets=radar.targets.map(target=>{
+  let samples=(positionSamples.get(target.slot)||[]).filter(s=>now-s.time<=500);
+  if(fresh)samples.push({time:now,x:target.x_mm,y:target.y_mm});
+  samples=samples.slice(-8);positionSamples.set(target.slot,samples);
+  if($('averaging').value==='raw'||!samples.length)return target;
+  const x=samples.reduce((sum,s)=>sum+s.x,0)/samples.length,y=samples.reduce((sum,s)=>sum+s.y,0)/samples.length;
+  return {...target,x_mm:x,y_mm:y,distance_mm:Math.round(Math.hypot(x,y)),angle_deg:Math.round(Math.atan2(x,y)*180/Math.PI*10)/10};
+ });return {...radar,targets};
+}
+const notice=text=>$('notice').textContent=text;
+let lightMin=Infinity,lightMax=-Infinity;
+function lightSettings(){return {enabled:$('lightEnabled').checked,idle_threshold_enabled:$('lightIdleEnabled').checked,sleep_below_lux:Number($('lightThreshold').value),wake_margin_lux:Number($('lightMargin').value),delay_seconds:Number($('lightDelay').value),manual_wake_seconds:Number($('lightWakeHold').value),evening_awake_enabled:$('lightEveningEnabled').checked,bedtime:$('lightBedtime').value,presence_awake_enabled:$('lightPresenceEnabled').checked,presence_absence_seconds:Number($('lightPresenceAbsence').value),mode:$('lightMode').value,mtreg:Number($('lightMtreg').value)};}
+let imuNeutral=[0,0],imuGyroBias=[0,0,0],imuAxes=[0,1,2],imuSigns=[1,1,1],imuRotation=null;
+let imuHeading={yaw:0,at:null,rate:0,mount:''};
+function resetImuHeading(){imuHeading={yaw:0,at:null,rate:0,mount:''};if(last)drawImu(last.i2c.imu);}
+function mapImuVector(v,settings){return settings.rotation?settings.rotation.map(row=>row.reduce((sum,a,i)=>sum+a*v[i],0)):settings.axes.map((axis,i)=>v[axis]*settings.signs[i]);}
+function updateImuHeading(imu,settings,state){
+ const mount=JSON.stringify([settings.axes,settings.signs,settings.rotation,settings.gyro_bias]);
+ if(state.mount!==mount){state.yaw=0;state.at=null;state.rate=0;state.mount=mount;state.samples=[];state.restBias=[0,0,0];}
+ if(imu.at===state.at)return state.yaw;
+ const corrected=imu.gyro_dps.map((v,i)=>v-settings.gyro_bias[i]);
+ const samples=state.samples||[];samples.push({at:imu.at,a:imu.accel_g||[],g:corrected});state.samples=samples.filter(s=>imu.at-s.at<=2);
+ const window=state.samples,mean=key=>[0,1,2].map(i=>window.reduce((sum,s)=>sum+(s[key][i]||0),0)/window.length);
+ const avgA=mean('a'),avgG=mean('g');
+ const stable=window.length>=5&&imu.at-window[0].at>=1.5&&window.every(s=>s.a.length===3&&Math.hypot(...s.a.map((v,i)=>v-avgA[i]))<.025&&Math.hypot(...s.g.map((v,i)=>v-avgG[i]))<.6)&&Math.hypot(...avgG)<3;
+ if(stable)state.restBias=avgG;
+ const rate=mapImuVector(corrected.map((v,i)=>v-(state.restBias?.[i]||0)),settings)[2];
+ const filtered=stable||Math.abs(rate)<1?0:rate,dt=state.at===null?0:imu.at-state.at;
+ if(dt>0&&dt<.6&&!stable)state.yaw+=(state.rate+filtered)*.5*dt*Math.PI/180;
+ state.at=imu.at;state.rate=filtered;return state.yaw;
+}
+let imuDisplayTilt=null,imuDisplayAt=0,imuDisplaySettings='';
+const calibrationSteps=[['neutral','Place the case on the table in its normal position and leave it still.'],['left','Start upright. During recording, slowly tilt the case LEFT by about 30–45°, then hold. Do not return until recording finishes.'],['right','Return upright first. During recording, slowly tilt RIGHT by about 30–45°, then hold.'],['forward','Return upright first. During recording, slowly tilt the top TOWARD YOU, then hold.'],['back','Return upright first. During recording, slowly tilt the top AWAY FROM YOU, then hold.'],['turn_left','Return upright first. During recording, slowly TURN LEFT by about 30–45°, keeping the case upright, then hold.'],['turn_right','Return to the starting direction first. During recording, slowly TURN RIGHT by about 30–45°, keeping the case upright, then hold.']];
+let calibration=null;
+let calibrationCountdown=null;
+async function reviewSavedImuCapture(){if(calibration?.waiting||calibration?.awaitNeutral||calibrationCountdown){notice('Finish or cancel the current calibration first.');return;}try{const report=await request('/api/hardware/imu-capture/download');if(!report.complete)throw Error('The saved capture does not contain seven completed movements.');const results=report.steps,proposal=inferImuCalibration(results);calibration={results,proposal,waiting:false};document.body.classList.add('imu-calibrating');$('imuWizard').hidden=false;$('imuApply').hidden=false;$('imuRecord').hidden=true;$('calSteps').replaceChildren();$('calTitle').textContent='Saved calibration ready';$('calCase').style.animation='none';$('calCase').style.transform='rotateZ(0deg)';$('imuInstruction').textContent='Calculated from the saved measurements. Review and apply; no movement repeat is needed.';$('imuProgress').textContent='Mounting angle learned from your movements'+'. Neutral roll / pitch: '+proposal.neutral.map(v=>(v*180/Math.PI).toFixed(1)+'°').join(' / ')+'.';}catch(e){notice(e.message);}}
+function startImuWizard(){if(!last||last.i2c.imu.state!=='live'){notice('Enable IMU readings and wait for live data first.');return;}clearInterval(calibrationCountdown);calibration={step:0,results:{},waiting:false,id:null,retries:0};document.body.classList.add('imu-calibrating');$('imuWizard').hidden=false;$('imuApply').hidden=true;$('imuRecord').hidden=true;showImuStep();scheduleImuStep(10);}
+function cancelImuWizard(){clearInterval(calibrationCountdown);calibrationCountdown=null;calibration=null;document.body.classList.remove('imu-calibrating');$('imuWizard').hidden=true;}
+function scheduleImuStep(seconds){clearInterval(calibrationCountdown);const run=calibration;if(run.step>0){waitForImuNeutral();return;}$('imuRecord').hidden=true;$('calCase').style.animationPlayState='paused';$('calCase').style.animation='none';$('calCase').style.transform='rotateZ(0deg)';
+ const update=()=>{$('imuProgress').textContent=(run.step===0?'Place the device on the table in its normal position. ':'Return upright and to the starting direction. ')+ 'Recording starts in '+seconds+'…';};update();
+ calibrationCountdown=setInterval(()=>{if(calibration!==run){clearInterval(calibrationCountdown);return;}if(--seconds>0){update();return;}clearInterval(calibrationCountdown);calibrationCountdown=null;recordImuStep();},1000);
+}
+function retryImuStep(){if(!calibration)return;calibration.retries=0;scheduleImuStep(10);}
+function waitForImuNeutral(){calibration.awaitNeutral=true;calibration.stillSince=null;calibration.lastNeutralSample=null;$('imuRecord').hidden=true;$('calCase').style.animation='none';$('calCase').style.transform='rotateZ(0deg)';$('calTitle').textContent='Return to starting position';$('imuProgress').textContent='Place it on the table in its original position. Waiting for matching tilt and stillness…';}
+function isImuAtNeutral(imu,neutral){
+ if(imu.state!=='live'||!Array.isArray(imu.accel_g)||!Array.isArray(imu.gyro_dps))return false;
+ const a=imu.accel_g,b=neutral.accel,ma=Math.hypot(...a),mb=Math.hypot(...b);
+ if(Math.abs(ma-mb)>.12||ma<.5||mb<.5)return false;
+ const cosine=a.reduce((sum,v,i)=>sum+v*b[i],0)/(ma*mb);
+ const speed=Math.hypot(...imu.gyro_dps.map((v,i)=>v-neutral.gyro[i]));
+ return cosine>=Math.cos(7*Math.PI/180)&&speed<3;
+}
+function observeImuNeutral(imu){const run=calibration;if(!run?.awaitNeutral)return;
+ if(imu.at===run.lastNeutralSample)return;run.lastNeutralSample=imu.at;
+ if(!isImuAtNeutral(imu,run.results.neutral)){run.stillSince=null;$('imuProgress').textContent='Return to the original table position and let it settle. Recording is paused.';return;}
+ if(run.stillSince===null)run.stillSince=imu.at;
+ if(imu.at-run.stillSince<1.2){$('imuProgress').textContent='Starting tilt detected—checking that it is still…';return;}
+ run.awaitNeutral=false;showImuStep();recordImuStep();
+}
+function showImuStep(){const [phase,instruction]=calibrationSteps[calibration.step];$('imuInstruction').textContent='Step '+(calibration.step+1)+' of 7: '+instruction+' The sensor must move with the case, not slide inside it.';
+ const names=['Hold still','Tilt left','Tilt right','Tilt toward you','Tilt away from you','Turn left','Turn right'];
+ $('calTitle').textContent=names[calibration.step];$('calCase').style.setProperty('--movement',['rotateZ(0deg)','rotateZ(-30deg)','rotateZ(30deg)','rotateX(-35deg)','rotateX(35deg)','rotateY(-35deg)','rotateY(35deg)'][calibration.step]);
+ $('calSteps').replaceChildren();names.forEach((name,i)=>{const chip=document.createElement('span');chip.className='cal-step '+(i===calibration.step?'current':i<calibration.step?'done':'');chip.textContent=(i<calibration.step?'✓ ':i+1+' ')+name;$('calSteps').append(chip);});
+ $('imuProgress').textContent=calibration.step?'Start upright → record → follow the animation → hold.':'Place the case on the table in its normal position. Neutral takes about two seconds.';$('imuRecord').disabled=false;}
+async function recordImuStep(){if(!calibration||calibration.waiting)return;const run=calibration;try{await saveSettingsForTest();if(calibration!==run)return;const phase=calibrationSteps[run.step][0];run.waiting=true;run.id=null;run.previousId=last.imu_capture?.id;$('imuRecord').disabled=true;$('calCase').style.animation='cal-once 2s ease-out forwards';$('calCase').style.animationPlayState='running';$('calCase').style.transform='';$('imuProgress').textContent=run.step===0?'Recording—hold still.':'MOVE NOW—follow the animation, then hold.';await request('/api/hardware/calibration',{phase,gyro_bias:run.results.neutral?.gyro||[0,0,0]});}catch(e){if(calibration!==run)return;run.waiting=false;$('imuRecord').hidden=false;$('imuRecord').disabled=false;$('imuProgress').textContent=e.message;}}
+function neutralQualityError(n){
+ if(!n||n.samples<10||n.duration<1.5)return 'Neutral sample was too short. Hold still while it records again.';
+ if(n.accel_spread>.08)return 'Neutral moved during recording. Let the case settle on the table.';
+ if(Math.max(...n.gyro.map(Math.abs))>5)return 'Neutral had too much rotation. Keep the case still.';
+ if(Math.abs(Math.hypot(...n.accel)-1)>.2)return 'Neutral acceleration is outside the expected gravity range. Check sensor readings.';
+ return null;
+}
+function inferImuCalibration(results){
+ const n=results.neutral;
+ const neutralError=neutralQualityError(n);if(neutralError)throw Error(neutralError);
+ const bias=n.gyro,delta=phase=>results[phase].integral.map((v,i)=>v-bias[i]*results[phase].duration);
+ // With toward-you and right tilts positive, positive yaw is a right turn.
+ const pairs=[['forward','back'],['right','left'],['turn_right','turn_left']];
+ const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0),norm=a=>Math.hypot(...a),unit=a=>a.map(v=>v/norm(a)),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+ const directions=pairs.map(([positive,negative])=>{const a=delta(positive),b=delta(negative);if(norm(a)<12||norm(b)<12||dot(unit(a),unit(b))>-.65)throw Error('Unclear '+positive+' / '+negative+' movements. Use opposite directions and hold at the end.');return unit(a.map((v,i)=>v-b[i]));});
+ if(Math.max(Math.abs(dot(directions[0],directions[1])),Math.abs(dot(directions[0],directions[2])),Math.abs(dot(directions[1],directions[2])))>.5)throw Error('Movements overlap too much. Separate tilting from turning.');
+ const x=directions[0],y=unit(directions[1].map((v,i)=>v-dot(directions[1],x)*x[i])),z=cross(x,y);
+ if(dot(z,directions[2])<.75)throw Error('Turning disagrees with tilt directions. Follow the turn-left and turn-right instructions.');
+ const rotation=[x,y,z],v=rotation.map(row=>dot(row,n.accel));
+ return {axes:[0,1,2],signs:[1,1,1],rotation,gyro_bias:bias,neutral:[Math.atan2(v[1],v[2]),Math.atan2(-v[0],Math.hypot(v[1],v[2]))]};
+}
+function updateImuWizard(capture){if(!calibration||!calibration.waiting||capture.phase!==calibrationSteps[calibration.step][0])return;
+ if(capture.id===calibration.previousId)return;
+ if(capture.state==='recording'){calibration.id=capture.id;$('imuProgress').textContent=capture.phase==='neutral'?'Recording neutral—hold still.':capture.motion_started?'Movement detected—continue once, then hold.':'Ready—make the indicated movement once. Waiting for you to start.';return;}
+ if(capture.state!=='complete'&&capture.state!=='error')return;
+ if(calibration.id!==null&&capture.id!==calibration.id)return;
+ calibration.waiting=false;
+ let issue=capture.state==='error'?capture.error:null;
+ if(!issue&&capture.phase==='neutral')issue=neutralQualityError(capture);
+ if(!issue&&capture.phase!=='neutral'){const bias=calibration.results.neutral.gyro,rotation=capture.integral.map((v,i)=>v-bias[i]*capture.duration);if(Math.hypot(...rotation)<12)issue='Movement was too small. Tilt farther once, then hold.';}
+ if(issue){if(capture.state!=='error'&&calibration.retries++<2){scheduleImuStep(8);$('imuProgress').textContent=issue+' Automatic retry in 8 seconds.';}else{$('imuProgress').textContent=issue;$('imuRecord').hidden=false;$('imuRecord').disabled=false;}return;}
+ calibration.retries=0;
+ calibration.results[capture.phase]=capture;
+ if(++calibration.step<calibrationSteps.length){showImuStep();scheduleImuStep(6);return;}
+ try{calibration.proposal=inferImuCalibration(calibration.results);$('calTitle').textContent='Calibration ready';$('calCase').style.setProperty('--movement','rotateZ(0deg)');$('imuInstruction').textContent='Review the inferred mounting, then apply to save.';$('imuProgress').textContent='Mounting angle learned from your movements'+'.\nNeutral roll / pitch: '+calibration.proposal.neutral.map(v=>Math.round(v*180/Math.PI)+'°').join(' / ')+'.\nGyro bias: '+calibration.proposal.gyro_bias.map(v=>v.toFixed(2)).join(' / ')+' °/s.';$('imuRecord').hidden=true;$('imuApply').hidden=false;}
+ catch(e){$('imuProgress').textContent=e.message;$('imuRecord').hidden=true;$('imuInstruction').textContent='Calibration could not determine a reliable mounting. Cancel and restart; existing settings have not changed.';}
+}
+async function applyImuCalibration(){if(!calibration?.proposal)return;const p=calibration.proposal;imuRotation=p.rotation||null;imuAxes=[...p.axes];imuSigns=[...p.signs];imuNeutral=p.neutral;imuGyroBias=p.gyro_bias;try{await saveSettingsForTest();notice('Guided calibration saved.');cancelImuWizard();}catch(e){notice(e.message);}}
+function imuSettings(){return {enabled:$('imuEnabled').checked,rotation:imuRotation,axes:imuAxes,signs:imuSigns,neutral:imuNeutral,gyro_bias:imuGyroBias};}
+function mappedTilt(imu){const settings=imuSettings(),v=mapImuVector(imu.accel_g,settings);return [Math.atan2(v[1],v[2]),Math.atan2(-v[0],Math.hypot(v[1],v[2]))];}
+async function setImuNeutral(){if(!last||last.i2c.imu.state!=='live'){notice('Enable IMU readings and wait for a live reading.');return;}if(new Set(imuSettings().axes).size!==3){notice('Use each source axis exactly once.');return;}imuNeutral=mappedTilt(last.i2c.imu);await saveSettings();imuDisplayTilt=null;resetImuHeading();}
+async function resetImuNeutral(){imuNeutral=[0,0];await saveSettings();imuDisplayTilt=null;resetImuHeading();}
+function drawImu(imu){
+ const canvas=$('imuBox'),g=canvas.getContext('2d');g.clearRect(0,0,480,360);
+ if(imu.state!=='live'){imuDisplayTilt=null;imuHeading.at=null;g.fillStyle='#a7b5cc';g.font='18px system-ui';g.textAlign='center';g.fillText('No live motion readings',240,180);$('imuTilt').textContent='';return;}
+ const tilt=mappedTilt(imu),wrap=v=>Math.atan2(Math.sin(v),Math.cos(v));
+ const desired=[wrap(tilt[0]-imuNeutral[0]),wrap(tilt[1]-imuNeutral[1])],now=performance.now(),mount=JSON.stringify(imuSettings());
+ if(!imuDisplayTilt||mount!==imuDisplaySettings){imuDisplayTilt=desired;imuDisplayAt=now;imuDisplaySettings=mount;}
+ else{const alpha=1-Math.exp(-Math.min(2,(now-imuDisplayAt)/1000)/.65);imuDisplayAt=now;imuDisplayTilt=desired.map((v,i)=>{const delta=wrap(v-imuDisplayTilt[i]);return Math.abs(delta)<.0087?imuDisplayTilt[i]:wrap(imuDisplayTilt[i]+alpha*delta);});}
+ // Canvas Y points down: invert forward/back tilt for the visual case only.
+ const roll=-imuDisplayTilt[0],pitch=imuDisplayTilt[1],yaw=updateImuHeading(imu,imuSettings(),imuHeading);$('imuMounting').textContent=imuRotation?'Calibrated mounting rotation':'Calibrated X/Y/Z: '+imuAxes.map((a,i)=>'XYZ'[a]+(imuSigns[i]<0?' reversed':'')).join(' / ');
+ // Gravity supplies tilt; calibrated gyro supplies relative heading. Then apply the camera view.
+ const rotate=p=>{let [x,y,z]=p;[y,z]=[y*Math.cos(roll)-z*Math.sin(roll),y*Math.sin(roll)+z*Math.cos(roll)];[x,y]=[x*Math.cos(pitch)-y*Math.sin(pitch),x*Math.sin(pitch)+y*Math.cos(pitch)];[x,z]=[x*Math.cos(yaw)+z*Math.sin(yaw),-x*Math.sin(yaw)+z*Math.cos(yaw)];const a=.6;[x,z]=[x*Math.cos(a)+z*Math.sin(a),-x*Math.sin(a)+z*Math.cos(a)];const b=-.45;[y,z]=[y*Math.cos(b)-z*Math.sin(b),y*Math.sin(b)+z*Math.cos(b)];return [x,y,z];};
+ const points=[[-100,-65,-20],[100,-65,-20],[100,65,-20],[-100,65,-20],[-100,-65,20],[100,-65,20],[100,65,20],[-100,65,20]].map(rotate);
+ const project=p=>[240+p[0]*1.35,180+p[1]*1.35];
+ const faces=[{ids:[0,1,2,3],color:'#3f6487'},{ids:[4,7,6,5],color:'#64c8bf'},{ids:[0,4,5,1],color:'#427d91'},{ids:[3,2,6,7],color:'#426578'},{ids:[1,5,6,2],color:'#e4ad62'},{ids:[0,3,7,4],color:'#9776be'}];
+ faces.sort((a,b)=>a.ids.reduce((s,i)=>s+points[i][2],0)-b.ids.reduce((s,i)=>s+points[i][2],0));
+ for(const face of faces){g.beginPath();face.ids.forEach((id,i)=>{const p=project(points[id]);if(i)g.lineTo(...p);else g.moveTo(...p);});g.closePath();g.fillStyle=face.color;g.fill();g.strokeStyle='#d7e8ef';g.lineWidth=2;g.stroke();}
+ const origin=project(rotate([0,0,0]));g.font='bold 16px system-ui';g.textAlign='center';
+ for(const [label,vector,color] of [['X',[140,0,0],'#ffb476'],['Y',[0,105,0],'#8df0c0'],['Z',[0,0,110],'#b9b5ff']]){const p=project(rotate(vector));g.strokeStyle=color;g.beginPath();g.moveTo(...origin);g.lineTo(...p);g.stroke();g.fillStyle=color;g.fillText(label,p[0],p[1]-8);}
+ $('imuTilt').textContent='Roll '+Math.round(roll*180/Math.PI)+'° · Pitch '+Math.round(pitch*180/Math.PI)+'° · Relative turn '+Math.round(yaw*180/Math.PI)+'°';
+}
+async function request(url,data){const r=await fetch(url,{method:data?'POST':'GET',headers:data?{'Content-Type':'application/json'}:{},body:data?JSON.stringify(data):undefined,cache:'no-store'});if(!r.ok)throw Error((await r.text()).replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim());return r.status===204?null:r.json();}
+async function saveSettings(){try{await request('/api/hardware/settings',{radar:{enabled:$('radarEnabled').checked,model:'rd03d',port:$('port').value,presence_range_m:Number($('radarPresenceRange').value)},speaker:{enabled:$('speakerEnabled').checked,output:$('speakerOutput').value,volume:Number($('toneLevel').value)},buttons:buttonSettings(),microphone:{enabled:$('microphoneEnabled').checked,wake_peak_threshold:Number($('micWakeThreshold').value)||4500},light:lightSettings(),imu:imuSettings()});trails.clear();notice('Hardware settings saved. Scene settings are unchanged.');}catch(e){notice(e.message);}}
+async function saveSpeakerSettings(){try{await request('/api/hardware/settings',{speaker:{enabled:$('speakerEnabled').checked,output:$('speakerOutput').value,volume:Number($('toneLevel').value)}});notice('Speaker output and volume saved.');}catch(e){notice(e.message);}}
+async function saveMicrophoneSettings(){try{await request('/api/hardware/settings',{microphone:{enabled:$('microphoneEnabled').checked,wake_peak_threshold:Number($('micWakeThreshold').value)||4500}});notice('Microphone settings and wake threshold saved.');}catch(e){notice(e.message);}}
+async function testDevice(device){try{await saveSettingsForTest();await request('/api/hardware/test',{device,level:Number($('toneLevel').value)});notice(device==='microphone'?'Microphone level test started for 15 seconds.':'Playing one brief tone.');}catch(e){notice(e.message);}}
+async function saveSettingsForTest(){await request('/api/hardware/settings',{radar:{enabled:$('radarEnabled').checked,model:'rd03d',port:$('port').value,presence_range_m:Number($('radarPresenceRange').value)},speaker:{enabled:$('speakerEnabled').checked,output:$('speakerOutput').value,volume:Number($('toneLevel').value)},buttons:buttonSettings(),microphone:{enabled:$('microphoneEnabled').checked,wake_peak_threshold:Number($('micWakeThreshold').value)||4500},light:lightSettings(),imu:imuSettings()});}
+function draw(radar){const mirror=$('radarMirror').checked?-1:1,canvas=$('plot'),g=canvas.getContext('2d'),max=Number($('range').value)*1000,cx=360,base=mirror===-1?45:435,scale=370/max;g.clearRect(0,0,720,480);g.strokeStyle='#394760';g.fillStyle='#aab9d2';g.font='14px system-ui';g.textAlign='center';
+ for(let i=1;i<=4;i++){const radius=max*i/4*scale;g.beginPath();g.arc(cx,base,radius,mirror===-1?0:Math.PI,mirror===-1?Math.PI:2*Math.PI);g.stroke();g.fillText((max*i/4000).toFixed(2)+' m',cx+32,base-mirror*radius+16);}
+ g.beginPath();g.moveTo(cx,base);g.lineTo(cx,mirror===-1?445:35);g.stroke();g.fillText(mirror===1?'X−':'X+',65,base+mirror*25);g.fillText(mirror===1?'X+':'X−',655,base+mirror*25);g.fillStyle='#f6c66e';g.beginPath();g.moveTo(cx,base-mirror*12);g.lineTo(cx-10,base+mirror*8);g.lineTo(cx+10,base+mirror*8);g.closePath();g.fill();
+ const active=radar.state==='receiving',colors=['#6be9c0','#ffa9cf','#aebaff'];const now=Date.now();
+ for(const [slot,list] of trails){const recent=list.filter(p=>now-p.time<10000);if(!recent.length)trails.delete(slot);else trails.set(slot,recent);}
+ if(!active){trails.clear();return;}
+ for(const target of radar.targets){const x=cx+mirror*target.x_mm*scale,y=base-mirror*target.y_mm*scale,color=colors[target.slot-1];const list=trails.get(target.slot)||[];if(list.at(-1)?.frame!==radar.last_frame){list.push({x:target.x_mm,y:target.y_mm,time:now,frame:radar.last_frame});if(list.length>100)list.shift();trails.set(target.slot,list);}
+  if($('trail').checked){g.strokeStyle=color;g.globalAlpha=.35;g.beginPath();list.forEach((p,i)=>i?g.lineTo(cx+mirror*p.x*scale,base-mirror*p.y*scale):g.moveTo(cx+mirror*p.x*scale,base-mirror*p.y*scale));g.stroke();g.globalAlpha=1;}
+  if(Math.abs(x-cx)>340||(mirror===1?(y<20||y>base):(y<base||y>460))){g.fillStyle=color;g.fillText('Target '+target.slot+' · '+(target.distance_mm/1000).toFixed(2)+' m · outside plot range',cx,20+target.slot*18);continue;}
+  g.fillStyle=color;g.beginPath();g.arc(x,y,9,0,Math.PI*2);g.fill();g.fillText('#'+target.slot+' · '+(target.distance_mm/1000).toFixed(2)+' m',x,y-17);
+ }
+}
+let buttonsLoaded=false,buttonTest=false;
+function addButtonRow(value){const row=document.createElement('tr');const used=buttonSettings().pins.map(p=>p.id);let id=1;while(used.includes(id))id++;const data=value||{id,bcm:0,name:''};for(const key of ['id','bcm','name']){const cell=document.createElement('td'),input=document.createElement('input');input.dataset.key=key;input.type=key==='name'?'text':'number';input.value=data[key];input.style.width=key==='name'?'140px':'70px';cell.append(input);row.append(cell);}const cell=document.createElement('td'),remove=document.createElement('button');remove.textContent='Remove';remove.onclick=()=>{if(confirm('Remove this physical GPIO button? Its application mappings will be retained.'))row.remove();};cell.append(remove);row.append(cell);$('buttonRows').append(row);}
+function buttonSettings(){return {enabled:$('buttonsEnabled').checked,pins:[...$('buttonRows').children].map(row=>Object.fromEntries([...row.querySelectorAll('input')].map(input=>[input.dataset.key,input.dataset.key==='name'?input.value:Number(input.value)])))};}
+async function toggleButtonTest(){try{await request('/api/hardware/buttons/test',{enabled:!buttonTest});}catch(e){notice(e.message);}}
+async function pollButtons(){const b=await request('/api/hardware/buttons');if(!buttonsLoaded){$('buttonsEnabled').checked=b.enabled;for(const row of b.buttons)addButtonRow(row);buttonsLoaded=true;}buttonTest=b.test_mode;$('buttonTestToggle').textContent=buttonTest?'Stop button test':'Start button test';$('buttonStatus').textContent=(buttonTest?'TEST MODE · '+b.test_seconds+'s remaining\n':'Normal operation\n')+b.buttons.map(row=>'Button '+row.id+' · GPIO '+row.bcm+': '+(row.error|| (row.pressed?'PRESSED':'released'))+' · '+row.presses+' presses').join('\n');}
+async function poll(){try{const data=await request('/api/hardware');last=data;await pollButtons();updateRadarCapture(data.radar_capture);if(!loaded){for(const key of ['radar','speaker','microphone','light','imu'])$(key+'Enabled').checked=data.settings[key].enabled;$('port').value=data.settings.radar.port;$('radarPresenceRange').value=data.settings.radar.presence_range_m??2;$('micWakeThreshold').value=data.settings.microphone.wake_peak_threshold??4500;$('speakerOutput').value=data.settings.speaker.output||'headphones';$('toneLevel').value=data.settings.speaker.volume??.25;$('toneLevelValue').value=Math.round(Number($('toneLevel').value)*100)+'%';$('lightEveningEnabled').checked=data.settings.light.evening_awake_enabled||false;$('lightBedtime').value=data.settings.light.bedtime||'22:00';$('radarBedtime').value=$('lightBedtime').value;const l=data.settings.light;$('lightMode').value=l.mode||'high_res_2';$('lightMtreg').value=l.mtreg??254;$('lightPresenceEnabled').checked=l.presence_awake_enabled||false;$('lightPresenceAbsence').value=l.presence_absence_seconds??30;$('lightIdleEnabled').checked=l.idle_threshold_enabled;$('lightThreshold').value=l.sleep_below_lux;$('lightMargin').value=l.wake_margin_lux;$('lightDelay').value=l.delay_seconds;$('lightWakeHold').value=l.manual_wake_seconds;const mount=data.settings.imu;imuNeutral=mount.neutral;imuGyroBias=mount.gyro_bias;imuRotation=mount.rotation||null;imuAxes=[...mount.axes];imuSigns=[...mount.signs];loaded=true;if(data.settings_error)notice(data.settings_error);}
+ const r=displayRadar(interpretRadar(data.radar)),age=r.age_seconds;$('radarStatus').className='status '+(r.state==='receiving'?'good':r.state==='disabled'?'':'bad');$('radarStatus').textContent=r.state==='receiving'?(r.targets.length?'Live · '+r.targets.length+' target(s)':'Live · no targets'):r.state==='stale'?'No fresh readings · previous targets hidden':r.state==='connecting'?'Port open/checking · waiting for valid frames':r.state==='disabled'?'Disabled · enable and save to begin':r.error||r.state;
+ $('radarQuality').textContent=r.state==='receiving'?r.targets.map(t=>'Track '+t.slot+': '+t.quality).join(' / ')||'No target reported':r.state;$('radarStats').textContent=r.frames+' frames · '+r.malformed+' malformed · last frame '+(age===null?'never':age.toFixed(2)+' s ago');$('targets').replaceChildren();for(const t of data.radar.targets){const row=document.createElement('tr');for(const text of [t.slot,(t.x_mm/10).toFixed(1)+' cm',(t.y_mm/10).toFixed(1)+' cm',(t.distance_mm/1000).toFixed(2)+' m',t.angle_deg+'°']){const cell=document.createElement('td');cell.textContent=text;row.append(cell);}$('targets').append(row);}draw(r);
+ for(const key of ['speaker','microphone']){$(key+'Test').disabled=data[key].state==='testing';$(key+'Status').textContent=(!data.settings[key].enabled?'Disabled':data[key].error||data[key].state);}
+ const light=data.i2c.light,imu=data.i2c.imu;if(light.state==='live'){lightMin=Math.min(lightMin,light.lux);lightMax=Math.max(lightMax,light.lux);$('lightRange').textContent='This visit: '+lightMin.toFixed(1)+'–'+lightMax.toFixed(1)+' lux';}drawImu(imu);observeImuNeutral(imu);updateImuWizard(data.imu_capture);
+ $('lightStatus').textContent=light.state==='live'?light.lux+' lux':light.error||light.state;
+ $('imuStatus').textContent=imu.state==='live'?'Acceleration X / Y / Z: '+imu.accel_g.join(' / ')+' g\nRotation X / Y / Z: '+imu.gyro_dps.join(' / ')+' °/s\nChip temperature: '+imu.temperature_c+' °C':imu.error||imu.state;
+ const mic=data.microphone;$('micMeter').value=(mic.state==='testing'||mic.state==='active')?(mic.rms_dbfs??-70):-70;if(mic.state==='testing')$('microphoneStatus').textContent='Listening for level only · '+(mic.rms_dbfs??'—')+' dBFS · peak '+mic.peak;else if(mic.state==='active')$('microphoneStatus').textContent='Live stream (VoiceSentry) · '+(mic.rms_dbfs??'—')+' dBFS · peak '+mic.peak+(mic.ambient_floor!=null?' · floor '+Math.round(mic.ambient_floor):'');
+ $('devices').textContent='Playback\n'+data.devices.playback+'\nCapture\n'+data.devices.capture;
+ }catch(e){$('radarStatus').textContent='Disconnected: '+e.message;$('radarStatus').className='status bad';$('targets').replaceChildren();drawImu({state:'disconnected'});positionSamples.clear();radarTracks.clear();sampleFrame=null;trails.clear();$('radarQuality').textContent='Disconnected';draw({state:'disconnected',targets:[]});}finally{if(!closed)setTimeout(poll,200);}}
+for(const id of ['radarInterpretation','radarHeading'])$(id).onchange=()=>{radarTracks.clear();positionSamples.clear();sampleFrame=null;trails.clear();};
+$('radarMirror').onchange=()=>{if(last)draw(displayRadar(interpretRadar(last.radar)));};
+window.addEventListener('pagehide',()=>{closed=true;});$('range').onchange=()=>{if(last)draw(displayRadar(interpretRadar(last.radar)));};$('averaging').onchange=()=>{trails.clear();if(last)draw(displayRadar(interpretRadar(last.radar)));};poll();
+</script></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

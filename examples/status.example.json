@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "app_id": "example_app",
+  "demo": true,
+  "status": "healthy",
+  "activity": "Waiting for the next scheduled job",
+  "summary": "Last job completed successfully; 3 records changed.",
+  "button_summary": "Today Oct 4\n- 3 records changed\n- No unresolved issues\n- Last job: catalogue update at 08:15",
+  "ttl_seconds": 300,
+  "generated_at": "2026-10-04T08:20:00+10:00",
+  "results": {
+    "date": "2026-10-04",
+    "timezone": "Australia/Brisbane",
+    "last_successful_check": "2026-10-04T08:15:00+10:00",
+    "coverage_complete": true,
+    "records_changed": 3,
+    "unresolved_issues": 0,
+    "last_run": {
+      "run_id": "catalogue-20261004-0815",
+      "job_name": "Catalogue update",
+      "outcome": "success",
+      "completed_at": "2026-10-04T08:15:00+10:00"
+    }
+  }
+}

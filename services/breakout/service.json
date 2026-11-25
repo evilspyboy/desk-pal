@@ -1,0 +1,10 @@
+{
+  "id": "breakout",
+  "name": "Breakout Arcade",
+  "description": "Retro Breakout arcade mini-game with customizable controllers (buttons, IMU tilt, radar, touch) and bezels",
+  "entrypoint": "main.py",
+  "category": "game",
+  "port": 8097,
+  "auto_start": false,
+  "env": {}
+}

@@ -1,0 +1,4 @@
+{
+  "balance_mild": "Four-frame mild balance reaction, facing right: upright ready stance, lean left with arms extending for balance, lean right with arms extending, then recover upright. Play once at 4 FPS; mirror the entire strip for the opposite reaction. Keep boot contact, canvas alignment, head size, costume and palette consistent. Follow each skeleton rather than sliding the whole character.",
+  "balance_strong": "Four-frame strong balance / shake reaction, facing right: raise hands defensively, recoil backward with bent knees, pitch forward with both hands out, then recover upright. Play once at 4 FPS; mirror the entire strip for the opposite reaction. Preserve boot contact and character scale while the torso rotates and knees bend. Keep all hands inside the canvas and keep identity, costume and palette unchanged."
+}

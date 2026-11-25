@@ -1,0 +1,859 @@
+{
+  "generator": "built-in image_gen",
+  "character": "adventurer_v1",
+  "sequences": {
+    "adventurer_v1:walk_up": {
+      "name": "walk_up",
+      "role": "walk_up",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "walk_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_walk_up_0.png",
+          "crop": [
+            242,
+            58,
+            600,
+            1360
+          ],
+          "index": 0
+        },
+        {
+          "name": "walk_up_1",
+          "url": "/assets/characters/adventurer/poses/v1_walk_up_1.png",
+          "crop": [
+            244,
+            51,
+            600,
+            1360
+          ],
+          "index": 1
+        },
+        {
+          "name": "walk_up_2",
+          "url": "/assets/characters/adventurer/poses/v1_walk_up_2.png",
+          "crop": [
+            257,
+            67,
+            600,
+            1360
+          ],
+          "index": 2
+        },
+        {
+          "name": "walk_up_3",
+          "url": "/assets/characters/adventurer/poses/v1_walk_up_3.png",
+          "crop": [
+            245,
+            37,
+            600,
+            1360
+          ],
+          "index": 3
+        }
+      ]
+    },
+    "adventurer_v1:walk_down": {
+      "name": "walk_down",
+      "role": "walk_down",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "walk_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_walk_down_0.png",
+          "crop": [
+            234,
+            50,
+            600,
+            1360
+          ],
+          "index": 0
+        },
+        {
+          "name": "walk_down_1",
+          "url": "/assets/characters/adventurer/poses/v1_walk_down_1.png",
+          "crop": [
+            240,
+            40,
+            600,
+            1360
+          ],
+          "index": 1
+        },
+        {
+          "name": "walk_down_2",
+          "url": "/assets/characters/adventurer/poses/v1_walk_down_2.png",
+          "crop": [
+            246,
+            53,
+            600,
+            1360
+          ],
+          "index": 2
+        },
+        {
+          "name": "walk_down_3",
+          "url": "/assets/characters/adventurer/poses/v1_walk_down_3.png",
+          "crop": [
+            256,
+            47,
+            600,
+            1360
+          ],
+          "index": 3
+        }
+      ]
+    },
+    "adventurer_v1:idle_side": {
+      "name": "idle_side",
+      "role": "idle_side",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 0
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 1
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 2
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 3
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 4
+        },
+        {
+          "name": "stand_side_breathe",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_breathe.png",
+          "crop": [
+            259,
+            27,
+            600,
+            1360
+          ],
+          "index": 5
+        },
+        {
+          "name": "stand_side_breathe",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_breathe.png",
+          "crop": [
+            259,
+            27,
+            600,
+            1360
+          ],
+          "index": 6
+        },
+        {
+          "name": "stand_side_breathe",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_breathe.png",
+          "crop": [
+            259,
+            27,
+            600,
+            1360
+          ],
+          "index": 7
+        },
+        {
+          "name": "stand_side_breathe",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_breathe.png",
+          "crop": [
+            259,
+            27,
+            600,
+            1360
+          ],
+          "index": 8
+        },
+        {
+          "name": "stand_side_breathe",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_breathe.png",
+          "crop": [
+            259,
+            27,
+            600,
+            1360
+          ],
+          "index": 9
+        },
+        {
+          "name": "stand_side_breathe",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_breathe.png",
+          "crop": [
+            259,
+            27,
+            600,
+            1360
+          ],
+          "index": 10
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 11
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 12
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 13
+        },
+        {
+          "name": "stand_side_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_0.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 14
+        },
+        {
+          "name": "stand_side_blink",
+          "url": "/assets/characters/adventurer/poses/v1_stand_side_blink.png",
+          "crop": [
+            258,
+            27,
+            600,
+            1360
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "adventurer_v1:idle_up": {
+      "name": "idle_up",
+      "role": "idle_up",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 0
+        },
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 1
+        },
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 2
+        },
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 3
+        },
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 4
+        },
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 5
+        },
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 6
+        },
+        {
+          "name": "stand_up_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_0.png",
+          "crop": [
+            242,
+            70,
+            600,
+            1360
+          ],
+          "index": 7
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 8
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 9
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 10
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 11
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 12
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 13
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 14
+        },
+        {
+          "name": "stand_up_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png",
+          "crop": [
+            242,
+            37,
+            600,
+            1360
+          ],
+          "index": 15
+        }
+      ]
+    },
+    "adventurer_v1:idle_down": {
+      "name": "idle_down",
+      "role": "idle_down",
+      "character": "adventurer_v1",
+      "fps": 4,
+      "ping_pong": false,
+      "frames": [
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 0
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 1
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 2
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 3
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 4
+        },
+        {
+          "name": "stand_down_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png",
+          "crop": [
+            225,
+            24,
+            600,
+            1360
+          ],
+          "index": 5
+        },
+        {
+          "name": "stand_down_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png",
+          "crop": [
+            225,
+            24,
+            600,
+            1360
+          ],
+          "index": 6
+        },
+        {
+          "name": "stand_down_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png",
+          "crop": [
+            225,
+            24,
+            600,
+            1360
+          ],
+          "index": 7
+        },
+        {
+          "name": "stand_down_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png",
+          "crop": [
+            225,
+            24,
+            600,
+            1360
+          ],
+          "index": 8
+        },
+        {
+          "name": "stand_down_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png",
+          "crop": [
+            225,
+            24,
+            600,
+            1360
+          ],
+          "index": 9
+        },
+        {
+          "name": "stand_down_breathe_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png",
+          "crop": [
+            225,
+            24,
+            600,
+            1360
+          ],
+          "index": 10
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 11
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 12
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 13
+        },
+        {
+          "name": "stand_down_0",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_0.png",
+          "crop": [
+            240,
+            32,
+            600,
+            1360
+          ],
+          "index": 14
+        },
+        {
+          "name": "stand_down_blink_colour_matched",
+          "url": "/assets/characters/adventurer/poses/v1_stand_down_blink_colour_matched.png",
+          "crop": [
+            241,
+            34,
+            600,
+            1360
+          ],
+          "index": 15
+        }
+      ]
+    }
+  },
+  "tags": {
+    "/assets/characters/adventurer/poses/v1_stand_down_0.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        240,
+        32,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_down_blink.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        241,
+        34,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_down_breathe.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        225,
+        24,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_side_0.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        258,
+        27,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_side_blink.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        258,
+        27,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_side_breathe.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        259,
+        27,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_up_0.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        242,
+        70,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_up_breathe.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        242,
+        37,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_down_0.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        234,
+        50,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_down_1.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        240,
+        40,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_down_2.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        246,
+        53,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_down_3.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        256,
+        47,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_up_0.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        242,
+        58,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_up_1.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        244,
+        51,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_up_2.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        257,
+        67,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_walk_up_3.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        245,
+        37,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_up_breathe_colour_matched.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        242,
+        37,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_down_breathe_colour_matched.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        225,
+        24,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    },
+    "/assets/characters/adventurer/poses/v1_stand_down_blink_colour_matched.png": {
+      "variant": "adventurer_v1",
+      "crop": [
+        241,
+        34,
+        600,
+        1360
+      ],
+      "generated_set": "directional_v1"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const calls=[];const c={Image:class{},config:{scenes:{study:{theme:'cozy_study',background:'day.jpg',obstacles:[{id:'keep'}]}}},currentSceneId:()=> 'study',render:()=>{},encodeURIComponent,FileReader:class{readAsDataURL(){this.result='data:image/png;base64,AA==';this.onload();}},fetch:async(url,args)=>{calls.push(JSON.parse(args.body));return{ok:true,json:async()=>({theme:'cozy_study',background_night:'new.png'})};}};
+vm.createContext(c);vm.runInContext(fs.readFileSync('src/scene_daynight_editor.js','utf8'),c);
+assert(c.propVisibleInEditor({}));assert(c.propVisibleInEditor({time_of_day:'day'}));assert(!c.propVisibleInEditor({time_of_day:'night'}));
+c.setEditorLightingPreview('night');assert(c.propVisibleInEditor({time_of_day:'night'}));assert(!c.propVisibleInEditor({time_of_day:'day'}));
+assert.equal(c.sceneAssetUrl(c.config.scenes.study,'night image.png'),'/assets/themes/cozy_study/night%20image.png');
+(async()=>{await c.uploadSceneBackground('study',{size:100},'night');assert.equal(calls[0].theme,'cozy_study');assert.equal(calls[0].variant,'night');assert.equal(c.config.scenes.study.background,'day.jpg');assert.equal(c.config.scenes.study.obstacles[0].id,'keep');await assert.rejects(()=>c.uploadSceneBackground('study',{size:12000001},'day'));console.log('Day/night preview, preserved scene data and night upload payload passed.');})();

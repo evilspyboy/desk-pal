@@ -1,0 +1,11 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');const html=fs.readFileSync('src/web_studio.html','utf8');
+const elements={};const c={Math,Date,config:{scenes:{room:{portals:[]}}},document:{getElementById:id=>elements[id] ||= {style:{},value:'',textContent:''}},currentSceneId:()=>'room',floorPoints:()=>[[0,0],[500,0],[500,500],[0,500]],validPoseGround:(x,y)=>x>=0&&x<=500&&y>=0&&y<=500,updateInspectors(){},render(){},zoom:1,editorOverlayVisible:()=>true};
+c.scenePortals=()=>c.config.scenes.room.portals;vm.createContext(c);vm.runInContext(html.slice(html.indexOf("let selectedPortalId=''"),html.indexOf('function scenePortals()')),c);
+c.addScenePortal();const p=c.scenePortals()[0];assert(p&&p.inside_x!==p.x,'Add immediately creates a connected pair');assert(c.portalPathValid(p));
+assert(c.portalDragStart(p.x,p.y));c.movePortalEnd(120,200);assert.equal(p.x,120);assert.equal(p.y,200);assert.equal(p.inside_x,350);
+assert(c.portalDragStart(p.inside_x,p.inside_y));c.movePortalEnd(230,200);assert.equal(p.inside_x,230);assert.equal(p.x,120);
+c.movePortalEnd(-50,200);assert.equal(p.inside_x,230,'Invalid drag must preserve the saved point');
+assert(c.portalDragStart(175,200));c.movePortalEnd(195,220);assert.deepEqual([p.x,p.y,p.inside_x,p.inside_y],[140,220,250,220],'Dragging the line moves the whole pair');
+c.zoom=.1;assert(c.portalDragStart(p.inside_x,p.inside_y));c.movePortalEnd(300,220);assert.equal(p.x,140);assert.equal(p.inside_x,300,'Nearest endpoint wins when zoomed-out handle hit areas overlap');
+c.validPoseGround=(x,y)=>x>=0&&x<=500&&y>=0&&y<=500&&!(x>160&&x<190);assert(!c.portalPathValid(p),'A line may not cross an obstacle between valid endpoints');
+console.log('Add Entry/Exit, independent endpoint drags, rejected outside-floor drags and blocked path checks passed.');

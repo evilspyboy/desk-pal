@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8"><title>Adventurer 1 gestures</title>
+<style>body{font:16px system-ui;background:#edf1f0;color:#18232b;margin:24px}main{display:grid;grid-template-columns:repeat(3,minmax(300px,1fr));gap:16px}article{background:white;border:1px solid #aebcb7;padding:12px}canvas{width:100%;height:360px;object-fit:contain;background:#b4c9bf}h2{font-size:16px}button{padding:8px}</style>
+<h1>Adventurer 1 gesture loops</h1><p>Two source frames per loop. Fixed physical scale. Room props are separate.</p><button id="toggle">Pause</button><main></main>
+<script>
+let playing=true,elapsed=0,last=performance.now();document.querySelector('button').onclick=e=>{playing=!playing;e.target.textContent=playing?'Pause':'Play'};
+fetch('manifest.json').then(r=>r.json()).then(async pack=>{
+ const cards=[];
+ for(const seq of Object.values(pack.sequences)){
+  const article=document.createElement('article'),h=document.createElement('h2'),c=document.createElement('canvas');
+  h.textContent=seq.name;c.width=420;c.height=360;article.append(h,c);document.querySelector('main').append(article);
+  const frames=await Promise.all(seq.frames.map(async f=>{let img=new Image();img.src='raw/'+f.url.split('/').pop().replace('v1_gesture_','');await img.decode();return{...f,img}}));
+  cards.push({seq,frames,c});
+ }
+ function draw(now){if(playing)elapsed+=now-last;last=now;
+  for(const {seq,frames,c} of cards){const f=frames[Math.floor(elapsed/1000*seq.fps)%frames.length],ctx=c.getContext('2d'),scale=270/f.reference_height;
+   ctx.clearRect(0,0,c.width,c.height);ctx.strokeStyle='#688578';ctx.beginPath();ctx.moveTo(0,330);ctx.lineTo(420,330);ctx.stroke();
+   const w=f.crop[2]*scale,h=f.crop[3]*scale;ctx.drawImage(f.img,...f.crop,210-w*f.anchor_x,330-h,w,h);
+  }requestAnimationFrame(draw);
+ }requestAnimationFrame(draw);
+});
+</script>

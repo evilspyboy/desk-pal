@@ -1,0 +1,110 @@
+{
+  "prop_animations": {
+    "tv_macgyver": {
+      "name": "TV — MacGyver",
+      "frames": [
+        "/assets/props/74e1ae512d495f01ac17fcd447663335.png",
+        "/assets/props/0da25308d50cc13ea16a14921970f945.png",
+        "/assets/props/0e96525a617ea64942e21c293c3d549d.png",
+        "/assets/props/027c8ed80210f20ac385dc4b4b9779f4.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    },
+    "tv_a_team": {
+      "name": "TV — The A-Team",
+      "frames": [
+        "/assets/props/4e2ca1ee5561804ad1cec08cf49050ff.png",
+        "/assets/props/977c2cfcf25e870bab1ccc1217051655.png",
+        "/assets/props/97d4f80699cfcb6d56240fb6a1d340b6.png",
+        "/assets/props/be2bddaef458dfd868fecd46e4e5a18a.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    },
+    "tv_knight_rider": {
+      "name": "TV — Knight Rider",
+      "frames": [
+        "/assets/props/03b564386f268fa9b487acd4bc0ac162.png",
+        "/assets/props/ba00d39bd0459854348ca477d084d20a.png",
+        "/assets/props/4a25fcc4a99498ed57c9b13942d0fa84.png",
+        "/assets/props/3aa367aa3302a899c781628d380df65b.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    },
+    "tv_he_man": {
+      "name": "TV — He-Man",
+      "frames": [
+        "/assets/props/86ea71bde150c93145910e8109c72b23.png",
+        "/assets/props/d3436681f4273b8cf59c9a3ee8accfa3.png",
+        "/assets/props/1a1713ec496a9973f6571478311cf35c.png",
+        "/assets/props/eb48a11d086f7bc7fcc765aab3cdb9bb.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    },
+    "tv_inspector_gadget": {
+      "name": "TV — Inspector Gadget",
+      "frames": [
+        "/assets/props/c7f07e1361d2863553161cd6bfcc674d.png",
+        "/assets/props/77a41ee289b9613946c76ee3dd9e8f3d.png",
+        "/assets/props/1b0e04fe06b9d6e9e31b970bdca6ff3e.png",
+        "/assets/props/d41ecf87db9937510270e153bb06799c.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    },
+    "tv_ninja_turtles": {
+      "name": "TV — Teenage Mutant Ninja Turtles",
+      "frames": [
+        "/assets/props/d956fce76fc667de19bb675d96f78b1e.png",
+        "/assets/props/ed81c47c5fa4183ab72d400e14208148.png",
+        "/assets/props/6bd1102ee80c49311d0dc4c26ff43fcd.png",
+        "/assets/props/ab3da9016e6e9ca1f45aee74b16b14cc.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    },
+    "tv_goodies": {
+      "name": "TV — The Goodies",
+      "frames": [
+        "/assets/props/0235436c950cc35623c30de4c69912e6.png",
+        "/assets/props/a27fa70686df29cdd9daeabc0c467c13.png",
+        "/assets/props/3db210c901a80c67bb5516954f458634.png",
+        "/assets/props/6023366fdca9befd70038e6d6189e15b.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    },
+    "tv_doctor_who_k9": {
+      "name": "TV — Doctor Who — K-9",
+      "frames": [
+        "/assets/props/eae0147c9a6c92b88d0195ad0f61910b.png",
+        "/assets/props/f92f97a93a0bc011a80cae924dd4dfbd.png",
+        "/assets/props/59e7c4c544de110b1fe754f5d8986753.png",
+        "/assets/props/aa66d9b44e50d992cc2fe0f40aff5bce.png"
+      ],
+      "fps": 2,
+      "playback_mode": "loop",
+      "repeat_count": 1
+    }
+  },
+  "prompts": {
+    "macgyver": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: 1980s MacGyver, blond feathered mullet and tan jacket, chest-up in a sunny workshop, glancing around with a confident smile; subtle head and eye movements. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1.",
+    "a_team": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: Mr. T with his mohawk and gold chains beside Hannibal with silver hair and a cigar, beside their black van with its red stripe; Mr. T gestures slightly and Hannibal smiles. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1.",
+    "knight_rider": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: KITT, the glossy black Pontiac Trans Am, front three-quarter view at night, unmistakable red scanner moving left, middle, right, middle across the nose; camera and car remain fixed. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1.",
+    "he_man": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: He-Man, blond muscular hero with chest harness, raising his glowing sword in front of Castle Grayskull; subtle sword shimmer and hair motion, no major pose change. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1.",
+    "inspector_gadget": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: Inspector Gadget in gray trench coat and gray hat, chest-up, a small mechanical propeller emerges from his hat and turns slightly, friendly surprised expression. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1.",
+    "ninja_turtles": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: 1987 cartoon Leonardo blue mask and Michelangelo orange mask sharing a pizza in a sewer lair, chest-up, subtle mouths and pizza-hand movements. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1.",
+    "goodies": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: The Goodies trio Tim Brooke-Taylor, Graeme Garden and Bill Oddie on their iconic three-seater tandem bicycle riding past a British suburban street; full bicycle readable, wheels and pedals move subtly, fixed camera and background. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1.",
+    "doctor_who_k9": "Production animation sprite sheet. Exactly 2 columns by 2 rows, FOUR consecutive frames in row-major order. Each tile is a complete 4:3 TV picture; entire sheet 4:3. No gaps, borders, labels, text, TV casing or transparency. Original illustrative TV homage, not episode footage. Subject: classic Doctor Who K-9 gray angular robot dog in the TARDIS interior, red visor blinking and antenna ears twitching slightly, side three-quarter view, fixed body and camera. SCUMM pixel-art style, bold crisp pixel outlines, saturated limited palette. Identical camera, character proportions, background and palette in every frame, only subtle looping movement. Clear at 100 pixels wide. Frame 4 flows back to frame 1."
+  }
+}

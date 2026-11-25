@@ -1,0 +1,16 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const html=fs.readFileSync('src/web_studio.html','utf8');const start=html.indexOf('function floorLimitAnchors('),end=html.indexOf('\n}',start)+2;
+const ctx={Math,Number,floorPoints:t=>t.points};vm.createContext(ctx);vm.runInContext(html.slice(start,end),ctx);
+const trap={y_min:340,y_max:720,points:[[245,420],[994,422],[1185,425],[1280,530],[1280,720],[0,720],[0,580]]};
+const a=ctx.floorLimitAnchors(trap);assert.equal(a.back[0],320);assert(Math.abs(a.back[1]-(420+75*2/749))<1e-9);assert.equal(a.front[1],720);
+const angled=ctx.floorLimitAnchors({points:[[200,300],[900,420],[1200,700],[0,650]]});assert(angled.back[1]>300&&angled.back[1]<420);assert(angled.front[1]>650&&angled.front[1]<700);
+console.log('Polygon limit previews follow actual back/front edges, ignoring stale trapezoid fields.');
+const scaleStart=html.indexOf('function floorPerspectiveHeight('),scaleEnd=html.indexOf('\n}',scaleStart)+2;
+vm.runInContext(html.slice(scaleStart,scaleEnd),ctx);
+trap.scale_at_y_min=170;trap.scale_at_y_max=515;
+assert.equal(ctx.floorPerspectiveHeight(trap,a.back[1]),170);
+assert.equal(ctx.floorPerspectiveHeight(trap,a.front[1]),515);
+assert(Math.abs(ctx.floorPerspectiveHeight(trap,(a.back[1]+a.front[1])/2)-342.5)<1e-9);
+assert.equal(ctx.floorPerspectiveHeight(trap,300),170);
+assert.equal(ctx.floorPerspectiveHeight(trap,800),515);
+console.log('Staged sprites match limit sizes at their polygon calibration depths.');

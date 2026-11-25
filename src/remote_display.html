@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Desk-Pal Remote Display</title>
+  <style>
+    :root {
+      --bg: #090c10;
+      --surface: rgba(22, 27, 34, 0.85);
+      --border: rgba(240, 246, 252, 0.1);
+      --accent: #58a6ff;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --live-green: #3fb950;
+      --amber: #d29922;
+      --red: #f85149;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .display-container {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #121820 0%, #090c10 100%);
+    }
+    .viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #screen {
+      max-width: 100vw;
+      max-height: 100vh;
+      aspect-ratio: 16 / 9;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+      cursor: pointer;
+      display: block;
+      background: #000;
+    }
+    /* Header Overlay */
+    .top-bar {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+    .brand-pill {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 5px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--live-green);
+      box-shadow: 0 0 8px var(--live-green);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .status-dot.amber {
+      background: var(--amber);
+      box-shadow: 0 0 8px var(--amber);
+    }
+    .status-dot.red {
+      background: var(--red);
+      box-shadow: 0 0 8px var(--red);
+    }
+    .action-group {
+      pointer-events: auto;
+      display: flex;
+      gap: 8px;
+    }
+    .icon-btn {
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .icon-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    /* Bottom Controls Drawer */
+    .controls-drawer {
+      position: absolute;
+      bottom: 16px;
+      display: flex;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      z-index: 100;
+      opacity: 0.15;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateY(4px);
+    }
+    .controls-drawer:hover, .controls-drawer.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .ctrl-btn:active {
+      transform: scale(0.96);
+    }
+    .kbd-shortcut {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 5px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-muted);
+    }
+    /* Touch Feedback ripple */
+    .touch-ripple {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid rgba(88, 166, 255, 0.8);
+      background: rgba(88, 166, 255, 0.2);
+      transform: translate(-50%, -50%) scale(0.5);
+      animation: ripple 0.4s ease-out forwards;
+      pointer-events: none;
+      z-index: 50;
+    }
+    @keyframes ripple {
+      to {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="display-container">
+    <div class="top-bar">
+      <div class="brand-pill">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Connecting...</span>
+        <span id="fpsCounter" style="color:var(--text-muted); font-size:11px; margin-left:4px;"></span>
+      </div>
+      <div class="action-group">
+        <button class="icon-btn" id="btnStudio" onclick="window.open('/studio', '_blank')">Web Studio</button>
+        <button class="icon-btn" id="btnFullscreen" onclick="toggleFullscreen()">⛶ Fullscreen <span class="kbd-shortcut">F</span></button>
+      </div>
+    </div>
+
+    <div class="viewport" id="viewport">
+      <img id="screen" alt="Desk-Pal Live Screen" />
+    </div>
+
+    <div class="controls-drawer" id="controlsDrawer">
+      <button class="ctrl-btn" id="btnSwitch1" onclick="sendSwitch(1)">
+        🌙 Sleep / Wake <span class="kbd-shortcut">1</span>
+      </button>
+      <div id="appButtons" style="display:flex; gap:8px;"></div>
+    </div>
+  </div>
+
+  <script>
+    const CANVAS_WIDTH = 1280;
+    const CANVAS_HEIGHT = 720;
+    const screenImg = document.getElementById('screen');
+    const viewport = document.getElementById('viewport');
+    const statusDot = document.getElementById('statusDot');
+    const statusText = document.getElementById('statusText');
+    const fpsCounter = document.getElementById('fpsCounter');
+    const appButtonsContainer = document.getElementById('appButtons');
+    const controlsDrawer = document.getElementById('controlsDrawer');
+
+    let streamActive = true;
+    let pollTimer = null;
+    let frameCount = 0;
+    let lastFpsUpdate = performance.now();
+    let isSleeping = false;
+    let failureCount = 0;
+
+    async function loadConfig() {
+      try {
+        const res = await fetch('/api/config');
+        if (!res.ok) return;
+        const cfg = await res.json();
+        const apps = cfg.apps || [];
+        appButtonsContainer.innerHTML = '';
+        for (let id = 2; id <= 5; id++) {
+          const app = apps.find(a => a.switch_id === id);
+          const name = app ? (app.name || app.id) : `App ${id}`;
+          const btn = document.createElement('button');
+          btn.className = 'ctrl-btn';
+          btn.innerHTML = `${name} <span class="kbd-shortcut">${id}</span>`;
+          btn.onclick = () => sendSwitch(id);
+          appButtonsContainer.appendChild(btn);
+        }
+      } catch (e) {
+        console.warn('Failed to load config:', e);
+      }
+    }
+
+    async function sendInput(cmd) {
+      try {
+        const res = await fetch('/api/preview/input', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(cmd)
+        });
+        if (!res.ok) {
+          console.warn('Input rejected:', await res.text());
+        }
+      } catch (e) {
+        console.warn('Network error sending input:', e);
+      }
+    }
+
+    function sendSwitch(num) {
+      sendInput({ kind: 'switch', switch: num });
+    }
+
+    // Touch and mouse coordinate scaling
+    screenImg.addEventListener('pointerdown', (e) => {
+      const rect = screenImg.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
+
+      if (clickX < 0 || clickX > rect.width || clickY < 0 || clickY > rect.height) return;
+
+      const canvasX = Math.round((clickX / rect.width) * CANVAS_WIDTH);
+      const canvasY = Math.round((clickY / rect.height) * CANVAS_HEIGHT);
+
+      // Visual touch ripple
+      const ripple = document.createElement('div');
+      ripple.className = 'touch-ripple';
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 400);
+
+      sendInput({ kind: 'touch', x: canvasX, y: canvasY });
+    });
+
+    // Keyboard shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key >= '1' && e.key <= '5') {
+        sendSwitch(parseInt(e.key, 10));
+      } else if (e.key === ' ' || e.key === 's') {
+        sendSwitch(1); // Sleep/wake
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      }
+    });
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // Frame Stream loop with auto-pause on hidden tab
+    function scheduleNextFrame(delay = 66) {
+      if (!streamActive || document.hidden) return;
+      clearTimeout(pollTimer);
+      pollTimer = setTimeout(fetchFrame, delay);
+    }
+
+    function fetchFrame() {
+      if (document.hidden) return;
+      const nextImg = new Image();
+      const now = Date.now();
+      nextImg.src = `/api/preview/frame?t=${now}`;
+
+      nextImg.onload = () => {
+        screenImg.src = nextImg.src;
+        failureCount = 0;
+        frameCount++;
+        const elapsed = performance.now() - lastFpsUpdate;
+        if (elapsed >= 1000) {
+          const fps = Math.round((frameCount * 1000) / elapsed);
+          fpsCounter.textContent = `${fps} fps`;
+          frameCount = 0;
+          lastFpsUpdate = performance.now();
+        }
+        statusDot.className = 'status-dot';
+        statusText.textContent = isSleeping ? 'Standby (Sleep)' : 'Live';
+        scheduleNextFrame(66); // ~15 FPS max
+      };
+
+      nextImg.onerror = () => {
+        failureCount++;
+        if (failureCount > 3) {
+          statusDot.className = 'status-dot red';
+          statusText.textContent = 'Reconnecting...';
+          fpsCounter.textContent = '';
+        }
+        scheduleNextFrame(Math.min(1000 * failureCount, 3000));
+      };
+    }
+
+    // Poll status periodically (every 3 seconds) for sleep state
+    async function checkStatus() {
+      try {
+        const res = await fetch('/api/preview/status');
+        if (res.ok) {
+          const data = await res.json();
+          isSleeping = !!data.sleeping;
+          if (isSleeping) {
+            statusDot.className = 'status-dot amber';
+            statusText.textContent = 'Standby (Sleep)';
+          }
+        }
+      } catch (e) {}
+      setTimeout(checkStatus, 3000);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        clearTimeout(pollTimer);
+      } else {
+        scheduleNextFrame(10);
+      }
+    });
+
+    loadConfig();
+    checkStatus();
+    scheduleNextFrame(10);
+  </script>
+</body>
+</html>

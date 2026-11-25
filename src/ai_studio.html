@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Desk-Pal · AI & Speech</title>
+<style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#10101b;color:#eee;font:16px system-ui}main{max-width:1050px;margin:auto;padding:24px}a{color:#81cafa}h1{margin-bottom:8px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}button,input:not([type=checkbox]),select{font:inherit;border:1px solid #545573;border-radius:6px;padding:9px;background:#292a40;color:white}button{cursor:pointer}button.active{background:#604393}.card{padding:22px;background:#1c1d2e;border:1px solid #393b54;border-radius:10px;margin:16px 0}label{display:flex;gap:12px;align-items:center;margin:14px 0;flex-wrap:wrap}input:not([type=checkbox]){flex:1;min-width:200px}input[type=checkbox]{width:20px;height:20px;min-width:20px;min-height:20px;margin:0;padding:0;accent-color:#a855f7;cursor:pointer;flex:none;appearance:auto;-webkit-appearance:checkbox}.muted{color:#b7b9ca;line-height:1.5}.badge{display:inline-block;padding:4px 9px;background:#3d354f;border-radius:5px}pre{white-space:pre-wrap;overflow-wrap:anywhere}#status{min-height:24px}</style></head>
+<body><main><a href="/">← Scene editor</a> · <a href="/hardware">Hardware</a><h1>AI & Speech</h1>
+<p class="muted">Agent activity, model connections and speech belong here. Applications continue to report their own work independently.</p>
+<nav class="tabs"><button data-tab="agents">Agent hooks</button><button data-tab="models">Model connections</button><button data-tab="speech">Speech</button></nav>
+<section id="agents" class="card"><h2>Agent activity hooks</h2><span class="badge">Existing optional MCP bridge</span>
+<p>The separate Desk-Pal MCP bridge runs on your agent’s computer. An agent explicitly reports started, researching, coding, completed or needs-attention events; Desk-Pal plays the mapped reactions.</p>
+<p class="muted">It works with an MCP-capable host using OpenAI, Gemini, Claude or a local model. This does not automatically observe agents or connect a model to Desk-Pal. Automatic lifecycle hooks and conversational agent mode are planned.</p>
+<p>Import <code>integrations/agent-mcp/integration.json</code> through App & Action Studio, then map its events. Follow <code>integrations/agent-mcp/README.md</code> to launch the bridge on the agent host.</p>
+<p>Desk-Pal event address: <code id="eventAddress"></code></p><p>Bridge tools: <code>deskpal_report_activity</code> and <code>deskpal_get_status</code>.</p></section>
+<section id="models" class="card" hidden><h2>Model connection profiles</h2><span class="badge" style="background:#065f46;color:#6ee7b7;border:1px solid #059669;">Active · Connected to Voice Dispatcher</span>
+<p class="muted">Configure endpoint and model for network LLMs (Local LLM via PC Ollama, OpenAI, Gemini, Claude) or local executable and model file paths for On-Device LLM.</p>
+<label>Provider Profile <select id="profile">
+  <option value="local">Local LLM (PC Ollama / LAN)</option>
+  <option value="on_device">On-Device</option>
+  <option value="openai">OpenAI</option>
+  <option value="gemini">Gemini</option>
+  <option value="claude">Claude</option>
+</select></label>
+<label><span id="endpointLabel">Endpoint URL</span> <input id="endpoint" type="url" placeholder="e.g. http://192.168.1.100:9931/v1"></label><label><span id="modelLabel">Model</span> <input id="model" placeholder="e.g. gemma3:1b or gemma4:e2b"></label>
+<div style="margin-top:18px;border-top:1px solid #393b54;padding-top:16px">
+  <h3>Conversational Dispatch & Fallback Tiers</h3>
+  <label>Preferred conversation provider <select id="chat_provider"></select></label>
+  <label>Intent & Tool Calling Engine <select id="intent_engine">
+    <option value="cactus_needle">Cactus Needle · On-device Tool Calling (~120 MB RAM, ~2s)</option>
+    <option value="regex_only">Instant Direct Matcher Only (Regex)</option>
+  </select></label>
+  <label>Primary Chat Fallback <select id="chat_fallback_primary">
+    <option value="local">Local LLM (PC Ollama / LAN)</option>
+    <option value="on_device">On-Device</option>
+    <option value="openai">OpenAI</option>
+    <option value="gemini">Gemini</option>
+    <option value="claude">Claude</option>
+    <option value="none">None (Disabled)</option>
+  </select></label>
+  <label>Secondary Chat Fallback <select id="chat_fallback_secondary">
+    <option value="on_device">On-Device</option>
+    <option value="local">Local LLM (PC Ollama / LAN)</option>
+    <option value="openai">OpenAI</option>
+    <option value="gemini">Gemini</option>
+    <option value="claude">Claude</option>
+    <option value="none">None (Disabled)</option>
+  </select></label>
+</div>
+<button id="saveModels">Save connection profiles</button></section>
+<section id="speech" class="card" hidden><h2>Speech output and input</h2><span class="badge">Piper output · STT not implemented</span>
+<label><input type="checkbox" id="ttsEnabled">Enable local Piper</label>
+<label>Speech model <select id="ttsModel"><option value="piper">Piper · local CPU speech</option></select></label>
+<label>Voice <select id="ttsVoice"></select></label>
+<button id="addVoice">+ Add voice</button>
+<div id="voiceInstaller" hidden>
+<label>Add from <select id="voiceSource"><option value="official">Piper voice download</option><option value="custom">Custom model files</option></select></label>
+<label>Voice name / ID <input id="voiceName" placeholder="For example: en_GB-alan-low"></label>
+<div id="officialVoice"><p class="muted">Enter an official Piper voice ID. <a href="https://rhasspy.github.io/piper-samples/" target="_blank" rel="noopener">Browse voices and listen to samples</a>. Downloads go to this device; the display keeps running.</p><button id="downloadVoice">Download voice</button></div>
+<div id="customVoice" hidden><label>ONNX model <input id="voiceModel" type="file" accept=".onnx"></label><label>Matching .onnx.json configuration <input id="voiceConfig" type="file" accept=".json"></label><p class="muted">Give it a unique name. The pair is checked before it appears in the voice list. Maximum model size: 256 MB. Multi-speaker models use their default speaker.</p><button id="uploadVoice">Install files</button></div>
+<p id="voiceInstallStatus" role="status"></p>
+</div>
+<label>Speech speed <input id="ttsSpeed" type="number" min="0.5" max="2" step="0.1" value="1"></label>
+<label><input type="checkbox" id="ttsKeepLoaded">Keep voice loaded between requests</label>
+<p class="muted">When enabled, the voice stays in memory after its first use for faster responses. When disabled, it unloads after each request. Disabling speech or pressing Stop also releases it. Volume/output come from Hardware.</p>
+<p class="muted">Save settings before testing a changed voice or model.</p><label>Test speech <input id="ttsText" maxlength="500" value="Good morning. This is Desk Pal testing its new voice."></label>
+<button id="saveSpeech">Save speech settings</button> <button id="speak">Speak test text</button> <button id="stopSpeech">Stop speech</button><p id="speechStatus" role="status"></p>
+<p>Local TTS can speak test text through the selected hardware speaker. Automatically reading briefings and attention messages is a separate future option. Speech to text (STT) would capture deliberate push-to-talk input through the microphone.</p>
+<label>Preferred TTS connection <select id="tts_provider"></select></label><label>Preferred STT connection <select id="stt_provider"></select></label>
+<p class="muted">These are separate preferences, not a claim that every provider supports both capabilities. Local speech services can run on another computer. Piper supplies local speech; transcription backends remain under evaluation. Automatic listening is disabled.</p>
+<div style="margin-top:20px;border-top:1px solid #393b54;padding-top:16px">
+<h3>Interactive Voice Attention</h3>
+<p class="muted">Desk-Pal can escalate its voice alert when important events (orders, fuel drops, anomalies) need attention. It waits for radar presence before speaking, and gives up cleanly if ignored.</p>
+<label><input type="checkbox" id="attnEnabled">Enable voice attention escalation ladder</label>
+<label><input type="checkbox" id="attnRadarRequired">Only alert when user present (radar-gated; waits until return)</label>
+<label>Initial alert phrase template <input id="attnPhase1Template" placeholder="Hey, I have a {app} update!"></label>
+<label>Reminder 1 (~18s) <input id="attnPhase2Phrase" placeholder="Hey, it's me, your pal!"></label>
+<label>Reminder 2 (~42s) <input id="attnPhase3Phrase" placeholder="Hello? Over here!"></label>
+<label>Attention timeout (seconds) <input id="attnTimeout" type="number" min="15" max="300" value="75"></label>
+<label>Away alert freshness limit (minutes) <input id="attnStaleMinutes" type="number" min="1" max="1440" value="15"></label>
+<button id="saveAttention">Save voice attention settings</button>
+</div>
+
+<div style="margin-top:24px;border-top:1px solid #393b54;padding-top:16px">
+<h3>Voice Recognition & Sentry (STT)</h3>
+<span class="badge" style="background:#2e1065;color:#c084fc;border:1px solid #7c3aed;">faster-whisper · local edge speech recognition</span>
+<p class="muted">Recognize voice input directly on device using lightweight faster-whisper. Tap the character sprite (push to talk) or trigger with a wake word.</p>
+
+<label><input type="checkbox" id="sttEnabled">Enable speech recognition (STT)</label>
+<label>STT Model <select id="sttModel">
+  <option value="tiny.en">tiny.en · ~75 MB (Recommended: fastest, ~0.8s)</option>
+  <option value="base.en">base.en · ~140 MB (Higher accuracy, ~1.8s)</option>
+  <option value="whistle">Whistle · 16.9 MB (Cactus Compute: ultra-fast CPU, sideload)</option>
+</select></label>
+
+<label><input type="checkbox" id="sttKeepLoaded">Keep STT model loaded in memory</label>
+<p class="muted">When checked, the Whisper model stays loaded in RAM (~120 MB), allowing instant transcription when you poke the sprite. Unchecked, it releases memory after each phrase.</p>
+
+<label>Trigger interaction <select id="sttTriggerMode">
+  <option value="poke_sprite">Poke character sprite (Push / Tap to talk)</option>
+  <option value="wake_word">Wake keyword ("Hey Deskpal")</option>
+  <option value="both">Both (Poke sprite or Wake keyword)</option>
+</select></label>
+
+<label>Wake keyword <input id="sttWakeWord" value="hey deskpal" placeholder="For example: hey deskpal"></label>
+<label>Sentence pause / break cutoff (seconds) <input id="sttSilenceSeconds" type="number" min="0.5" max="5.0" step="0.5" value="2.0"></label>
+<p class="muted">Stops listening after 2.0 seconds of silence so natural pauses between sentences are preserved.</p>
+
+<label><input type="checkbox" id="sttSpeakResponse">Character speaks back what it heard (TTS)</label>
+
+<div style="margin:16px 0; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+  <button id="talkStt" type="button" style="background:#8b5cf6; border-color:#a78bfa; font-weight:bold; font-size:14px; padding:9px 18px;">🗣️ Talk to Desk-Pal (Tap to Talk)</button>
+  <button id="saveStt" type="button">Save STT settings</button>
+  <div id="sttStatus" style="font-size:13px; color:#a5b4fc; margin-top:4px; width:100%; min-height:18px;"></div>
+</div>
+
+<div id="sttTranscriptBox" style="background:rgba(20,16,35,0.7); border:1px solid #6366f1; border-radius:8px; padding:12px; margin:12px 0; display:none;">
+  <div style="font-size:11px; text-transform:uppercase; color:#9ca3af; letter-spacing:0.05em; margin-bottom:4px;">Speech Recognition Result</div>
+  <div id="sttHeardText" style="font-size:18px; font-weight:600; color:#f3e8ff; min-height:26px;"></div>
+  <div id="sttDetails" style="font-size:12px; color:#c084fc; margin-top:6px; font-family:monospace;"></div>
+</div>
+
+<div style="margin-top:24px;border-top:1px solid #393b54;padding-top:16px">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+    <div>
+      <h3 style="margin:0 0 4px 0;">Recent Speech & Voice History</h3>
+      <p class="muted" style="margin:0; font-size:14px;">Review recently spoken messages, morning briefings, voice replies and alerts. Replay any message aloud.</p>
+    </div>
+    <div style="display:flex; gap:8px;">
+      <button id="refreshSpeechHistory" type="button" style="font-size:13px; padding:6px 12px; background:#292a40;">🔄 Refresh</button>
+      <button id="replayLatestSpeech" type="button" style="font-size:13px; padding:6px 14px; background:#0284c7; border-color:#38bdf8; font-weight:600;">🔊 Replay Last Spoken</button>
+    </div>
+  </div>
+  <div id="speechHistoryList" style="margin-top:12px; display:flex; flex-direction:column; gap:8px;">
+    <p class="muted" style="font-style:italic; margin:8px 0;">Loading speech history...</p>
+  </div>
+</div>
+
+<a href="/hardware">Speaker and microphone settings</a></section>
+<p id="status" role="status"></p></main>
+<script>
+const $=id=>document.getElementById(id);let settings,selected='openai',speechError='';
+const names={local:'Local LLM (PC Ollama / LAN)',openai:'OpenAI',gemini:'Gemini',claude:'Claude'};
+const chatProviderNames={local:'Local LLM (PC Ollama / LAN)',on_device:'On-Device',openai:'OpenAI',gemini:'Gemini',claude:'Claude'};
+let installWatching=false,installVoice='';
+async function voiceList(preferred){const r=await fetch('/api/ai/voices');const data=await r.json();if(!r.ok)throw Error(data.error||'Could not load voices');const selectedVoice=preferred||$('ttsVoice').value||settings.tts.voice;$('ttsVoice').replaceChildren();for(const v of data.voices){const o=document.createElement('option');o.value=v.id;o.textContent=v.label;$('ttsVoice').append(o);}if(!data.voices.some(v=>v.id===selectedVoice)){const o=document.createElement('option');o.value=selectedVoice;o.textContent=selectedVoice+' · not installed';$('ttsVoice').append(o);}$('ttsVoice').value=selectedVoice;return data;}
+$('addVoice').onclick=()=>{$('voiceInstaller').hidden=!$('voiceInstaller').hidden;};
+$('voiceSource').onchange=()=>{const custom=$('voiceSource').value==='custom';$('customVoice').hidden=!custom;$('officialVoice').hidden=custom;};
+$('voiceModel').onchange=()=>{if(!$('voiceName').value)$('voiceName').value=$('voiceModel').files[0]?.name.replace(/\.onnx$/i,'')||'';};
+async function voiceFetch(path,body,json=true){const r=await fetch(path,{method:'POST',headers:json?{'Content-Type':'application/json'}:{'Content-Type':'application/octet-stream'},body:json?JSON.stringify(body):body});const data=await r.json();if(!r.ok)throw Error(data.error||'Voice installation failed');return data;}
+$('downloadVoice').onclick=async()=>{try{installVoice=$('voiceName').value.trim();await voiceFetch('/api/ai/voices/download',{voice:installVoice});installWatching=true;$('voiceInstallStatus').textContent='Downloading '+installVoice+'…';}catch(e){$('voiceInstallStatus').textContent=e.message;}};
+$('uploadVoice').onclick=async()=>{const button=$('uploadVoice');try{const model=$('voiceModel').files[0],config=$('voiceConfig').files[0],name=$('voiceName').value.trim();if(!model||!config)throw Error('Choose both model and matching configuration');if(model.size>256*1024*1024||config.size>1024*1024)throw Error('Model/config exceeds the upload limit');button.disabled=true;$('voiceInstallStatus').textContent='Uploading model…';const path='/api/ai/voices/upload?voice='+encodeURIComponent(name);await voiceFetch(path+'&kind=model',model,false);$('voiceInstallStatus').textContent='Uploading configuration and checking voice…';await voiceFetch(path+'&kind=config',config,false);await voiceList(name);$('voiceInstallStatus').textContent='Installed. Save speech settings to use this voice.';}catch(e){$('voiceInstallStatus').textContent=e.message;}finally{button.disabled=false;}};
+setInterval(async()=>{if(!installWatching)return;try{const data=await voiceList();const task=data.install;$('voiceInstallStatus').textContent=task.error||task.state+' · '+(task.voice||'');if(['ready','error'].includes(task.state)){installWatching=false;if(task.state==='ready'){await voiceList(installVoice);$('voiceInstallStatus').textContent='Installed. Save speech settings to use this voice.';}}}catch(e){$('voiceInstallStatus').textContent=e.message;}},2000);
+function show(tab){for(const id of ['agents','models','speech'])$(id).hidden=id!==tab;for(const b of document.querySelectorAll('[data-tab]'))b.classList.toggle('active',b.dataset.tab===tab);if(tab==='speech')loadSpeechHistory();}
+function stash(){
+  if (!settings || !settings.providers) return;
+  if (!settings.providers[selected]) settings.providers[selected] = {endpoint:'', model:''};
+  settings.providers[selected]={endpoint:$('endpoint').value.trim(),model:$('model').value.trim()};
+  settings.tts={enabled:$('ttsEnabled').checked,model:$('ttsModel').value,voice:$('ttsVoice').value,speed:Number($('ttsSpeed').value),keep_loaded:$('ttsKeepLoaded').checked};
+  settings.stt={enabled:$('sttEnabled').checked,model:$('sttModel').value,keep_loaded:$('sttKeepLoaded').checked,trigger_mode:$('sttTriggerMode').value,wake_word:$('sttWakeWord').value.trim(),silence_seconds:Number($('sttSilenceSeconds').value)||2.0,max_record_seconds:15.0,speak_response:$('sttSpeakResponse').checked};
+  settings.attention_voice={enabled:$('attnEnabled').checked,radar_required:$('attnRadarRequired').checked,phase1_template:$('attnPhase1Template').value.trim()||'Hey, I have a {app} update!',phase2_phrase:$('attnPhase2Phrase').value.trim()||"Hey, it's me, your pal!",phase3_phrase:$('attnPhase3Phrase').value.trim()||"Hello? Over here!",timeout_seconds:Number($('attnTimeout').value)||75,stale_age_seconds:(Number($('attnStaleMinutes').value)||15)*60};
+}
+function profile(){
+  selected=$('profile').value;
+  const isDevice=(selected==='on_device');
+  $('endpointLabel').textContent=isDevice?'Binary / CLI Path':'Endpoint URL';
+  $('endpoint').type=isDevice?'text':'url';
+  $('endpoint').placeholder=isDevice?'e.g. /home/admin/test_llm/llama-b11706/llama-cli':'e.g. http://192.168.1.100:9931/v1';
+  $('modelLabel').textContent=isDevice?'GGUF Model Path':'Model';
+  $('model').placeholder=isDevice?'e.g. /home/admin/test_llm/model.gguf':'e.g. gemma3:1b or gemma4:e2b';
+  if(!settings.providers[selected])settings.providers[selected]={endpoint:'',model:''};
+  $('endpoint').value=settings.providers[selected].endpoint||'';
+  $('model').value=settings.providers[selected].model||'';
+}
+async function save(){
+  try{
+    stash();
+    settings.chat_provider = $('chat_provider').value;
+    settings.tts_provider = $('tts_provider').value;
+    settings.stt_provider = $('stt_provider').value;
+    settings.intent_engine = $('intent_engine').value;
+    settings.chat_fallback_primary = $('chat_fallback_primary').value;
+    settings.chat_fallback_secondary = $('chat_fallback_secondary').value;
+    const chain = [];
+    if (settings.chat_fallback_primary && settings.chat_fallback_primary !== 'none') chain.push(settings.chat_fallback_primary);
+    if (settings.chat_fallback_secondary && settings.chat_fallback_secondary !== 'none' && !chain.includes(settings.chat_fallback_secondary)) {
+      chain.push(settings.chat_fallback_secondary);
+    }
+    settings.chat_fallback_chain = chain;
+    const r=await fetch('/api/ai/settings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(settings)});
+    const body=await r.json();
+    if(!r.ok)throw Error(body.error||'Save failed');
+    settings=body.settings;
+    $('status').textContent='Saved. Connection profiles and fallback tiers updated.';
+  }catch(e){$('status').textContent=e.message;}
+}
+for(const b of document.querySelectorAll('[data-tab]'))b.onclick=()=>show(b.dataset.tab);$('profile').onchange=()=>{stash();profile();};$('saveModels').onclick=save;$('saveSpeech').onclick=save;$('saveAttention').onclick=save;$('saveStt').onclick=save;$('eventAddress').textContent=location.origin+'/api/v1/event';
+async function load(){
+  try{
+    const r=await fetch('/api/ai/settings');const body=await r.json();if(!r.ok)throw Error(body.error||'Could not load settings');settings=body.settings;
+    $('chat_provider').replaceChildren();
+    for(const [value,label] of Object.entries(chatProviderNames)){
+      const option=document.createElement('option');
+      option.value=value;
+      option.textContent=label;
+      $('chat_provider').append(option);
+    }
+    $('chat_provider').value = settings.chat_provider || 'local';
+
+    for(const key of ['tts_provider','stt_provider']){
+      $(key).replaceChildren();
+      for(const [value,label] of Object.entries(names)){
+        const option=document.createElement('option');
+        option.value=value;
+        option.textContent=label;
+        $(key).append(option);
+      }
+      $(key).value=settings[key];
+    }
+    $('intent_engine').value = settings.intent_engine || 'cactus_needle';
+    $('chat_fallback_primary').value = settings.chat_fallback_primary || (settings.chat_fallback_chain && settings.chat_fallback_chain[0]) || 'local';
+    $('chat_fallback_secondary').value = settings.chat_fallback_secondary || (settings.chat_fallback_chain && settings.chat_fallback_chain[1]) || 'on_device';
+    await voiceList(settings.tts.voice);
+    $('ttsEnabled').checked=settings.tts.enabled;$('ttsModel').value=settings.tts.model;$('ttsVoice').value=settings.tts.voice;$('ttsSpeed').value=settings.tts.speed;$('ttsKeepLoaded').checked=settings.tts.keep_loaded;
+    const stt=settings.stt||{};
+    $('sttEnabled').checked=stt.enabled??false;$('sttModel').value=stt.model||'tiny.en';$('sttKeepLoaded').checked=stt.keep_loaded??true;$('sttTriggerMode').value=stt.trigger_mode||'poke_sprite';$('sttWakeWord').value=stt.wake_word||'hey deskpal';$('sttSilenceSeconds').value=stt.silence_seconds??2.0;$('sttSpeakResponse').checked=stt.speak_response??true;
+    const attn=settings.attention_voice||{};
+    $('attnEnabled').checked=attn.enabled??true;$('attnRadarRequired').checked=attn.radar_required??true;$('attnPhase1Template').value=attn.phase1_template||'Hey, I have a {app} update!';$('attnPhase2Phrase').value=attn.phase2_phrase||"Hey, it's me, your pal!";$('attnPhase3Phrase').value=attn.phase3_phrase||"Hello? Over here!";$('attnTimeout').value=attn.timeout_seconds||75;$('attnStaleMinutes').value=Math.round((attn.stale_age_seconds||900)/60);
+    selected=settings.chat_provider||'local';if($('profile'))$('profile').value=selected;profile();show('agents');
+  }catch(e){$('status').textContent=e.message;for(const id of ['saveModels','saveSpeech','saveAttention','saveStt','speak','talkStt'])$(id).disabled=true;}
+}
+load();
+
+async function speechRequest(path,body){
+  speechError='';
+  try{
+    const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    const data=await r.json();
+    if(!r.ok)throw Error(data.error);
+    $('speechStatus').textContent=data.state||'Request sent';
+  }catch(e){
+    speechError=e.message;
+    $('speechStatus').textContent=speechError;
+  }
+}
+$('speak').onclick=()=>speechRequest('/api/ai/speak',{text:$('ttsText').value});$('stopSpeech').onclick=()=>speechRequest('/api/ai/speech/stop',{});
+
+let isTalking=false;
+function resetTalkBtn(){
+  isTalking=false;
+  const btn=$('talkStt');
+  if(!btn) return;
+  btn.disabled=false;
+  btn.textContent='🗣️ Talk to Desk-Pal (Tap to Talk)';
+  btn.style.background='#8b5cf6';
+  btn.style.borderColor='#a78bfa';
+}
+
+function setSttStatus(msg){
+  const el = $('sttStatus') || $('status');
+  if (el) el.textContent = msg;
+}
+
+if ($('saveStt')) $('saveStt').onclick = save;
+
+$('talkStt').onclick=async()=>{
+  const btn=$('talkStt'), box=$('sttTranscriptBox'), heard=$('sttHeardText'), details=$('sttDetails');
+  if(!isTalking){
+    try{
+      btn.disabled=true; setSttStatus('Starting voice listener...');
+      const r=await fetch('/api/ai/stt/listen',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+      const data=await r.json();
+      if(!r.ok) throw Error(data.error||'Failed to start listening');
+      isTalking=true;
+      btn.disabled=false;
+      btn.textContent='⏹️ Finish & Transcribe';
+      btn.style.background='#ef4444';
+      btn.style.borderColor='#f87171';
+      setSttStatus('🎙️ Listening... Speak naturally (auto-stops after 2s pause or click Finish)');
+      if (box) box.style.display='block';
+      if (heard) heard.textContent='Listening... Speak now!';
+      if (details) details.textContent='Desk-Pal will auto-stop after 2 seconds of silence, or click Finish.';
+    }catch(e){
+      btn.disabled=false;
+      setSttStatus('Error: '+e.message);
+    }
+  }else{
+    try{
+      btn.disabled=true;
+      btn.textContent='⏳ Transcribing...';
+      setSttStatus('Transcribing captured speech...');
+      const r=await fetch('/api/ai/stt/stop',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+      const data=await r.json();
+      if(!r.ok) throw Error(data.error||'Failed to stop');
+    }catch(e){
+      setSttStatus('Error: '+e.message);
+      resetTalkBtn();
+    }
+  }
+};
+
+setInterval(async()=>{
+  if($('speech').hidden) return;
+  try{
+    if(!speechError){
+      const r=await fetch('/api/ai/speech');const s=await r.json();
+      $('speechStatus').textContent=s.error||s.state+(s.loaded?' · Voice loaded':' · Voice unloaded')+(s.generation_seconds?' · Generated in '+s.generation_seconds+'s · Audio '+s.audio_seconds+'s · Peak '+s.peak_memory_mb+' MB':'');
+    }
+    const r2=await fetch('/api/ai/stt/status');const s2=await r2.json();
+    if(s2) {
+      if(isTalking && s2.state === 'idle') {
+        resetTalkBtn();
+      } else if(!isTalking && s2.state === 'listening') {
+        isTalking = true;
+        const btn = $('talkStt');
+        btn.textContent = '⏹️ Finish & Transcribe';
+        btn.style.background = '#ef4444';
+        btn.style.borderColor = '#f87171';
+        $('sttTranscriptBox').style.display = 'block';
+        $('sttHeardText').textContent = 'Listening (sprite poked)...';
+      }
+      if(s2.latest_transcription) {
+        $('sttTranscriptBox').style.display = 'block';
+        $('sttHeardText').textContent = `"${s2.latest_transcription}"`;
+        $('sttDetails').textContent = `Model: ${s2.model} · Trigger: ${s2.trigger_mode} · Silence cutoff: ${s2.silence_seconds}s`;
+      }
+      if(s2.engine) {
+        const el=$('sttStatus');
+        if(!el.textContent.startsWith('✓') && !el.textContent.startsWith('🎙️') && !isTalking) {
+          el.textContent = `STT State: ${s2.state} · ${s2.engine.loaded ? 'Model resident in RAM ('+s2.engine.memory_mb+' MB)' : 'Model unloaded'}`;
+        }
+      }
+    }
+  }catch(e){}
+},1500);
+
+async function loadSpeechHistory() {
+  const container = $('speechHistoryList');
+  if (!container) return;
+  try {
+    const r = await fetch('/api/ai/speech/history');
+    const data = await r.json();
+    const history = data.history || [];
+    if (!history.length) {
+      container.innerHTML = '<p class="muted" style="font-style:italic; margin:8px 0;">No spoken messages recorded yet.</p>';
+      return;
+    }
+    const sourceBadges = {
+      'voice_response': { label: 'Voice Response', bg: '#4338ca', color: '#c7d2fe' },
+      'morning_greeting': { label: 'Daily Briefing', bg: '#b45309', color: '#fef3c7' },
+      'attention_alert': { label: 'Voice Alert', bg: '#b91c1c', color: '#fee2e2' },
+      'web_test': { label: 'Manual Test', bg: '#0e7490', color: '#cffafe' },
+      'replay': { label: 'Replay', bg: '#047857', color: '#d1fae5' },
+      'speech': { label: 'Speech', bg: '#374151', color: '#e5e7eb' }
+    };
+    container.innerHTML = history.map(item => {
+      const badge = sourceBadges[item.source] || sourceBadges['speech'];
+      const timeStr = item.time_str || '';
+      const ageMins = Math.floor((item.age_seconds || 0) / 60);
+      const ageStr = ageMins < 1 ? 'just now' : (ageMins === 1 ? '1 min ago' : `${ageMins} mins ago`);
+      const safeText = (item.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return `
+        <div style="background:#222438; border:1px solid #373a5a; border-radius:8px; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; gap:14px;">
+          <div style="flex:1; min-width:0;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px; font-size:12px;">
+              <span style="background:${badge.bg}; color:${badge.color}; padding:2px 8px; border-radius:4px; font-weight:600;">${badge.label}</span>
+              <span style="color:#9ca3af;">${timeStr} (${ageStr})</span>
+            </div>
+            <div style="font-size:15px; color:#f3f4f6; overflow-wrap:break-word; line-height:1.4;">${safeText}</div>
+          </div>
+          <button type="button" onclick="replayItem('${item.id}')" style="flex:none; background:#292a40; border:1px solid #545573; padding:6px 12px; font-size:13px; font-weight:600;" title="Replay this speech">🔊 Replay</button>
+        </div>
+      `;
+    }).join('');
+  } catch (err) {
+    container.innerHTML = `<p class="muted" style="color:#ef4444; margin:8px 0;">Could not load speech history: ${err.message}</p>`;
+  }
+}
+
+async function replayItem(id) {
+  try {
+    const r = await fetch('/api/ai/speech/replay', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(id ? { id } : {})
+    });
+    const data = await r.json();
+    if (!r.ok) throw Error(data.error || 'Replay failed');
+    $('speechStatus').textContent = `Replaying: "${data.text}"`;
+    setTimeout(loadSpeechHistory, 1200);
+  } catch (e) {
+    alert(e.message);
+  }
+}
+
+if ($('refreshSpeechHistory')) $('refreshSpeechHistory').onclick = loadSpeechHistory;
+if ($('replayLatestSpeech')) $('replayLatestSpeech').onclick = () => replayItem(null);
+setInterval(() => {
+  if (!$('speech').hidden) loadSpeechHistory();
+}, 6000);
+</script></body></html>

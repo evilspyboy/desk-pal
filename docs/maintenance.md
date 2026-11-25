@@ -1,0 +1,15 @@
+# Long-running maintenance
+
+Desk-Pal limits each derived character/prop surface cache to 128 entries and a 48 MiB surface-memory budget, evicting the least recently used entries. One unusually large surface can exceed the budget on its own so the current frame remains readable. Original character artwork, backgrounds and application state are separate from these caches; 96 MiB is not a total-process memory limit. Cached frames can always be recreated from the source assets.
+
+The activity audit rotates at approximately 2 MB per file and retains four older files alongside the current one. Review exports and backups can contain private application details and should remain private.
+
+On 5 October the Pi had about 21 GB free disk space, a 60 KB runtime console log and about 744 MB Desk-Pal resident memory before cache limits were introduced. These figures motivated bounded caches, but do not establish the cause of the reported apparent animation freeze. Compare memory after sustained usage; a post-restart reduction alone is not proof.
+
+A read-only asset inventory reports references from config metadata, retained authoring sheets/references, backup ZIP contents, missing references and config `.tmp` files older than 24 hours. It never deletes files. Source sheets and intentionally retained artwork must not be mistaken for garbage merely because they are not in the active configuration. No artwork or recovery backup was deleted during this maintenance change. Standalone Desk-Pal now captures Python stdout/stderr in `logs/deskpal-runtime.log`, rotating near 1 MB and retaining three older files. Terminal launches also show the output; redirected launches avoid an unbounded duplicate console stream. Early imports/native-library output may still reach the launcher log. Recovery backups remain retained until a deliberate retention policy is chosen.
+
+Run `python scripts/report_maintenance.py --data-dir <installation-directory> --output <private-report.json>` to generate an inventory. Unreferenced files are review candidates, not permission to delete: metadata may not describe every intended reuse. Keep reports private. Existing package imports use managed temporary directories; completed operations remove those automatically. Never remove in-progress `.tmp` files.
+
+See the [9 October runtime review](RUNTIME_REVIEW_2026-10-09.md) for deployment evidence and current limitations.
+
+Optional Piper workers and validation/download subprocesses have their own memory/disk costs beyond the renderer's surface cache. Voice models live under `~/.cache/deskpal/piper/`, outside ordinary content inventories/backups. Keep-loaded intentionally retains a model; Stop or disabling speech releases it. Failed/completed voice pair installs remove staging, but a browser upload abandoned after only the model can leave `.upload-*` staging; automatic retention/cleanup for these abandoned pairs remains a follow-up. Do not delete an in-progress installation or a user's installed voice as generic garbage collection.

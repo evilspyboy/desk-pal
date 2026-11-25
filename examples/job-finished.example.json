@@ -1,0 +1,11 @@
+{
+  "app_id": "example_app",
+  "demo": true,
+  "event": "job_finished",
+  "run_id": "catalogue-20261004-0815",
+  "job_name": "Catalogue update",
+  "completed_at": "2026-10-04T08:15:00+10:00",
+  "success": true,
+  "records_changed": 3,
+  "summary": "Catalogue updated: 3 records changed."
+}
